@@ -11,8 +11,8 @@ class Note {
     required this.timeStamp,
   });
 
-  //method to convert data to a map that will later be converted to json
-  Map<String, dynamic> jsonMap() {
+  //method to convert a note into a map
+  Map<String, dynamic> toJsonMap() {
     return {
       'id': id,
       'title': title,
@@ -21,7 +21,7 @@ class Note {
     };
   }
 
-  //method to convert each map (jsonMap) to a note object
+  //method to convert each jsonMap object into a note
   factory Note.fromJson(Map<String, dynamic> jsonMap) {
     return switch (jsonMap) {
       {
@@ -36,25 +36,11 @@ class Note {
           content: content,
           timeStamp: DateTime.parse(timeStamp),
         ),
-      _ => throw const FormatException('Unrecognised json format'),
+      _ => throw const FormatException('The json format is not recognised'),
     };
   }
-  //the copywith method to copy of the original instance properties & values
-  Note copyWith({
-    int? id,
-    String? title,
-    String? content,
-    DateTime? timeStamp,
-  }) {
-    return Note(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      content: content ?? this.content,
-      timeStamp: timeStamp ?? this.timeStamp,
-    );
-  }
 
-  //the operator and hashcode method overrides for list management
+  //the operator & hashcode override to define what one note object deffers from the other
   @override
   bool operator ==(Object other) {
     if (identical(Note, other)) return true;

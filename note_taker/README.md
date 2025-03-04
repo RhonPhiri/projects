@@ -1,16 +1,15 @@
 # note_taker
 
-A new Flutter project.
+This is a flutter project, a note taking app.
 
-## Getting Started
+## Purpose
 
-This project is a starting point for a Flutter application.
+I created this app, to practice my skills gained in learning how to use the provider package and the path_provider package.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Objective
+Users should be able to:
+- Create a note and save or cancel it
+- Update an existing note or delete it
+- Save and load from the local storage
+- Search for a note using the title or content
+- sort them using the date, alphabet
