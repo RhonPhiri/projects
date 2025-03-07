@@ -20,7 +20,7 @@ class SearchButton extends StatelessWidget {
           noteContainerTapped(searchedNote);
         }
       },
-      icon: Icon(Icons.search),
+      icon: const Icon(Icons.search),
     );
   }
 }

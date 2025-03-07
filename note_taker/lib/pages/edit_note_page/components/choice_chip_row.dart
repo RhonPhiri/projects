@@ -15,17 +15,23 @@ class ChoiceChipRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title),
+        Text(
+          title,
+          style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurface),
+        ),
         ...List.generate(choiceChipNameList.length, (int index) {
           return ChoiceChip(
             showCheckmark: true,
             selected: index == enumValueIndex,
             label: Text(
               choiceChipNameList[index],
-              style: TextStyle(fontSize: 12),
+              style: const TextStyle(fontSize: 12),
             ),
             onSelected: (value) {
               if (value) {

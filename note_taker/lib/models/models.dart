@@ -1,3 +1,3 @@
 export 'note_class.dart';
-export 'note_provider.dart';
-export 'note_storage.dart';
+export '../providers/note_provider.dart';
+export '../services/note_storage.dart';

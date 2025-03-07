@@ -52,17 +52,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final notesProvider = context.watch<NoteProvider>();
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notes'),
+        title: Text(
+          'Notes',
+          style: textTheme.headlineSmall?.copyWith(
+            color: colorScheme.onSurfaceVariant,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         actions: [
-          SortButton(),
+          const SortButton(),
           SearchButton(noteContainerTapped: noteContainerTapped),
         ],
       ),
       body:
           _isLoading
-              ? Center(child: CircularProgressIndicator())
+              ? const Center(child: CircularProgressIndicator())
               : notesProvider.notes.isEmpty
               ? Center(
                 child: Column(
@@ -70,7 +78,17 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       flex: 2,
-                      child: Image.asset('assets/images/emptynote.png'),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Image.asset('assets/images/emptynote.png'),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: colorScheme.surface.withValues(alpha: 0.6),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     Expanded(
                       child: Text.rich(
@@ -78,8 +96,9 @@ class _HomePageState extends State<HomePage> {
                         style: GoogleFonts.alexBrush(
                           fontSize: 48,
                           fontWeight: FontWeight.bold,
+                          color: colorScheme.onSurface,
                         ),
-                        TextSpan(
+                        const TextSpan(
                           text: 'You don\'t have any\n',
                           children: [TextSpan(text: 'notes')],
                         ),
@@ -89,22 +108,35 @@ class _HomePageState extends State<HomePage> {
                 ),
               )
               : notesProvider.errorMessage.isNotEmpty
-              ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    notesProvider.errorMessage,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.error,
+              ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      notesProvider.errorMessage,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.error,
+                        fontSize: 24,
+                      ),
                     ),
-                  ),
-                  ElevatedButton(onPressed: _loadNotes, child: Text('Retry')),
-                ],
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: _loadNotes,
+                      child: Text(
+                        'Retry',
+                        style: GoogleFonts.alexBrush(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: colorScheme.onSurface,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               )
               : SafeArea(
                 child: StaggeredGridView.countBuilder(
                   crossAxisCount: 2,
-
                   itemCount: notesProvider.notes.length,
                   itemBuilder: (context, index) {
                     final note = notesProvider.notes[index];
@@ -113,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () => noteContainerTapped(note),
                     );
                   },
-                  staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+                  staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
                 ),
               ),
       floatingActionButton: FloatingActionButton(
@@ -123,7 +155,7 @@ class _HomePageState extends State<HomePage> {
           //if a note is retained, then create a new note
           final newNote = await Navigator.of(
             context,
-          ).push(MaterialPageRoute(builder: (context) => EditNotePage()));
+          ).push(MaterialPageRoute(builder: (context) => const EditNotePage()));
 
           if (newNote != null) {
             notesProvider.addNote(newNote);
@@ -131,7 +163,7 @@ class _HomePageState extends State<HomePage> {
         },
         foregroundColor: Theme.of(context).colorScheme.primary,
         backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

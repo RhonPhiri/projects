@@ -14,7 +14,7 @@ class _SortButtonState extends State<SortButton> {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      icon: Icon(Icons.sort),
+      icon: const Icon(Icons.sort),
       tooltip: 'Sort notes by',
       position: PopupMenuPosition.under,
       onSelected:

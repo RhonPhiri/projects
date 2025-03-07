@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_taker/models/theme_provider.dart';
+import 'package:note_taker/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'choice_chip_row.dart';
 
@@ -12,28 +12,30 @@ class ThemeButton extends StatelessWidget {
       onPressed: () {
         showModalBottomSheet(
           context: context,
+
           builder: (context) {
             final themeProvider = context.watch<ThemeProvider>();
+            final textTheme = Theme.of(context).textTheme;
 
             return Container(
-              padding: EdgeInsets.all(16),
-              height: 250,
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surfaceContainer,
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ...List.generate(3, (int index) {
                     //list of 1st 3 variables in the modalBottomSheet
                     //used patterns (switch expressions) to parse check the variables and asign accordingly
-                    final variables = ['themeMode', 'themeColor', 'fontFamily'];
+                    final variables = ['themeMode', 'themeColor', 'textTheme'];
                     return ChoiceChipRow(
                       title: switch (variables[index]) {
                         'themeMode' => 'Choose Theme:',
                         'themeColor' => 'Choose color:',
-                        'fontFamily' => 'Choose Font',
+                        'textTheme' => 'Font:',
                         _ => 'null',
                       },
                       choiceChipNameList: switch (variables[index]) {
@@ -45,9 +47,9 @@ class ThemeButton extends StatelessWidget {
                           ThemeColor.values
                               .map((themeColor) => themeColor.name)
                               .toList(),
-                        'fontFamily' =>
-                          FontFamily.values
-                              .map((fontFamily) => fontFamily.name)
+                        'textTheme' =>
+                          NoteTextTheme.values
+                              .map((textTheme) => textTheme.name)
                               .toList(),
                         _ => [],
                       },
@@ -58,8 +60,8 @@ class ThemeButton extends StatelessWidget {
                         'themeColor' => ThemeColor.values.indexOf(
                           themeProvider.themeColor,
                         ),
-                        'fontFamily' => FontFamily.values.indexOf(
-                          themeProvider.fontFamily,
+                        'textTheme' => NoteTextTheme.values.indexOf(
+                          themeProvider.noteTextTheme,
                         ),
                         _ => 0,
                       },
@@ -69,9 +71,8 @@ class ThemeButton extends StatelessWidget {
                         'themeColor' =>
                           (p0) =>
                               themeProvider.changeVariable(p0, 'themeColor'),
-                        'fontFamily' =>
-                          (p0) =>
-                              themeProvider.changeVariable(p0, 'fontFamily'),
+                        'textTheme' =>
+                          (p0) => themeProvider.changeVariable(p0, 'textTheme'),
                         _ => (p0) {},
                       },
                     );
@@ -79,8 +80,13 @@ class ThemeButton extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Font size'),
-                      Spacer(),
+                      Text(
+                        'Font size:',
+                        style: textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
+                      const Spacer(),
                       Row(
                         children: List.generate(2, (int index) {
                           return IconButton(
@@ -88,7 +94,6 @@ class ThemeButton extends StatelessWidget {
                               context.read<ThemeProvider>().changeFontSize(
                                 index,
                               );
-                              print(context.read<ThemeProvider>().fontSize);
                             },
                             icon: Icon(
                               Icons.text_fields,
@@ -99,7 +104,7 @@ class ThemeButton extends StatelessWidget {
                           );
                         }),
                       ),
-                      Spacer(),
+                      const Spacer(),
                     ],
                   ),
                 ],
@@ -109,9 +114,9 @@ class ThemeButton extends StatelessWidget {
         );
       },
       icon: switch (context.watch<ThemeProvider>().themeMode) {
-        ThemeMode.system => Icon(Icons.invert_colors),
-        ThemeMode.light => Icon(Icons.wb_sunny),
-        ThemeMode.dark => Icon(Icons.dark_mode),
+        ThemeMode.system => const Icon(Icons.invert_colors),
+        ThemeMode.light => const Icon(Icons.wb_sunny),
+        ThemeMode.dark => const Icon(Icons.dark_mode),
       },
     );
   }

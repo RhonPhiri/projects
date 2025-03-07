@@ -1,8 +1,8 @@
 //page to create new, view, update and/or delete an existing note
 import 'package:flutter/material.dart';
 import 'package:note_taker/models/note_class.dart';
-import 'package:note_taker/models/note_provider.dart';
-import 'package:note_taker/models/theme_provider.dart';
+import 'package:note_taker/providers/note_provider.dart';
+import 'package:note_taker/providers/theme_provider.dart';
 import 'package:note_taker/pages/home_page/components/app_bart_buttons/app_bar_buttons.dart';
 import 'package:provider/provider.dart';
 
@@ -49,7 +49,7 @@ class _EditNotePageState extends State<EditNotePage> {
               ? 'Note created successfully'
               : 'Note updated successfully',
         ),
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -57,7 +57,7 @@ class _EditNotePageState extends State<EditNotePage> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
@@ -77,12 +77,12 @@ class _EditNotePageState extends State<EditNotePage> {
                   onPressed: _saveNote,
                   child: Text(
                     widget.note == null ? 'Save' : 'Update Note',
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
-                ThemeButton(),
+                const ThemeButton(),
               ],
-              actionsPadding: EdgeInsets.only(right: 8),
+              actionsPadding: const EdgeInsets.only(right: 8),
             ),
 
             SliverToBoxAdapter(
@@ -90,27 +90,32 @@ class _EditNotePageState extends State<EditNotePage> {
                 children: [
                   TextField(
                     controller: _titleController,
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
-                    decoration: InputDecoration(
+                    style: textTheme.displayLarge?.copyWith(
+                      color: colorScheme.onSurface,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ),
+                    decoration: const InputDecoration(
                       hintText: 'Title',
                       hintStyle: TextStyle(fontSize: 32),
                       border: OutlineInputBorder(borderSide: BorderSide.none),
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Consumer<ThemeProvider>(
                     builder: (context, themeProvider, child) {
                       return TextField(
                         controller: _contentController,
-                        style: TextStyle(
-                          fontSize: themeProvider.fontSize.toDouble(),
-                          fontFamily:
-                              themeProvider.fontFamily == FontFamily.ledger
-                                  ? 'Ledger'
-                                  : 'Lato',
+                        style: textTheme.bodyMedium?.copyWith(
+                          fontSize:
+                              context
+                                  .watch<ThemeProvider>()
+                                  .fontSize
+                                  .toDouble(),
+                          color: colorScheme.onSurface,
                         ),
                         maxLines: null,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Content',
                           border: OutlineInputBorder(
                             borderSide: BorderSide.none,
@@ -134,7 +139,11 @@ class _EditNotePageState extends State<EditNotePage> {
                       context: context,
                       builder:
                           (context) => AlertDialog(
-                            title: Text('Delete note?'),
+                            title: Text(
+                              'Delete note?',
+                              style: Theme.of(context).textTheme.headlineMedium
+                                  ?.copyWith(color: colorScheme.onSurface),
+                            ),
                             actions: [
                               TextButton(
                                 onPressed: () {
@@ -145,7 +154,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                   Navigator.of(context).pop();
 
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                    const SnackBar(
                                       content: Text(
                                         'Note deleted successfully',
                                       ),
@@ -153,7 +162,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     ),
                                   );
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Yes',
                                   style: TextStyle(color: Colors.red),
                                 ),
@@ -162,14 +171,14 @@ class _EditNotePageState extends State<EditNotePage> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('No'),
+                                child: const Text('No'),
                               ),
                             ],
                           ),
                     ),
                 foregroundColor: Theme.of(context).colorScheme.primary,
                 backgroundColor: colorScheme.onInverseSurface,
-                child: Icon(Icons.delete),
+                child: const Icon(Icons.delete),
               ),
     );
   }
