@@ -3,11 +3,15 @@
 //wrapped & caught in the failure class
 //Solution was to add a try-catch block and retain a failure
 import 'dart:io';
-
 import 'package:nah/data/services/result.dart';
 import 'package:http/http.dart' as http;
 
 class HymnalService {
+  //using dependency injection to allow for testing
+  final http.Client client;
+  //initializing client upon calling the constructor, making it optional or else use the http
+  HymnalService({http.Client? client}) : client = client ?? http.Client();
+
   //variable to hold the github hymnal.json url
   final _hymnalUrl =
       'https://rhonphiri.github.io/nac-hymnal-files/hymnals.json';
@@ -19,7 +23,7 @@ class HymnalService {
   /// or an error if the fetch operation fails.
   Future<Result<String>> fetchHymnals() async {
     try {
-      final response = await http.get(Uri.parse(_hymnalUrl));
+      final response = await client.get(Uri.parse(_hymnalUrl));
       if (response.statusCode == 200) {
         return Success(response.body);
       } else {
