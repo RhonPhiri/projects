@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Adoration",
+        "otherDetails": "verse 1: John S Monsell (1811-1875)\nverse 2: Ken Bible (b. 1950)\nref. Psalm 96 : 9",
+        "lyrics": {
+            "verses": [
+                "1. Worship the Lord in the beaty of holiness!\nBowdown before Him, His glory proclaim.\nWith gikd of obedience and incense of lowliness,\nKneel and adore Him the Lord is His name!",
+                "2. Fear not the enter His presence in poverty,\nbearing no gifts to present as your own.\nBring truth in its beauty and love in its purity\nthese are the off'rings to lay at His throne"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 2,
+        "title": "All creature of our God and King",
+        "otherDetails": "Francis of Assisi (1182-1226)\ntransl. William H Draper (1855-1933)\n from Geistliche Kirchengesänge, Cologne 1623\narr. Ralph Vaughan Williams (1872-1958)",
+        "lyrics": {
+            "verses": [
+                "1. All creatures of our God and King,\nLift up your voice and with us sing,\nAlleluia!, Alleluia!\nthou burning sin with golden beam,\nthough silver moon with softer gleam:",
+                "2. Thou rushing wind that art so strong,\nye clouds that sail in heav'n along,\nO praise Him! Alleluia!\nThou rising morning praise rejoice\nye lights of evening find a voice:",
+                "3. Thou flowing water, pure and clear,\nmake music for thy Lord to hear,\nAlleluia! Alleluia!\nThou fire, so masterful and bright,\nthou givest us both warmth and light:",
+                "4. All ye that are of tender heart,\nforgiving others, take your part,\nO sing ye! Alleluia!\nAll ye who pain and sorrowbear,\npraise God and on Him cast your care",
+                "5. Let all things their Creator bless,\nand worship Him in humbleness,\nO praise Him! Alleluia!\nPraise, praise the Father, praise the Son,\nand praise the Spirit, Three in One:"
+            ],
+            "chorus": "Chorus: O praise Him! O praise Him!\nAlleluia, alleluia, alleluia!"
+        }
+    }
+]
