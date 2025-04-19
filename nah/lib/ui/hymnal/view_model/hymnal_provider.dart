@@ -7,6 +7,10 @@ import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/result.dart';
 
 class HymnalProvider extends ChangeNotifier {
+  //call, using DI the get hymnals method from the hymnal repo
+  final HymnalRepository _hymnalRepository;
+  HymnalProvider(this._hymnalRepository);
+
   //variable to hold the error message
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
@@ -17,10 +21,6 @@ class HymnalProvider extends ChangeNotifier {
   //Variable to hold the current selected hymnal
   int _selectedHymnal = 0;
   int get selectedHymnal => _selectedHymnal;
-
-  //call, using DI the get hymnals method from the hymnal repo
-  final HymnalRepository _hymnalRepository;
-  HymnalProvider(this._hymnalRepository);
 
   //variable to hold the list of hymnals
   final List<Hymnal> _hymnalList = [];
