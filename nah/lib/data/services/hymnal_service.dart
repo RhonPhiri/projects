@@ -5,6 +5,7 @@
 import 'dart:io';
 import 'package:nah/data/services/result.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart' show rootBundle;
 
 class HymnalService {
   //using dependency injection to allow for testing
@@ -55,5 +56,19 @@ class HymnalService {
     }
     final error = await fetchHymnals();
     return error;
+  }
+
+  //load hymnals from the embedded code
+  Future<Result<String>> loadHymnalsFromAssets() async {
+    try {
+      final hymnalData = await rootBundle.loadString(
+        'assets/hymnals/hymnals.json',
+      );
+      return Success(hymnalData);
+    } on Exception catch (e) {
+      return Failure(
+        Exception('Failed to load hymnals from assets. Details: $e'),
+      );
+    }
   }
 }
