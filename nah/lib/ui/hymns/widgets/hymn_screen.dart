@@ -27,7 +27,7 @@ class _HymnScreenState extends State<HymnScreen> {
       body: CustomScrollView(
         slivers: [
           MySliverAppBar(
-            title: 'H O M E  P A G E',
+            title: 'Hymnal Language',
             leading: AnimatedSwitcher(
               duration: Duration(milliseconds: 250),
               child: Icon(Icons.menu),
