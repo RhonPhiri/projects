@@ -44,6 +44,7 @@ class HymnalScreen extends StatelessWidget {
                           ? Icons.book_rounded
                           : Icons.book_outlined,
                       size: 40,
+                      //TODO: create a list of color themes to assign to each hymnal
                       color: const Color(0xFF0168B5),
                     ),
                     title: Text(hymnal.title),
