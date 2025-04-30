@@ -1,0 +1,187 @@
+Recommendation: Use a Shared Database Helper
+You can create a single DatabaseHelper class that manages the database for both hymns and hymnals. This helper will handle:
+
+Creating tables for hymns and hymnals.
+Inserting and retrieving data for both entities.
+Checking if cached data exists.
+Step 1: Define the Database Schema
+Extend the existing DatabaseHelper to include tables for both hymns and hymnals.
+
+//
+//
+
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+import 'package:nah/data/models/hymn_model.dart';
+import 'package:nah/data/models/hymnal_model.dart';
+
+class DatabaseHelper {
+  static final DatabaseHelper _instance = DatabaseHelper._internal();
+  factory DatabaseHelper() => _instance;
+
+  DatabaseHelper._internal();
+
+  static Database? _database;
+
+  Future<Database> get database async {
+    if (_database != null) return _database!;
+    _database = await _initDatabase();
+    return _database!;
+  }
+
+  Future<Database> _initDatabase() async {
+    final dbPath = await getDatabasesPath();
+    return openDatabase(
+      join(dbPath, 'hymns_and_hymnals.db'),
+      onCreate: (db, version) async {
+        // Create hymns table
+        await db.execute('''
+          CREATE TABLE hymns (
+            id INTEGER PRIMARY KEY,
+            title TEXT,
+            lyrics TEXT,
+            language TEXT
+          )
+        ''');
+        // Create hymnals table
+        await db.execute('''
+          CREATE TABLE hymnals (
+            id INTEGER PRIMARY KEY,
+            title TEXT,
+            language TEXT
+          )
+        ''');
+      },
+      version: 1,
+    );
+  }
+
+  // Insert hymns into the database
+  Future<void> insertHymns(List<Hymn> hymns) async {
+    final db = await database;
+    for (final hymn in hymns) {
+      await db.insert(
+        'hymns',
+        hymn.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+  }
+
+  // Retrieve hymns from the database
+  Future<List<Hymn>> getHymns(String language) async {
+    final db = await database;
+    final maps = await db.query(
+      'hymns',
+      where: 'language = ?',
+      whereArgs: [language],
+    );
+    return maps.map((map) => Hymn.fromMap(map)).toList();
+  }
+
+  // Insert hymnals into the database
+  Future<void> insertHymnals(List<Hymnal> hymnals) async {
+    final db = await database;
+    for (final hymnal in hymnals) {
+      await db.insert(
+        'hymnals',
+        hymnal.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+  }
+
+  // Retrieve hymnals from the database
+  Future<List<Hymnal>> getHymnals() async {
+    final db = await database;
+    final maps = await db.query('hymnals');
+    return maps.map((map) => Hymnal.fromMap(map)).toList();
+  }
+}
+
+//
+//
+Step 2: Update the Repositories
+Modify both HymnRepository and HymnalRepository to use the DatabaseHelper for caching.
+//
+//
+import 'dart:convert';
+import 'package:nah/data/local/database_helper.dart';
+import 'package:nah/data/models/hymn_model.dart';
+import 'package:nah/data/services/nah_services_export.dart';
+
+class HymnRepository {
+  final HymnService hymnService;
+  final DatabaseHelper databaseHelper;
+
+  HymnRepository(this.hymnService, this.databaseHelper);
+
+  Future<Result<List<Hymn>>> getHymns(String language) async {
+    try {
+      // Try fetching hymns from the network
+      final result = await hymnService.fetchHymns(language);
+      if (result is Success<String>) {
+        final hymnData = json.decode(result.data);
+        final hymns = [for (final hymn in hymnData) Hymn.fromMap(hymn)];
+
+        // Cache the hymns locally
+        await databaseHelper.insertHymns(hymns);
+
+        return Success(hymns);
+      } else if (result is Failure<String>) {
+        return Failure(result.error);
+      }
+    } catch (e) {
+      // If there's an error (e.g., no network), load cached hymns
+      final cachedHymns = await databaseHelper.getHymns(language);
+      if (cachedHymns.isNotEmpty) {
+        return Success(cachedHymns);
+      }
+      return Failure(Exception('No network and no cached data available.'));
+    }
+    return Failure(Exception('Error: Failed to get hymns from hymn service'));
+  }
+}
+
+//
+//
+import 'dart:convert';
+import 'package:nah/data/local/database_helper.dart';
+import 'package:nah/data/models/hymnal_model.dart';
+import 'package:nah/data/services/hymnal_service.dart';
+import 'package:nah/data/services/result.dart';
+
+class HymnalRepository {
+  final HymnalService hymnalService;
+  final DatabaseHelper databaseHelper;
+
+  HymnalRepository(this.hymnalService, this.databaseHelper);
+
+  Future<Result<List<Hymnal>>> getHymnals() async {
+    try {
+      // Try fetching hymnals from the network
+      final result = await hymnalService.fetchHymnalsWithRetry();
+      if (result is Success<String>) {
+        final hymnalData = json.decode(result.data);
+        final hymnals = [for (final hymnal in hymnalData) Hymnal.fromMap(hymnal)];
+
+        // Cache the hymnals locally
+        await databaseHelper.insertHymnals(hymnals);
+
+        return Success(hymnals);
+      } else if (result is Failure<String>) {
+        return Failure(result.error);
+      }
+    } catch (e) {
+      // If there's an error (e.g., no network), load cached hymnals
+      final cachedHymnals = await databaseHelper.getHymnals();
+      if (cachedHymnals.isNotEmpty) {
+        return Success(cachedHymnals);
+      }
+      return Failure(Exception('No network and no cached data available.'));
+    }
+    return Failure(Exception('Error: Failed to get hymnals from hymnal service'));
+  }
+}
+//
+//
