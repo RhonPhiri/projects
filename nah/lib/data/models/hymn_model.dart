@@ -33,7 +33,7 @@ class Hymn {
       'id': id,
       'title': title,
       'otherDetails': otherDetails,
-      'lyrics': lyrics,
+      'lyrics': json.encode(lyrics), //the map literal will be stored as text
     };
   }
 

@@ -2,7 +2,10 @@
 //Will use the singleton pattern to allow only a single instanciation of the databsehelper class
 //and use the instance grobally
 
+import 'dart:convert';
+
 import 'package:nah/data/db/db_parameters.dart';
+import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/models/hymnal_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -63,10 +66,9 @@ class DatabaseHelper {
     //Path package provides the correct format of representing the native path
     return openDatabase(
       join(dbPath, fileName),
-
+      version: 1,
       //oncreate allows creation of the database if opendatabase found a non existing database
       onCreate: _createDB,
-      version: 1,
     );
   }
 
@@ -89,6 +91,40 @@ class DatabaseHelper {
     return hymnalMaps.map((map) => Hymnal.fromMap(map)).toList();
   }
 
+  //insert hymns into the database
+  Future<void> insertHymns(List<Hymn> hymns) async {
+    final db = await database;
+    final batch = db.batch();
+
+    for (Hymn hymn in hymns) {
+      batch.insert(
+        hymnTableName,
+        hymn.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+
+    await batch.commit(noResult: true);
+  }
+
+  //method to retrieve hymns from database
+  Future<List<Hymn>> getHymns() async {
+    final db = await database;
+    final hymnMaps = await db.query('hymns');
+
+    return hymnMaps.map((map) {
+      return Hymn(
+        id: map['id'] as int,
+        title: map['title'] as String,
+        otherDetails: map['otherDetails'] as String,
+        lyrics: json.decode(
+          map['lyrics'] as String,
+        ), // Convert JSON string back to Map
+      );
+    }).toList();
+  }
+
+  //Method to release resources when database is not needed
   Future<void> close() async {
     final db = await database;
     return db.close();

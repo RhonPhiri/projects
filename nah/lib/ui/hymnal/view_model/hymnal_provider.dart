@@ -53,4 +53,9 @@ class HymnalProvider extends ChangeNotifier {
     _selectedHymnal = index;
     notifyListeners();
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 }
