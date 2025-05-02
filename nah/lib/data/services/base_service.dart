@@ -25,11 +25,11 @@ abstract class BaseService {
           ),
         );
       }
-    } on SocketException catch (e) {
+    } on SocketException {
       return Failure(
         Exception('No internet connection. Please try again later'),
       );
-    } on http.ClientException catch (e) {
+    } on http.ClientException {
       return Failure(Exception('Failed to connect to the server'));
     } catch (e) {
       return Failure(Exception('An unexpected error occured. Details: $e'));

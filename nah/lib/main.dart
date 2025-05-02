@@ -7,9 +7,17 @@ import 'package:nah/ui/hymns/widgets/hymn_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-
-  runApp(MultiProvider(providers: [ChangeNotifierProvider(create:(context) => HymnalProvider(HymnalRepository(HymnalService())),)],child: const MyApp(),));
-
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create:
+              (context) => HymnalProvider(HymnalRepository(HymnalService())),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
