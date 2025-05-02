@@ -11,9 +11,12 @@ typedef StringSuccess = Success<String>;
 class HymnalRepository {
   //Access the hymnal service
   final HymnalService _hymnalService;
-  final DatabaseHelper _databaseHelper;
+
+  //access the nah database through the DatabaseHelper()
+  final DatabaseHelper databaseHelper;
+
   //use dependancy injection to improve testing
-  HymnalRepository(this._hymnalService, this._databaseHelper);
+  HymnalRepository(this._hymnalService, this.databaseHelper);
 
   /// Fetches a list of hymnals from the hymnal service.
   ///
@@ -25,6 +28,7 @@ class HymnalRepository {
   /// - `Failure<String>` if there is an error during the operation.
   Future<Result<List<Hymnal>>> getHymnals() async {
     try {
+      //fetch hymnals from the hymnal service
       final result = await _hymnalService.fetchHymnalsWithRetry();
 
       if (result is StringSuccess) {
@@ -34,8 +38,8 @@ class HymnalRepository {
             Hymnal.fromMap(hymnalMap),
         ];
 
-        //cache the hymnals
-        await _databaseHelper.insertHymnals(hymnals);
+        //cache the hymnals to database
+        await databaseHelper.insertHymnals(hymnals);
 
         return Success(hymnals);
       }
@@ -43,8 +47,9 @@ class HymnalRepository {
       //if result is a failure, fall back on cached data
       throw Exception((result as Failure).error);
     } catch (e) {
-      //load cached hymnals
-      final cachedHymnals = await _databaseHelper.getHymnals();
+      //load cached hymnals from database
+      final cachedHymnals = await databaseHelper.getHymnals();
+
       if (cachedHymnals.isNotEmpty) {
         return Success(cachedHymnals);
       }

@@ -46,7 +46,7 @@ abstract class BaseService {
       if (result is Success) {
         return result;
       }
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(Duration(seconds: 1));
     }
     final error = await fetchData(url);
     return error;
