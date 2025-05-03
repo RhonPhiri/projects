@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nah/ui/core/ui/erro_message_with_retry.dart';
 import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
+import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import 'package:nah/ui/hymnal/widgets/hymnal_screen.dart';
+import 'package:nah/ui/hymns/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
 
 class HymnScreen extends StatefulWidget {
@@ -16,18 +19,35 @@ class _HymnScreenState extends State<HymnScreen> {
   void initState() {
     super.initState();
     //defer the call to loadHymnals() until after the widget tree is built
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<HymnalProvider>().loadHymnals();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await context.read<HymnalProvider>().loadHymnals();
+
+      if (!mounted) return;
+      // After hymnals are loaded, load hymns for the selected hymnal
+      final hymnalProvider = context.read<HymnalProvider>();
+      if (hymnalProvider.hymnals.isNotEmpty) {
+        final selectedHymnal =
+            hymnalProvider.hymnals[hymnalProvider.selectedHymnal];
+        await context.read<HymnProvider>().loadHymns(selectedHymnal.language);
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    //variable to hold the hymnal provider hymnal list
+    final hymnalProvider = context.watch<HymnalProvider>();
+    final hymnalTitle =
+        hymnalProvider.hymnals.isEmpty
+            ? ''
+            : hymnalProvider.hymnals[hymnalProvider.selectedHymnal].title;
+    //varibal to hold the hymn provider
+    final hymnProvider = context.watch<HymnProvider>();
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           MySliverAppBar(
-            title: 'Hymnal Language',
+            title: hymnalTitle,
             leading: AnimatedSwitcher(
               duration: Duration(milliseconds: 250),
               child: Icon(Icons.menu),
@@ -46,6 +66,21 @@ class _HymnScreenState extends State<HymnScreen> {
               );
             }),
           ),
+          hymnProvider.isLoading
+              ? SliverFillRemaining(
+                hasScrollBody: false,
+                child: Center(child: CircularProgressIndicator()),
+              )
+              : hymnProvider.errorMessage != null &&
+                  hymnProvider.errorMessage!.isNotEmpty
+              ? SliverFillRemaining(
+                hasScrollBody: false,
+                child: ErroMessageWithRetry(),
+              )
+              : SliverHymnList(
+                hymns: hymnProvider.hymnList,
+                isBookmarked: false,
+              ),
         ],
       ),
     );

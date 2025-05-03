@@ -2,14 +2,19 @@
 //The app should load the list of hymnals & display a list of hymns from the first hymnal
 
 import 'package:flutter/widgets.dart';
+import 'package:nah/data/db/database_helper.dart';
 import 'package:nah/data/models/hymnal_model.dart';
 import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/result.dart';
+import 'package:nah/domain/app_service.dart';
 
 class HymnalProvider extends ChangeNotifier {
   //call, using DI the get hymnals method from the hymnal repo
   final HymnalRepository _hymnalRepository;
-  HymnalProvider(this._hymnalRepository);
+
+  final AppService appService;
+
+  HymnalProvider(this.appService, this._hymnalRepository);
 
   //variable to hold the error message
   String? _errorMessage;
@@ -38,6 +43,7 @@ class HymnalProvider extends ChangeNotifier {
       case Success<List<Hymnal>> success:
         _hymnalList.clear();
         _hymnalList.addAll(success.data);
+        await appService.fetchAndCacheHymnsForAllHymnals(_hymnalList);
         _isLoading = false;
         _errorMessage = '';
         break;
@@ -55,7 +61,8 @@ class HymnalProvider extends ChangeNotifier {
   }
 
   @override
-  void dispose() {
+  void dispose() async {
+    await DatabaseHelper().close();
     super.dispose();
   }
 }

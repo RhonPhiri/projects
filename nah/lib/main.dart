@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/db/database_helper.dart';
+import 'package:nah/data/repositories/hymn_repository.dart';
 import 'package:nah/data/repositories/hymnal_repository.dart';
-import 'package:nah/data/services/hymnal_service.dart';
+import 'package:nah/data/services/nah_services_export.dart';
+import 'package:nah/domain/app_service.dart';
 import 'package:nah/ui/core/theme/nah_theme.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
+import 'package:nah/ui/hymns/view_model/hymn_provider.dart';
 import 'package:nah/ui/hymns/widgets/hymn_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -18,16 +21,23 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider(
           create:
+              (context) => HymnalProvider(
+                AppService(HymnRepository(HymnService(), dbHelper)),
+                HymnalRepository(HymnalService(), dbHelper),
+              ),
+        ),
+        ChangeNotifierProvider(
+          create:
               (context) =>
-                  HymnalProvider(HymnalRepository(HymnalService(), dbHelper)),
+                  HymnProvider(HymnRepository(HymnService(), dbHelper)),
         ),
       ],
       child: const MyApp(),
     ),
   );
 
-  //close database resources
-  await closeDatabaseOnAppExit(dbHelper);
+  //close database and release resources
+  // await closeDatabaseOnAppExit(dbHelper);
 }
 
 //method to initalize the app & database
