@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nah/ui/core/ui/core_ui_export.dart';
+import 'package:nah/ui/core/ui/erro_message_with_retry.dart';
+import 'package:nah/ui/hymns/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
 import '../view_model/hymnal_provider.dart';
 
@@ -26,13 +28,7 @@ class HymnalScreen extends StatelessWidget {
                   hymnalProvider.errorMessage!.isNotEmpty
               ? SliverFillRemaining(
                 hasScrollBody: false,
-                child: Center(
-                  child: Text(
-                    hymnalProvider.errorMessage!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
+                child: ErroMessageWithRetry(),
               )
               : SliverList.separated(
                 itemCount: hymnalProvider.hymnals.length,
@@ -51,6 +47,9 @@ class HymnalScreen extends StatelessWidget {
                     subtitle: Text(hymnal.language),
                     onTap: () {
                       context.read<HymnalProvider>().selectHymnal(index);
+                      context.read<HymnProvider>().loadHymns(
+                        hymnal.language.toLowerCase(),
+                      );
                       Navigator.of(context).pop(hymnal);
                     },
                   );

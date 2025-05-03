@@ -18,7 +18,7 @@ void main() {
   });
   group('Testing the hymn repository methods & functionality', () {
     //variable to hold language of hymns
-    final language = 'Chichewa';
+    final language = 'Chichewa'.toLowerCase();
     test('Test getting hymns from hymnservice with success', () async {
       //Arrange
       when(() => mockHymnService.fetchHymns(language)).thenAnswer(
@@ -27,7 +27,7 @@ void main() {
         ),
       );
       when(
-        () => mockDatabaseHelper.insertHymns(any()),
+        () => mockDatabaseHelper.insertHymns(language, any()),
       ).thenAnswer((_) async => Future.value());
 
       //Act
@@ -37,7 +37,9 @@ void main() {
       expect((result as Success<List<Hymn>>).data.first.title, 'Chichewa hymn');
 
       //verify that the database insert method is called upon returning a success from service
-      verify(() => mockDatabaseHelper.insertHymns(any())).called(1);
+      verify(
+        () => mockDatabaseHelper.insertHymns(language.toLowerCase(), any()),
+      ).called(1);
     });
 
     test(
@@ -47,7 +49,7 @@ void main() {
         when(
           () => mockHymnService.fetchHymns(language),
         ).thenAnswer((_) async => Failure(Exception('Error fetching hymns')));
-        when(() => mockDatabaseHelper.getHymns()).thenAnswer(
+        when(() => mockDatabaseHelper.getHymnsByLanguage(language)).thenAnswer(
           (_) async => [
             Hymn(
               id: 1,
@@ -67,7 +69,7 @@ void main() {
         //Assert
         expect(result, isA<Success<List<Hymn>>>());
         verify(() => mockHymnService.fetchHymns(language)).called(1);
-        verify(() => mockDatabaseHelper.getHymns()).called(1);
+        verify(() => mockDatabaseHelper.getHymnsByLanguage(language)).called(1);
       },
     );
 
@@ -78,7 +80,9 @@ void main() {
         when(
           () => mockHymnService.fetchHymns(language),
         ).thenAnswer((_) async => Failure(Exception('Error fetching hymns')));
-        when(() => mockDatabaseHelper.getHymns()).thenAnswer((_) async => []);
+        when(
+          () => mockDatabaseHelper.getHymnsByLanguage(language),
+        ).thenAnswer((_) async => []);
 
         //ACT
         final result = await hymnRepository.getHymns(language);
@@ -86,7 +90,7 @@ void main() {
         //Assert
         expect(result, isA<Failure>());
         verify(() => mockHymnService.fetchHymns(language)).called(1);
-        verify(() => mockDatabaseHelper.getHymns()).called(1);
+        verify(() => mockDatabaseHelper.getHymnsByLanguage(language)).called(1);
       },
     );
   });

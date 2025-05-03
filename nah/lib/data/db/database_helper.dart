@@ -3,7 +3,6 @@
 //and use the instance grobally
 
 import 'dart:convert';
-
 import 'package:nah/data/db/db_parameters.dart';
 import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/models/hymnal_model.dart';
@@ -36,12 +35,13 @@ class DatabaseHelper {
   }
 
   //Method to create the tables for the hymnals & hymns respectively
-
   Future<void> _createDB(Database db, int version) async {
     //create hymns table
+    //each hymn row will have a language field for querying, A one (hymnal) to many (hymns) relationship
     await db.execute('''
       CREATE TABLE $hymnTableName (
         $idField $idType,
+        $languageField $textType,
         $titleField $textType,
         $odField $textTypeNullable,
         $lyricsField $textType
@@ -56,6 +56,12 @@ class DatabaseHelper {
         $languageField $textType
       )
     ''');
+
+    //The method below will create a copy of the languageField. When the gethymns method searchs the where arguments and locates
+    //the row with the language, it will quickly refer to that row
+    await db.execute(
+      'CREATE INDEX idx_hymns_language ON $hymnTableName ($languageField)',
+    );
   }
 
   //Method to open the database or create one
@@ -92,25 +98,29 @@ class DatabaseHelper {
   }
 
   //insert hymns into the database
-  Future<void> insertHymns(List<Hymn> hymns) async {
+  Future<void> insertHymns(String language, List<Hymn> hymns) async {
     final db = await database;
     final batch = db.batch();
 
     for (Hymn hymn in hymns) {
-      batch.insert(
-        hymnTableName,
-        hymn.toMap(),
-        conflictAlgorithm: ConflictAlgorithm.replace,
-      );
+      batch.insert(hymnTableName, {
+        'language': language.toLowerCase(),
+        ...hymn.toMap(),
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
     }
 
+    //The method bellow is to add all the hymns in a single transaction & not a single hymns @ a time
     await batch.commit(noResult: true);
   }
 
   //method to retrieve hymns from database
-  Future<List<Hymn>> getHymns() async {
+  Future<List<Hymn>> getHymnsByLanguage(String language) async {
     final db = await database;
-    final hymnMaps = await db.query('hymns');
+    final hymnMaps = await db.query(
+      hymnTableName,
+      where: '$languageField = ?',
+      whereArgs: [language],
+    );
 
     return hymnMaps.map((map) {
       return Hymn(
