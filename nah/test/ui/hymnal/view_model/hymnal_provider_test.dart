@@ -1,32 +1,51 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:nah/data/models/hymnal_model.dart';
-import 'package:nah/data/repositories/hymnal_repository.dart';
+import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/services/result.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
-
-//mocking the repository class with mochtail
-class MockHymnalRepository with Mock implements HymnalRepository {}
+import '../../../../mocks/test_mocks.dart';
 
 //
 void main() {
   //initialize the needed classes
   late MockHymnalRepository mockHymnalRepository;
+  late MockHymnRepository mockHymnRepository;
   late HymnalProvider hymnalProvider;
 
   setUp(() {
     mockHymnalRepository = MockHymnalRepository();
-    hymnalProvider = HymnalProvider(mockHymnalRepository);
+    mockHymnRepository = MockHymnRepository();
+    hymnalProvider = HymnalProvider(mockHymnRepository, mockHymnalRepository);
   });
 
   group('Testing hymnal provider functionality', () {
-    test('Test loading hymns from repository with success', () async {
+    final language = 'Chichewa';
+
+    final hymnalList = [
+      Hymnal(id: 1, language: language, title: "Nyimbo za NAC"),
+    ];
+
+    final hymnList = [
+      Hymn(
+        id: 1,
+        title: "Chichewa hymn",
+        otherDetails: "Other Details",
+        lyrics: {
+          "verses": ["Verse 1"],
+          "chorus": "",
+        },
+      ),
+    ];
+    test('Test loading hymnals & hymns from repository with success', () async {
       //Arrange
-      when(() => mockHymnalRepository.getHymnals()).thenAnswer(
-        (_) async => Success([
-          Hymnal(id: 1, language: "Chichewa", title: "Nyimbo za NAC"),
-        ]),
-      );
+      when(
+        () => mockHymnalRepository.getHymnals(),
+      ).thenAnswer((_) async => Success(hymnalList));
+
+      when(
+        () => mockHymnRepository.getHymns(language.toLowerCase()),
+      ).thenAnswer((_) async => Success(hymnList));
 
       //Act
       await hymnalProvider.loadHymnals();
@@ -35,6 +54,27 @@ void main() {
       expect(hymnalProvider.hymnals.length, 1);
       expect(hymnalProvider.hymnals.first.title, "Nyimbo za NAC");
     });
+
+    test(
+      'Test loading hymns from repository with success but fail for hymns',
+      () async {
+        //Arrange
+        when(
+          () => mockHymnalRepository.getHymnals(),
+        ).thenAnswer((_) async => Success(hymnalList));
+
+        when(
+          () => mockHymnRepository.getHymns(language.toLowerCase()),
+        ).thenAnswer((_) async => Failure(Exception('Failed to load hymns')));
+
+        //Act
+        await hymnalProvider.loadHymnals();
+
+        //Assert
+        expect(hymnalProvider.hymnals.length, 1);
+        expect(hymnalProvider.hymnals.first.title, "Nyimbo za NAC");
+      },
+    );
 
     test('Test receiving an error from repo', () async {
       //Arrange

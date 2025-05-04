@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
-import 'package:nah/ui/hymns/view_model/hymn_provider.dart';
+import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
 
 class ErroMessageWithRetry extends StatelessWidget {
