@@ -3,18 +3,19 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:nah/data/db/database_helper.dart';
+import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/models/hymnal_model.dart';
+import 'package:nah/data/repositories/hymn_repository.dart';
 import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/result.dart';
-import 'package:nah/domain/app_service.dart';
 
 class HymnalProvider extends ChangeNotifier {
   //call, using DI the get hymnals method from the hymnal repo
   final HymnalRepository _hymnalRepository;
 
-  final AppService appService;
+  final HymnRepository _hymnRepository;
 
-  HymnalProvider(this.appService, this._hymnalRepository);
+  HymnalProvider(this._hymnRepository, this._hymnalRepository);
 
   //variable to hold the error message
   String? _errorMessage;
@@ -43,7 +44,7 @@ class HymnalProvider extends ChangeNotifier {
       case Success<List<Hymnal>> success:
         _hymnalList.clear();
         _hymnalList.addAll(success.data);
-        await appService.fetchAndCacheHymnsForAllHymnals(_hymnalList);
+        await fetchAndCacheHymnsForAllHymnals(_hymnalList);
         _isLoading = false;
         _errorMessage = '';
         break;
@@ -58,6 +59,23 @@ class HymnalProvider extends ChangeNotifier {
   void selectHymnal(int index) {
     _selectedHymnal = index;
     notifyListeners();
+  }
+
+  //method to cache all hymns associated with each hymnal fetched
+  Future<void> fetchAndCacheHymnsForAllHymnals(List<Hymnal> hymnalList) async {
+    //iterate through each hymnal & fetch its hymns
+    for (Hymnal hymnal in hymnalList) {
+      final hymnFetchResult = await _hymnRepository.getHymns(
+        hymnal.language.toLowerCase(),
+      );
+      if (hymnFetchResult is Success<List<Hymn>>) {
+        debugPrint('Hymns for ${hymnal.title} cached successfully');
+      } else if (hymnFetchResult is Failure<List<Hymn>>) {
+        debugPrint(
+          'Error in fetching hymns for ${hymnal.title}: ${hymnFetchResult.error.toString()}',
+        );
+      }
+    }
   }
 
   @override
