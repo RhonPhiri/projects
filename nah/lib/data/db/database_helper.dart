@@ -38,29 +38,31 @@ class DatabaseHelper {
   Future<void> _createDB(Database db, int version) async {
     //create hymns table
     //each hymn row will have a language field for querying, A one (hymnal) to many (hymns) relationship
+    //each row will be uniquely identified by its id & language
     await db.execute('''
       CREATE TABLE $hymnTableName (
         $idField $idType,
         $languageField $textType,
         $titleField $textType,
         $odField $textTypeNullable,
-        $lyricsField $textType
+        $lyricsField $textType,
+        PRIMARY KEY ($idField, $languageField) -- Composite primary key
       )
     ''');
 
     //create hymnals table
     await db.execute('''
       CREATE TABLE $hymnalTableName (
-        $idField $idType,
+        $idField $idPrimaryKey,
         $titleField $textType,
         $languageField $textType
       )
     ''');
 
     //The method below will create a copy of the languageField. When the gethymns method searchs the where arguments and locates
-    //the row with the language, it will quickly refer to that row
+    //the row with the language & id, it will quickly refer to that row
     await db.execute(
-      'CREATE INDEX idx_hymns_language ON $hymnTableName ($languageField)',
+      'CREATE INDEX idx_hymns_language_id ON $hymnTableName ($languageField, $idField)',
     );
   }
 

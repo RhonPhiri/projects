@@ -22,6 +22,7 @@ class _HymnScreenState extends State<HymnScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await context.read<HymnalProvider>().loadHymnals();
 
+      //If the widget is mounted in the widget tree, run the following callbacks
       if (!mounted) return;
       // After hymnals are loaded, load hymns for the selected hymnal
       final hymnalProvider = context.read<HymnalProvider>();
@@ -66,13 +67,14 @@ class _HymnScreenState extends State<HymnScreen> {
               );
             }),
           ),
-          hymnProvider.isLoading
+          //Since all is dependent on the hymnal provider, show the progress indicator if hymnals or hymns are loading
+          hymnalProvider.isLoading || hymnProvider.isLoading
               ? SliverFillRemaining(
                 hasScrollBody: false,
                 child: Center(child: CircularProgressIndicator()),
               )
-              : hymnProvider.errorMessage != null &&
-                  hymnProvider.errorMessage!.isNotEmpty
+              : hymnalProvider.errorMessage != null &&
+                  hymnalProvider.errorMessage!.isNotEmpty
               ? SliverFillRemaining(
                 hasScrollBody: false,
                 child: ErroMessageWithRetry(),
