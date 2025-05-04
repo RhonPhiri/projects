@@ -17,7 +17,7 @@ class HymnProvider with ChangeNotifier {
   String? get errorMessage => _errorMessage;
 
   //varibale to hold the list of hymns
-  List<Hymn> _hymnList = [];
+  final List<Hymn> _hymnList = [];
   List<Hymn> get hymnList => List.unmodifiable(_hymnList);
 
   //method to fetch hymns from repo

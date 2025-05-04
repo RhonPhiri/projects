@@ -10,7 +10,9 @@ const String languageField = "language";
 const List<String> hymnColumns = [idField, titleField, odField, lyricsField];
 const List<String> hymnalColumns = [idField, titleField, languageField];
 
-const String idType = "INTEGER PRIMARY KEY";
+const String idType = "INTEGER";
+const String idPrimaryKey = "INTEGER PRIMARY KEY";
 const String idTypeAutoIncre = "INTEGER PRIMARY KEY AUTOINCREMENT";
+const String textPrimaryKey = "TEXT PRIMARY KEY NOT NULL";
 const String textType = "TEXT NOT NULL";
 const String textTypeNullable = "TEXT";

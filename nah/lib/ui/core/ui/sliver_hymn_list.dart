@@ -61,7 +61,6 @@ class SliverHymnList extends StatelessWidget {
             },
             openBuilder: (context, action) {
               return Placeholder();
-              // return DetailsPage(hymn: hymn, isBookmark: isBookmarked);
             },
           );
         },
