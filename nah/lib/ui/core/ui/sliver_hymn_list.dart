@@ -2,7 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/models/hymnal_model.dart';
-import 'package:nah/ui/core/ui/details_screen.dart';
+import 'package:nah/ui/details/details_screen.dart';
 
 class SliverHymnList extends StatelessWidget {
   const SliverHymnList({
