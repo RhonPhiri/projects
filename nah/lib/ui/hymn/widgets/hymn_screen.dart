@@ -4,7 +4,7 @@ import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import 'package:nah/ui/hymnal/widgets/hymnal_screen.dart';
-import 'package:nah/ui/hymns/view_model/hymn_provider.dart';
+import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
 
 class HymnScreen extends StatefulWidget {
