@@ -13,6 +13,7 @@ import 'package:provider/provider.dart';
 final dbHelper = DatabaseHelper();
 Future<void> main() async {
   //initialize
+WidgetsFlutterBinding.ensureInitialized();
   await initializeApp(dbHelper);
 
   runApp(
@@ -41,7 +42,7 @@ Future<void> main() async {
 
 //method to initalize the app & database
 Future<void> initializeApp(DatabaseHelper dbHelper) async {
-  WidgetsFlutterBinding.ensureInitialized();
+
   try {
     await dbHelper.database;
   } catch (e) {
