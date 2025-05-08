@@ -3,6 +3,7 @@ import 'package:nah/ui/core/ui/erro_message_with_retry.dart';
 import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
 import 'package:nah/ui/hymn/widgets/drawer/nah_drawer.dart';
+import 'package:nah/ui/hymn/widgets/search/search_hymn_delegate.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import 'package:nah/ui/hymnal/widgets/hymnal_screen.dart';
 import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
@@ -46,24 +47,28 @@ class _HymnScreenState extends State<HymnScreen> {
       body: CustomScrollView(
         slivers: [
           MySliverAppBar(
+            //Get the title from the provider
             title: hymnalProvider.getHymnTitle(),
             leading: Builder(
               builder: (context) {
-                return AnimatedSwitcher(
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    onPressed: () => handleDrawerButton(context),
-                    icon: Icon(Icons.menu),
-                  ),
+                //Menu icon button
+                return IconButton(
+                  onPressed: () => handleDrawerButton(context),
+                  icon: Icon(Icons.menu),
                 );
               },
             ),
             actions: List.generate(2, (int index) {
+              //Search icon as the first button in the actions list
               final searchIconPressed = index == 0;
               return IconButton(
                 onPressed: () async {
+                  //If it's the searchicon pressed, then show the search, else, navigate to hymnal screen
                   searchIconPressed
-                      ? null
+                      ? showSearch(
+                        context: context,
+                        delegate: SearchHymnDelegate(searchHymnId: false),
+                      )
                       : Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => HymnalScreen()),
                       );
@@ -77,26 +82,37 @@ class _HymnScreenState extends State<HymnScreen> {
               ? SliverFillRemaining(
                 hasScrollBody: false,
                 child: Center(
-                  child: CircularProgressIndicator(
-                    key: ValueKey('hymnScreenProgressIndicator'),
-                  ),
+                  key: ValueKey('hymnScreenProgressIndicator'),
+                  child: CircularProgressIndicator(),
                 ),
               )
               : hymnalProvider.errorMessage != null &&
                   hymnalProvider.errorMessage!.isNotEmpty
               ? SliverFillRemaining(
                 hasScrollBody: false,
-                child: ErroMessageWithRetry(),
+                child: ErroMessageWithRetry(key: ValueKey('hymnError')),
               )
               : SliverHymnList(
+                key: ValueKey("sliverHymnList"),
                 hymns: hymnProvider.hymnList,
                 isBookmarked: false,
               ),
         ],
       ),
+      //Search hymn number through the FAB
+      floatingActionButton: FloatingActionButton(
+        key: ValueKey("searchHymnId"),
+        onPressed:
+            () => showSearch(
+              context: context,
+              delegate: SearchHymnDelegate(searchHymnId: true),
+            ),
+        child: Icon(Icons.dialpad),
+      ),
     );
   }
 
+  //Method to handle the opening & closing of the drawer
   void handleDrawerButton(BuildContext context) {
     Scaffold.of(context).isDrawerOpen
         ? Scaffold.of(context).closeDrawer()
