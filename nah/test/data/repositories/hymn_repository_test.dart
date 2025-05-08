@@ -6,6 +6,7 @@ import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/repositories/hymn_repository.dart';
 import 'package:nah/data/services/result.dart';
 import '../../../mocks/test_mocks.dart';
+import '../../../mocks/test_variables.dart';
 
 late MockHymnService mockHymnService;
 late MockDatabaseHelper mockDatabaseHelper;
@@ -18,7 +19,7 @@ void main() {
   });
   group('Testing the hymn repository methods & functionality', () {
     //variable to hold language of hymns
-    final language = 'Chichewa'.toLowerCase();
+    final language = chiLanguage;
     test('Test getting hymns from hymnservice with success', () async {
       //Arrange
       when(() => mockHymnService.fetchHymns(language)).thenAnswer(

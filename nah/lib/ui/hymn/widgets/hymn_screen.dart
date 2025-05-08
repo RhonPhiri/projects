@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nah/ui/core/ui/erro_message_with_retry.dart';
 import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
+import 'package:nah/ui/hymn/widgets/drawer/nah_drawer.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import 'package:nah/ui/hymnal/widgets/hymnal_screen.dart';
 import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
@@ -38,20 +39,24 @@ class _HymnScreenState extends State<HymnScreen> {
   Widget build(BuildContext context) {
     //variable to hold the hymnal provider hymnal list
     final hymnalProvider = context.watch<HymnalProvider>();
-    final hymnalTitle =
-        hymnalProvider.hymnals.isEmpty
-            ? ''
-            : hymnalProvider.hymnals[hymnalProvider.selectedHymnal].title;
     //varibal to hold the hymn provider
     final hymnProvider = context.watch<HymnProvider>();
     return Scaffold(
+      drawer: NahDrawer(),
       body: CustomScrollView(
         slivers: [
           MySliverAppBar(
-            title: hymnalTitle,
-            leading: AnimatedSwitcher(
-              duration: Duration(milliseconds: 250),
-              child: Icon(Icons.menu),
+            title: hymnalProvider.getHymnTitle(),
+            leading: Builder(
+              builder: (context) {
+                return AnimatedSwitcher(
+                  duration: Duration(milliseconds: 250),
+                  child: IconButton(
+                    onPressed: () => handleDrawerButton(context),
+                    icon: Icon(Icons.menu),
+                  ),
+                );
+              },
             ),
             actions: List.generate(2, (int index) {
               final searchIconPressed = index == 0;
@@ -71,7 +76,11 @@ class _HymnScreenState extends State<HymnScreen> {
           hymnalProvider.isLoading || hymnProvider.isLoading
               ? SliverFillRemaining(
                 hasScrollBody: false,
-                child: Center(child: CircularProgressIndicator()),
+                child: Center(
+                  child: CircularProgressIndicator(
+                    key: ValueKey('hymnScreenProgressIndicator'),
+                  ),
+                ),
               )
               : hymnalProvider.errorMessage != null &&
                   hymnalProvider.errorMessage!.isNotEmpty
@@ -86,5 +95,11 @@ class _HymnScreenState extends State<HymnScreen> {
         ],
       ),
     );
+  }
+
+  void handleDrawerButton(BuildContext context) {
+    Scaffold.of(context).isDrawerOpen
+        ? Scaffold.of(context).closeDrawer()
+        : Scaffold.of(context).openDrawer();
   }
 }

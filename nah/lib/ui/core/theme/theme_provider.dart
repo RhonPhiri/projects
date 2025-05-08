@@ -8,8 +8,8 @@ class ThemeProvider with ChangeNotifier {
     loadAppTheme();
   }
   //variable holding the font size
-  static const double defaultFontSize = 16.0;
-  double _fontsize = defaultFontSize;
+  static const double _defaultFontSize = 16.0;
+  double _fontsize = _defaultFontSize;
   double get fontSize => _fontsize;
 
   //method to change and save the font size
@@ -50,7 +50,7 @@ class ThemeProvider with ChangeNotifier {
   Future<void> loadAppTheme() async {
     //get the stored fontSize
     try {
-      _fontsize = _prefs.getDouble('hymn_fontsize') ?? defaultFontSize;
+      _fontsize = _prefs.getDouble('hymn_fontsize') ?? _defaultFontSize;
       // get the stored index for the themeMode
       final themeModeIndex = _prefs.getInt('hymn_themeMode') ?? 2;
       _themeMode = ThemeMode.values[themeModeIndex];
