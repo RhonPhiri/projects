@@ -14,9 +14,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 //variable to hold the DatabaseHelper instance
 final dbHelper = DatabaseHelper();
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
   //initialize
+WidgetsFlutterBinding.ensureInitialized();
   await initializeApp(dbHelper);
 
   final _prefs = await SharedPreferences.getInstance();
