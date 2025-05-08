@@ -33,6 +33,7 @@ class ErroMessageWithRetry extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           ElevatedButton(
+            key: ValueKey("errorRetryButton"),
             onPressed: () => retryCallBack(context),
             child: const Text('Retry'),
           ),

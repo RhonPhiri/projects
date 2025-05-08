@@ -37,6 +37,7 @@ class NahTheme {
         modalBackgroundColor: Colors.grey.shade200,
       ),
       sliderTheme: _sharedSliderTheme,
+      drawerTheme: _sharedDrawerThemeData(true),
     );
   }
 
@@ -55,6 +56,7 @@ class NahTheme {
       appBarTheme: _sharedAppBarTheme(false),
       dividerTheme: _sharedDividerThemeData(false),
       sliderTheme: _sharedSliderTheme,
+      drawerTheme: _sharedDrawerThemeData(false),
     );
   }
 
@@ -83,5 +85,11 @@ class NahTheme {
       DividerThemeData(
         thickness: 1,
         color: isLightTheme ? Color(0xFFE3F2FD) : Color(0xFF212121),
+      );
+
+  static DrawerThemeData _sharedDrawerThemeData(bool isLightTheme) =>
+      DrawerThemeData(
+        backgroundColor:
+            isLightTheme ? Colors.grey.shade100 : Color(0xFF0168B5),
       );
 }

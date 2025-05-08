@@ -33,22 +33,29 @@ class MySliverAppBar extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Container(
-                  height: 4,
-                  width: (title.length / 1) * 10,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
+                // Container(
+                //   height: 4,
+                //   width: (title.length / 1) * 10,
+                //   decoration: BoxDecoration(
+                //     color: Theme.of(context).colorScheme.primary,
+                //     borderRadius: BorderRadius.circular(8),
+                //   ),
+                // ),
               ],
             ),
           ),
         ),
       ),
       //if either actions / leading is null, then add a shrinked sized box, or an empty list
-      leading: leading??IconButton(onPressed: (){Navigator.of(context).pop();}, icon: Icon(Icons.arrow_back)),
-      actions: actions??[],
+      leading:
+          leading ??
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
+      actions: actions ?? [],
       actionsPadding: const EdgeInsets.only(right: 16),
     );
   }

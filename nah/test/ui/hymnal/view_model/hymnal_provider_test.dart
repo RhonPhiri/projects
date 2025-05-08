@@ -1,10 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:nah/data/models/hymnal_model.dart';
-import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/services/result.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import '../../../../mocks/test_mocks.dart';
+import '../../../../mocks/test_variables.dart';
 
 //
 void main() {
@@ -20,23 +19,8 @@ void main() {
   });
 
   group('Testing hymnal provider functionality', () {
-    final language = 'Chichewa';
+    final language = chiLanguage;
 
-    final hymnalList = [
-      Hymnal(id: 1, language: language, title: "Nyimbo za NAC"),
-    ];
-
-    final hymnList = [
-      Hymn(
-        id: 1,
-        title: "Chichewa hymn",
-        otherDetails: "Other Details",
-        lyrics: {
-          "verses": ["Verse 1"],
-          "chorus": "",
-        },
-      ),
-    ];
     test('Test loading hymnals & hymns from repository with success', () async {
       //Arrange
       when(

@@ -35,6 +35,7 @@ class SliverHymnList extends StatelessWidget {
             closedBuilder: (context, action) {
               return isBookmarked
                   ? ListTile(
+                    key: ValueKey("hymnTile $index"),
                     contentPadding: const EdgeInsets.only(left: 16),
                     title: Text(
                       '${index + 1}. ${hymn.title}',

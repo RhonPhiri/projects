@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:nah/data/models/hymnal_model.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import 'package:nah/ui/hymnal/widgets/hymnal_screen.dart';
 import 'package:provider/provider.dart';
-
-//mock the hymnal provider
-class MockHymnalProvider with Mock implements HymnalProvider {}
+import '../../../../mocks/test_mocks.dart';
+import '../../../../mocks/test_variables.dart';
 
 void main() {
   //initializ the mock class
@@ -28,6 +26,7 @@ void main() {
     //tests: scenarios
     //1. hymnals are loading
     //2. hymnals are loaded
+    //TODO: 3. hymnals failed to load
 
     testWidgets('Displays a loading indicator when loading', (
       WidgetTester tester,
@@ -48,9 +47,7 @@ void main() {
     ) async {
       //Arrange
       when(() => mockHymnalProvider.isLoading).thenReturn(false);
-      when(() => mockHymnalProvider.hymnals).thenReturn(([
-        Hymnal(id: 1, language: "Chichewa", title: "Nyimbo za NAC"),
-      ]));
+      when(() => mockHymnalProvider.hymnals).thenReturn((hymnalList));
       when(() => mockHymnalProvider.selectedHymnal).thenReturn(0);
 
       //ACT

@@ -12,7 +12,6 @@ import 'package:nah/data/services/result.dart';
 class HymnalProvider extends ChangeNotifier {
   //call, using DI the get hymnals method from the hymnal repo
   final HymnalRepository _hymnalRepository;
-
   final HymnRepository _hymnRepository;
 
   HymnalProvider(this._hymnRepository, this._hymnalRepository);
@@ -76,6 +75,11 @@ class HymnalProvider extends ChangeNotifier {
         );
       }
     }
+  }
+
+  //Get hymnal title
+  String getHymnTitle() {
+    return _hymnalList.isEmpty ? '' : _hymnalList[_selectedHymnal].title;
   }
 
   @override

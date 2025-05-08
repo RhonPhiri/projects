@@ -6,6 +6,7 @@ import 'package:nah/data/models/hymnal_model.dart';
 import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/nah_services_export.dart';
 import '../../../mocks/test_mocks.dart';
+import '../../../mocks/test_variables.dart';
 
 void main() {
   late HymnalRepository hymnalRepository;
@@ -20,20 +21,6 @@ void main() {
   });
 
   group('Test the hymn & hymnal repositories', () {
-    //variable to hold the json of hymnals as a response by the mocked hymnal service
-    const mockHymnalJson = '''
-      [
-        {"id": 1, "title": "Hymnal 1", "language": "English"},
-        {"id": 2, "title": "Hymnal 2", "language": "French"}
-      ]
-    ''';
-
-    //Variable to hold a list of hymnals loaded from mocked database
-    final mockHymnals = [
-      Hymnal(id: 1, title: "Hymnal 1", language: "English"),
-      Hymnal(id: 2, title: "Hymnal 2", language: "French"),
-    ];
-
     test('Test getting hymnals from the service', () async {
       //Arrange
       when(
