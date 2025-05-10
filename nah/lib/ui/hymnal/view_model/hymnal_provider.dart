@@ -82,6 +82,11 @@ class HymnalProvider extends ChangeNotifier {
     return _hymnalList.isEmpty ? '' : _hymnalList[_selectedHymnal].title;
   }
 
+  //Get the current selected hymnal
+  Hymnal getSelectedHymnal() {
+    return _hymnalList[selectedHymnal];
+  }
+
   @override
   void dispose() async {
     await DatabaseHelper().close();

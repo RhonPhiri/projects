@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
-import 'package:nah/ui/details/hymn_column.dart';
+import 'package:nah/ui/details/widget/flow_menu/flow_menu.dart';
+import 'package:nah/ui/details/widget/hymn_column.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key, required this.hymn});
@@ -8,9 +9,6 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //variable to hold the list of names of the actions buttons for the appbar
-    final actionButtonLable = ['Preferences', 'Bookmark'];
-
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
@@ -25,6 +23,7 @@ class DetailsScreen extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FlowMenu(hymn: hymn),
     );
   }
 }

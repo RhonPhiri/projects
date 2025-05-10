@@ -19,6 +19,7 @@ class ThemeProvider with ChangeNotifier {
       _fontsize = newFontsize;
       //store the current font
       await _prefs.setDouble('hymn_fontsize', newFontsize);
+      notifyListeners();
     } catch (e) {
       debugPrint('Error saving fontSize: $e');
     }
