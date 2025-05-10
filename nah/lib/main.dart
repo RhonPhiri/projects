@@ -5,6 +5,7 @@ import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/nah_services_export.dart';
 import 'package:nah/ui/core/theme/nah_theme.dart';
 import 'package:nah/ui/core/theme/theme_provider.dart';
+import 'package:nah/ui/hymn_collection/view_model/hymn_collection_provider.dart';
 import 'package:nah/ui/hymnal/view_model/hymnal_provider.dart';
 import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
 import 'package:nah/ui/hymn/widgets/hymn_screen.dart';
@@ -15,15 +16,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 final dbHelper = DatabaseHelper();
 Future<void> main() async {
   //initialize
-WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeApp(dbHelper);
 
-  final _prefs = await SharedPreferences.getInstance();
+  final prefs = await SharedPreferences.getInstance();
 
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => ThemeProvider(_prefs)),
+        ChangeNotifierProvider(create: (context) => ThemeProvider(prefs)),
         ChangeNotifierProvider(
           create:
               (context) => HymnalProvider(
@@ -36,6 +37,7 @@ WidgetsFlutterBinding.ensureInitialized();
               (context) =>
                   HymnProvider(HymnRepository(HymnService(), dbHelper)),
         ),
+        ChangeNotifierProvider(create: (context) => HymnCollectionProvider()),
       ],
       child: const MyApp(),
     ),
@@ -65,10 +67,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final thememode = context.watch<ThemeProvider>().themeMode;
     return MaterialApp(
       theme: NahTheme.light(),
       darkTheme: NahTheme.dark(),
-      themeMode: ThemeMode.dark,
+      themeMode: thememode,
       home: HymnScreen(),
     );
   }

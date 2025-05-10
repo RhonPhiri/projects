@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
+import 'package:nah/ui/core/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class HymnColumn extends StatelessWidget {
   const HymnColumn({super.key, required this.hymn});
@@ -10,6 +12,7 @@ class HymnColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     //variable to hold the list of verses
     final verses = getHymnVerses();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -27,7 +30,8 @@ class HymnColumn extends StatelessWidget {
         const Divider(),
         const SizedBox(height: 16),
         ...List.generate(verses.length, (int index) {
-          final fontSize = 16.0;
+          //variable to hold the font size
+          final fontSize = context.watch<ThemeProvider>().fontSize;
           //if the index of the this list generated is 0 and the hymn has a chorus
           //then retain a column with the 1st verse & a chorus else retain a column of verses only
           return index == 0 && getChorus().isNotEmpty

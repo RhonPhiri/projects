@@ -38,6 +38,7 @@ class NahTheme {
       ),
       sliderTheme: _sharedSliderTheme,
       drawerTheme: _sharedDrawerThemeData(true),
+      floatingActionButtonTheme: _sharedFabThemeData(),
     );
   }
 
@@ -92,4 +93,7 @@ class NahTheme {
         backgroundColor:
             isLightTheme ? Colors.grey.shade100 : Color(0xFF0168B5),
       );
+
+  static FloatingActionButtonThemeData _sharedFabThemeData() =>
+      FloatingActionButtonThemeData(foregroundColor: Colors.white);
 }
