@@ -14,7 +14,7 @@ class BookmarkedHymnScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final hymnList = context.watch<BookmarkedHymnsProvider>().bookmarkedHymns;
 
-    final hymnals = hymnList.map((bh) => bh.hymnal).toList();
+    final hymnalTItles = hymnList.map((bh) => bh.hymnalTitle).toList();
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -51,7 +51,7 @@ class BookmarkedHymnScreen extends StatelessWidget {
               : SliverHymnList(
                 hymns: hymnList,
                 isBookmarked: true,
-                hymnals: hymnals,
+                hymnalTitles: hymnalTItles,
               ),
         ],
       ),

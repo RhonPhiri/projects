@@ -1,16 +1,15 @@
 import 'package:nah/data/models/hymn_model.dart';
-import 'package:nah/data/models/hymnal_model.dart';
 
 class BookmarkedHymn extends Hymn {
   //the hymnal can be null since it is loaded async after the hymns have been loaded
-  final Hymnal? hymnal;
+  final String hymnalTitle;
 
   BookmarkedHymn({
     required super.id,
     required super.title,
     required super.otherDetails,
     required super.lyrics,
-    required this.hymnal,
+    required this.hymnalTitle,
   });
 
   @override
@@ -21,7 +20,7 @@ class BookmarkedHymn extends Hymn {
         other.title == title &&
         other.otherDetails == otherDetails &&
         other.lyrics == lyrics &&
-        other.hymnal == hymnal;
+        other.hymnalTitle == hymnalTitle;
   }
 
   @override
@@ -30,6 +29,6 @@ class BookmarkedHymn extends Hymn {
         title.hashCode ^
         otherDetails.hashCode ^
         lyrics.hashCode ^
-        hymnal.hashCode;
+        hymnalTitle.hashCode;
   }
 }
