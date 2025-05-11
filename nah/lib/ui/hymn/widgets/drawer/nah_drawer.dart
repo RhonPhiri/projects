@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nah/ui/hymn/widgets/drawer/drawer_tile.dart';
+import 'package:nah/ui/hymn_collection/widgets/hymn_col_screen.dart';
 
 class NahDrawer extends StatelessWidget {
   const NahDrawer({super.key});
@@ -21,7 +22,17 @@ class NahDrawer extends StatelessWidget {
               ),
             ),
             Spacer(),
-            DrawerTile(title: "Collections", icon: Icons.menu_book),
+            DrawerTile(
+              title: "Hymn Collections",
+              icon: Icons.menu_book,
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => HymnColScreen()),
+                );
+                //Close the drawer
+                Scaffold.of(context).closeDrawer();
+              },
+            ),
             Spacer(flex: 3),
           ],
         ),

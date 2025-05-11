@@ -3,6 +3,7 @@ import 'package:nah/data/db/database_helper.dart';
 import 'package:nah/data/repositories/hymn_repository.dart';
 import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/nah_services_export.dart';
+import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
 import 'package:nah/ui/core/theme/nah_theme.dart';
 import 'package:nah/ui/core/theme/theme_provider.dart';
 import 'package:nah/ui/hymn_collection/view_model/hymn_collection_provider.dart';
@@ -38,6 +39,7 @@ Future<void> main() async {
                   HymnProvider(HymnRepository(HymnService(), dbHelper)),
         ),
         ChangeNotifierProvider(create: (context) => HymnCollectionProvider()),
+        ChangeNotifierProvider(create: (context) => BookmarkedHymnsProvider()),
       ],
       child: const MyApp(),
     ),

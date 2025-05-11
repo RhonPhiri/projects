@@ -58,6 +58,9 @@ class NahTheme {
       dividerTheme: _sharedDividerThemeData(false),
       sliderTheme: _sharedSliderTheme,
       drawerTheme: _sharedDrawerThemeData(false),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: Colors.grey.shade800,
+      ),
     );
   }
 
