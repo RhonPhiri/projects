@@ -29,26 +29,6 @@ class HymnColBotSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildCollectionsEmpty() {
-    return const Center(
-      child: Text.rich(
-        style: TextStyle(fontSize: 16),
-
-        TextSpan(
-          text: 'You currently don\'t have any collections\nClick ',
-          children: [
-            TextSpan(
-              text: '+ create new collection',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            TextSpan(text: ' to create a new one'),
-          ],
-        ),
-        textAlign: TextAlign.center,
-      ),
-    );
-  }
-
   Widget _buildColBotSheetTopBar(
     BuildContext context,
     HymnCollectionProvider hymnCollectionProvider,
@@ -89,11 +69,31 @@ class HymnColBotSheet extends StatelessWidget {
             children: [
               TextSpan(
                 text: 'Create New Collection',
-                style: TextStyle(fontWeight: FontWeight.normal),
+                style: TextStyle(fontWeight: FontWeight.w600),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildCollectionsEmpty() {
+    return const Center(
+      child: Text.rich(
+        style: TextStyle(fontSize: 16),
+
+        TextSpan(
+          text: 'You currently don\'t have any collections\nClick ',
+          children: [
+            TextSpan(
+              text: '+ create new collection',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: ' to create a new one'),
+          ],
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }
@@ -129,29 +129,6 @@ class HymnColBotSheet extends StatelessWidget {
                 collection: collection,
                 newHymn: hymn,
                 hymnal: selectedHymnal,
-              );
-              final bottomMargin = MediaQuery.of(context).size.height / 2 + 50;
-              //Show a snackbar to show successfull addition or removal of a hymn from a collection
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  dismissDirection: DismissDirection.down,
-                  margin: EdgeInsets.only(
-                    bottom: bottomMargin,
-                    left: 24,
-                    right: 24,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  behavior: SnackBarBehavior.floating,
-                  duration: const Duration(milliseconds: 1300),
-                  content: Text(
-                    newValue
-                        ? 'Hymn added to ${collection.title} successfully'
-                        : 'Hymn removed from ${collection.title} successfully',
-                    textAlign: TextAlign.center,
-                  ),
-                ),
               );
             },
           ),
