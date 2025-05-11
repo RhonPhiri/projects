@@ -21,14 +21,14 @@ class HymnCollectionProvider with ChangeNotifier {
     required bool newValue,
     required HymnCollection collection,
     required Hymn newHymn,
-    required Hymnal? hymnal,
+    required Hymnal hymnal,
   }) {
     final bookmarkedHymn = BookmarkedHymn(
       id: newHymn.id,
       title: newHymn.title,
       otherDetails: newHymn.otherDetails,
       lyrics: newHymn.lyrics,
-      hymnal: hymnal,
+      hymnalTitle: hymnal.title,
     );
     if (newValue &&
         !collection.hymnList.any((bh) => bh.title == newHymn.title)) {

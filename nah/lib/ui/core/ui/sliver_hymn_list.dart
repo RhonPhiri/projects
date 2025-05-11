@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
-import 'package:nah/data/models/hymnal_model.dart';
 import 'package:nah/ui/details/widget/details_screen.dart';
 
 class SliverHymnList extends StatelessWidget {
@@ -9,7 +8,7 @@ class SliverHymnList extends StatelessWidget {
     super.key,
     required this.hymns,
     required this.isBookmarked,
-    this.hymnals,
+    this.hymnalTitles,
   });
   final List<Hymn> hymns;
   //This variable holds the bool to indicate if the hymn list are bookmarks or not
@@ -17,7 +16,7 @@ class SliverHymnList extends StatelessWidget {
   //if isBookmark, the hymnal list below will be provided, otherwise is nullable
   //this list is receiving hymnals that can be null themselves due to the selectedHymnal
   //getter in the hymnal collection provider
-  final List<Hymnal?>? hymnals;
+  final List<String>? hymnalTitles;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class SliverHymnList extends StatelessWidget {
                     subtitle: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: Text(
-                        '${hymnals?[index]?.title ?? "Unknown"}, No: ${hymn.id}',
+                        '${hymnalTitles?[index] ?? "Unknown"}, No: ${hymn.id}',
                         style: const TextStyle(fontWeight: FontWeight.w300),
                       ),
                     ),
