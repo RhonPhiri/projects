@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/ui/details/widget/flow_menu/flow_menu_delegate.dart';
+import 'package:nah/ui/details/widget/full_screen_detailed_view.dart';
 import 'package:nah/ui/hymn_collection/widgets/hymn_col_bot_sheet.dart';
 import 'package:nah/ui/core/theme/widgets/theme_preferences.dart';
 
@@ -36,6 +37,23 @@ class _FlowMenuState extends State<FlowMenu>
     super.dispose();
   }
 
+  void handleFlowIconPressed(IconData icon, BuildContext context) {
+    icon != Icons.fullscreen
+        ? showModalBottomSheet(
+          context: context,
+          builder:
+              (context) =>
+                  icon == Icons.text_fields
+                      ? ThemePreferences(hymn: widget.hymn)
+                      : HymnColBotSheet(hymn: widget.hymn),
+        )
+        : Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => FullScreenDetailedView(hymn: widget.hymn),
+          ),
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Flow(
@@ -60,15 +78,16 @@ class _FlowMenuState extends State<FlowMenu>
         } else {
           controller.forward();
         }
-        if (icon != Icons.menu && icon != Icons.fullscreen) {
-          showModalBottomSheet(
-            context: context,
-            builder:
-                (context) =>
-                    icon == Icons.text_fields
-                        ? ThemePreferences(hymn: widget.hymn)
-                        : HymnColBotSheet(hymn: widget.hymn),
-          );
+        switch (icon) {
+          case Icons.bookmark:
+            handleFlowIconPressed(icon, context);
+            break;
+          case Icons.text_fields:
+            handleFlowIconPressed(icon, context);
+            break;
+          case Icons.fullscreen:
+            handleFlowIconPressed(icon, context);
+            break;
         }
       },
       child: Icon(icon, size: 32),

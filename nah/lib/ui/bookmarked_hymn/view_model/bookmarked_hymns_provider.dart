@@ -101,12 +101,20 @@ class BookmarkedHymnsProvider with ChangeNotifier {
   }
 
   ///Method to delete bookmarks from a collection
-  Future<void> deleteBookmarks(HymnCollection collection) async {
-    final bookmarksToDel =
-        _bookmarks
-            .where((bookmark) => bookmark.hymnColTitle == collection.title)
-            .toList();
-    await _bookmarkRepository.deleteBookmarks(bookmarksToDel);
+  Future<void> deleteBookmarks(List<HymnCollection> collections) async {
+    //First, add all bookmarks with a reference to the current collection to the bookmarksToDel varibale
+    for (var collection in collections) {
+      final bookmarksToDel =
+          _bookmarks
+              .where((bookmark) => bookmark.hymnColTitle == collection.title)
+              .toList();
+      //Remove all to be deleted bookmarks from _bookmarks
+      for (var bookmark in bookmarksToDel) {
+        _bookmarks.remove(bookmark);
+      }
+      //Delete all cached bookmarks
+      await _bookmarkRepository.deleteBookmarks(bookmarksToDel);
+    }
     print("Bookmarks deleted: provider");
   }
 

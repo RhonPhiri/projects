@@ -112,9 +112,9 @@ class HymnColInkwellButton extends StatelessWidget {
                   tooltip: 'Delete Collection',
                   onPressed: () {
                     ///delete bookmarked hymns in that collection
-                    context.read<BookmarkedHymnsProvider>().deleteBookmarks(
+                    context.read<BookmarkedHymnsProvider>().deleteBookmarks([
                       collection,
-                    );
+                    ]);
 
                     ///delete a single collection
                     context.read<HymnCollectionProvider>().deleteCollections(
