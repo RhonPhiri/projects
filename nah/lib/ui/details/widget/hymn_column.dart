@@ -1,17 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/ui/core/theme/theme_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:nah/utils/hymn_extensions.dart';
 
 class HymnColumn extends StatelessWidget {
   const HymnColumn({super.key, required this.hymn});
-
   final Hymn hymn;
+
+  List<Widget> _buildLyrics(
+    List<String> verses,
+    String chorus,
+    double fontSize,
+  ) {
+    if (chorus.isNotEmpty) {
+      return [
+        for (var i = 0; i < verses.length; i++) ...[
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              verses[i],
+              style: TextStyle(
+                height: 1.5,
+                fontSize: fontSize,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+          if (i == 0)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                chorus,
+                style: TextStyle(
+                  fontSize: fontSize + 1,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+        ],
+      ];
+    } else {
+      return [
+        for (String verse in verses)
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              verse,
+              style: TextStyle(
+                height: 1.5,
+                fontSize: fontSize,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+      ];
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    ///variable to hold the font size
+    final fontSize = context.watch<ThemeProvider>().fontSize;
+
     ///variable to hold the list of verses
-    final verses = getHymnVerses();
+    final verses = hymn.verses;
+    final chorus = hymn.chorus;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,60 +83,8 @@ class HymnColumn extends StatelessWidget {
         }),
         const Divider(),
         const SizedBox(height: 16),
-        ...List.generate(verses.length, (int index) {
-          ///variable to hold the font size
-          final fontSize = context.watch<ThemeProvider>().fontSize;
-
-          ///if the index of the this list generated is 0 and the hymn has a chorus
-          ///then retain a column with the 1st verse & a chorus else retain a column of verses only
-          return index == 0 && getChorus().isNotEmpty
-              ? Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: List.generate(2, (int columnIndex) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: Text(
-                      columnIndex == 0 ? verses[index] : getChorus(),
-
-                      style: TextStyle(
-                        height: 1.5,
-                        fontSize: columnIndex == 0 ? fontSize : (fontSize + 1),
-                        fontWeight:
-                            columnIndex == 0
-                                ? FontWeight.normal
-                                : FontWeight.w700,
-                      ),
-                    ),
-                  );
-                }),
-              )
-              : Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Text(
-                  verses[index],
-                  style: TextStyle(height: 1.5, fontSize: fontSize),
-                ),
-              );
-        }),
+        ..._buildLyrics(verses, chorus, fontSize),
       ],
     );
-  }
-
-  ///method to get lyrics from verses and chorus and format them
-  List<String> getHymnVerses() {
-    final verses =
-        hymn.lyrics['verses'] is List
-            ? (hymn.lyrics['verses'] as List)
-                .map((verse) => verse.toString())
-                .toList()
-            : <String>[];
-
-    return verses;
-  }
-
-  ///method to get the chorus from the hymn lyrics
-  String getChorus() {
-    final chorus = hymn.lyrics['chorus'] as String? ?? '';
-    return chorus;
   }
 }

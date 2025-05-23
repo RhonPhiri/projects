@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_collection_model.dart';
+import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
 import 'package:nah/ui/hymn_collection/view_model/hymn_collection_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -37,6 +38,11 @@ class HymnColScreenTopBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
+              //Delete the bookamrks first before deleting the collections
+              context.read<BookmarkedHymnsProvider>().deleteBookmarks(
+                hymnCollectionsToDel,
+              );
+
               ///Delete all collections in the hymnCollectionsToDel
               _buildSnackBar(context, 2);
               context.read<HymnCollectionProvider>().deleteCollections();
