@@ -1,28 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
+import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
 import 'package:nah/ui/details/widget/flow_menu/flow_menu.dart';
 import 'package:nah/ui/details/widget/hymn_column.dart';
+import 'package:provider/provider.dart';
 
+/// Screen that displays the details of a single hymn.
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key, required this.hymn});
+  const DetailsScreen({
+    super.key,
+    required this.hymn,
+    required this.isBookmarked,
+  });
   final Hymn hymn;
+  final bool isBookmarked;
 
   @override
   Widget build(BuildContext context) {
+    ///Variable to access the bookmarked hymn provider
+    final bookamrkProvider = context.watch<BookmarkedHymnsProvider>();
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
+            /// App bar for the details screen.
             SliverAppBar(),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: HymnColumn(hymn: hymn),
-              ),
-            ),
+
+            /// Main content: hymn details.
+            (isBookmarked && bookamrkProvider.isLoading)
+                ? SliverFillRemaining(
+                  child: Center(child: CircularProgressIndicator()),
+                )
+                : SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: HymnColumn(hymn: hymn),
+                  ),
+                ),
           ],
         ),
       ),
+
+      /// Floating action button menu for actions related to the hymn.
       floatingActionButton: FlowMenu(hymn: hymn),
     );
   }

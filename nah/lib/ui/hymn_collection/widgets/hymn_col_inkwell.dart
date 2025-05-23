@@ -20,20 +20,23 @@ class HymnColInkwellButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //parameter values for the text properties in the collection item
+    ///parameter values for the text properties in the collection item
     final textStyle = Theme.of(context).textTheme.bodyLarge;
-    //color for checkboxes, iconButtons
+
+    ///color for checkboxes, iconButtons
     final color = Theme.of(
       context,
     ).colorScheme.onPrimary.withValues(alpha: 0.6);
     return InkWell(
-      onTap: () {
-        //assing the collection to the provider
-        //load the bookmarked hymns into the bookmarkedHymns list
-        context.read<BookmarkedHymnsProvider>().updateCollection(
-          collection: collection,
-        );
-        //Move to the bookMarkedHymn page
+      onTap: () async {
+        ///assing the collection to the provider
+        ///load the bookmarked hymns into the bookmarkedHymns list
+        await context
+            .read<BookmarkedHymnsProvider>()
+            .loadBookmarkedHymnsForCollection(collection);
+
+        ///Move to the bookMarkedHymn page
+
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => BookmarkedHymnScreen(collection: collection),
@@ -46,7 +49,7 @@ class HymnColInkwellButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            //Row to hold the index and title
+            ///Row to hold the index and title
             Row(
               children: [
                 SizedBox(
@@ -73,7 +76,20 @@ class HymnColInkwellButton extends StatelessWidget {
                   backgroundColor: Theme.of(
                     context,
                   ).colorScheme.primary.withAlpha(127),
-                  child: Text('${collection.hymnList.length}'),
+                  child: Consumer<BookmarkedHymnsProvider>(
+                    builder: (context, bookmarkProvider, child) {
+                      final totalBookmarks =
+                          bookmarkProvider.bookmarks
+                              .where(
+                                (bookmark) =>
+                                    bookmark.hymnColTitle == collection.title,
+                              )
+                              .toList()
+                              .length
+                              .toString();
+                      return Text(totalBookmarks);
+                    },
+                  ),
                 ),
                 const SizedBox(width: 8),
                 Checkbox(
@@ -82,7 +98,7 @@ class HymnColInkwellButton extends StatelessWidget {
                   side: BorderSide(color: color, width: 2),
                   value: hymnCollectionsToDelete.contains(collection),
                   onChanged: (newValue) {
-                    //add a collection to the hymnCollectionToDel
+                    ///add a collection to the hymnCollectionToDel
                     if (newValue != null) {
                       context
                           .read<HymnCollectionProvider>()
@@ -95,7 +111,12 @@ class HymnColInkwellButton extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   tooltip: 'Delete Collection',
                   onPressed: () {
-                    //delete a single collection
+                    ///delete bookmarked hymns in that collection
+                    context.read<BookmarkedHymnsProvider>().deleteBookmarks(
+                      collection,
+                    );
+
+                    ///delete a single collection
                     context.read<HymnCollectionProvider>().deleteCollections(
                       collection: collection,
                     );
@@ -111,6 +132,7 @@ class HymnColInkwellButton extends StatelessWidget {
     );
   }
 
+  ///Shows a snackbar when a collection is deleted
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _buildSnackBar(
     BuildContext context,
     int numberOfCollections,

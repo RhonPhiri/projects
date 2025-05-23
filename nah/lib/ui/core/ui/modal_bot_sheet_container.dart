@@ -15,7 +15,7 @@ class ModalBotSheetContainer extends StatelessWidget {
             topLeft: Radius.circular(24),
             topRight: Radius.circular(24),
           ),
-          color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          color: Theme.of(context).bottomSheetTheme.backgroundColor,
         ),
         child: child,
       ),

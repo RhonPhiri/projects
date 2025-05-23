@@ -9,6 +9,7 @@ import 'package:nah/ui/hymnal/widgets/hymnal_screen.dart';
 import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
 
+/// Main screen for displaying hymns and searching/selecting hymnals.
 class HymnScreen extends StatefulWidget {
   const HymnScreen({super.key});
 
@@ -20,13 +21,13 @@ class _HymnScreenState extends State<HymnScreen> {
   @override
   void initState() {
     super.initState();
-    //defer the call to loadHymnals() until after the widget tree is built
+    // Defer the call to loadHymnals() until after the widget tree is built.
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await context.read<HymnalProvider>().loadHymnals();
 
-      //If the widget is mounted in the widget tree, run the following callbacks
+      // If the widget is mounted in the widget tree, run the following callbacks.
       if (!mounted) return;
-      // After hymnals are loaded, load hymns for the selected hymnal
+      // After hymnals are loaded, load hymns for the selected hymnal.
       final hymnalProvider = context.read<HymnalProvider>();
       if (hymnalProvider.hymnals.isNotEmpty) {
         final selectedHymnal =
@@ -38,20 +39,21 @@ class _HymnScreenState extends State<HymnScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //variable to hold the hymnal provider hymnal list
+    /// Get the hymnal provider hymnal list.
     final hymnalProvider = context.watch<HymnalProvider>();
-    //varibal to hold the hymn provider
+
+    /// Get the hymn provider.
     final hymnProvider = context.watch<HymnProvider>();
     return Scaffold(
       drawer: NahDrawer(),
       body: CustomScrollView(
         slivers: [
           MySliverAppBar(
-            //Get the title from the provider
+            // Get the title from the provider.
             title: hymnalProvider.getHymnTitle(),
             leading: Builder(
               builder: (context) {
-                //Menu icon button
+                // Menu icon button.
                 return IconButton(
                   onPressed: () => handleDrawerButton(context),
                   icon: Icon(Icons.menu),
@@ -59,11 +61,11 @@ class _HymnScreenState extends State<HymnScreen> {
               },
             ),
             actions: List.generate(2, (int index) {
-              //Search icon as the first button in the actions list
+              // Search icon as the first button in the actions list.
               final searchIconPressed = index == 0;
               return IconButton(
                 onPressed: () async {
-                  //If it's the searchicon pressed, then show the search, else, navigate to hymnal screen
+                  // If it's the searchicon pressed, then show the search, else, navigate to hymnal screen.
                   searchIconPressed
                       ? showSearch(
                         context: context,
@@ -77,7 +79,7 @@ class _HymnScreenState extends State<HymnScreen> {
               );
             }),
           ),
-          //Since all is dependent on the hymnal provider, show the progress indicator if hymnals or hymns are loading
+          // Since all is dependent on the hymnal provider, show the progress indicator if hymnals or hymns are loading.
           hymnalProvider.isLoading || hymnProvider.isLoading
               ? SliverFillRemaining(
                 hasScrollBody: false,
@@ -95,11 +97,10 @@ class _HymnScreenState extends State<HymnScreen> {
               : SliverHymnList(
                 key: ValueKey("sliverHymnList"),
                 hymns: hymnProvider.hymnList,
-                isBookmarked: false,
               ),
         ],
       ),
-      //Search hymn number through the FAB
+      // Search hymn number through the FAB.
       floatingActionButton: FloatingActionButton(
         key: ValueKey("searchHymnId"),
         onPressed:
@@ -112,7 +113,7 @@ class _HymnScreenState extends State<HymnScreen> {
     );
   }
 
-  //Method to handle the opening & closing of the drawer
+  /// Method to handle the opening & closing of the drawer.
   void handleDrawerButton(BuildContext context) {
     Scaffold.of(context).isDrawerOpen
         ? Scaffold.of(context).closeDrawer()

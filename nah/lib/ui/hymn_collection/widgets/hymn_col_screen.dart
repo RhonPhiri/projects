@@ -13,7 +13,8 @@ class HymnColScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = 'Collection';
     final hymnCollectionProvider = context.watch<HymnCollectionProvider>();
-    final hymnCollections = hymnCollectionProvider.hymnCollections;
+    final hymnCollections =
+        hymnCollectionProvider.hymnCollections.reversed.toList();
     final hymnCollectionsToDel = hymnCollectionProvider.hymnCollectionsToDel;
     //color for checkboxes, iconButtons
     final color = Theme.of(
@@ -36,8 +37,11 @@ class HymnColScreen extends StatelessWidget {
           ),
 
           //Allow to de/select all collections or nothing
-          const SliverToBoxAdapter(),
-          hymnCollections.isEmpty
+          hymnCollectionProvider.isLoading
+              ? SliverFillRemaining(
+                child: Center(child: CircularProgressIndicator()),
+              )
+              : hymnCollections.isEmpty
               ? SliverListEmpty(
                 message: 'You currently don\'t have any hymn collections',
               )
@@ -55,10 +59,10 @@ class HymnColScreen extends StatelessWidget {
                 },
                 separatorBuilder:
                     (context, index) => Container(
-                      height: 1,
+                      height: 2,
                       color: Theme.of(
                         context,
-                      ).colorScheme.primary.withValues(alpha: 0.1),
+                      ).colorScheme.primary.withValues(alpha: 0.2),
                     ),
               ),
         ],

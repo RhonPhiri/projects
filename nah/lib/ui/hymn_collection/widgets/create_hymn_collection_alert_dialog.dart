@@ -84,7 +84,6 @@ class _CreateHymnCollectionAlertDialogState
                   HymnCollection(
                     title: _titleEditingController.text,
                     description: _descriptionEditingController.text,
-                    hymnList: [],
                   ),
                 );
               }

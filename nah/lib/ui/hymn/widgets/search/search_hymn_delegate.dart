@@ -4,8 +4,8 @@ import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
 
 class SearchHymnDelegate extends SearchDelegate {
-  //property to hold the current index based on the search IconButton tapped in the
-  //appBar actions
+  ///property to hold the current index based on the search IconButton tapped in the
+  ///appBar actions
   final bool searchHymnId;
 
   SearchHymnDelegate({
@@ -19,13 +19,13 @@ class SearchHymnDelegate extends SearchDelegate {
     required this.searchHymnId,
   });
 
-  //I have overriden the label to display a custom one
+  ///I have overriden the label to display a custom one
   @override
   String? get searchFieldLabel =>
       'Search hymn ${searchHymnId ? 'number' : 'title, lyrics'}';
 
-  //I have also overriden the keyboardType to show a number keyborad if searchHymnId is true
-  //else, return a text keyboard
+  ///I have also overriden the keyboardType to show a number keyborad if searchHymnId is true
+  ///else, return a text keyboard
   @override
   TextInputType? get keyboardType =>
       searchHymnId
@@ -65,24 +65,26 @@ class SearchHymnDelegate extends SearchDelegate {
     return filteredHymnSliverList(context);
   }
 
+  ///Filters the list of hymns based on the search query
   Widget filteredHymnSliverList(BuildContext context) {
     final hymns = context.watch<HymnProvider>().hymnList;
-    //
-    //method to filter the list of hymns based on the contents containing the query
-    //need to check that the "verses" key is present or not hence List<dynamic>?
-    //if not null then map the list of verses and retain them as a List strings or else retain an empty <String>[]
-    //
-    //Also check if the key chorus exists or is null
-    //if null, then retain them as strings
+
+    ///
+    ///method to filter the list of hymns based on the contents containing the query
+    ///need to check that the "verses" key is present or not hence List<dynamic>?
+    ///if not null then map the list of verses and retain them as a List strings or else retain an empty <String>[]
+    ///
+    ///Also check if the key chorus exists or is null
+    ///if null, then retain them as strings
     final filteredHymns =
         hymns.where((hymn) {
-          //conscise way of writing this
+          ///conscise way of writing this
           // final verses =
           //     (hymn.lyrics['verses'] as List<dynamic>?)?.map(
           //       (verse) => verse.toString(),
           //     ) ??
           //     [];
-          //another way of writing this
+          ///another way of writing this
           final verses =
               hymn.lyrics['verses'] is List
                   ? (hymn.lyrics['verses'] as List)
@@ -90,13 +92,14 @@ class SearchHymnDelegate extends SearchDelegate {
                       .toList()
                   : <String>[];
 
-          //first way of getting the string
+          ///first way of getting the string
           // final chorus = hymn.lyrics['chorus']?.toString() ?? '';
-          //another way
+          ///another way
           final chorus = hymn.lyrics['chorus'] as String? ?? '';
           final lowerCaseQuery = query.toLowerCase();
-          //if searchHymnId is true then search for the id else search for the
-          //title or lyrics
+
+          ///if searchHymnId is true then search for the id else search for the
+          ///title or lyrics
           return searchHymnId
               ? hymn.id.toString().startsWith(lowerCaseQuery)
               : hymn.title.toLowerCase().contains(lowerCaseQuery) ||
@@ -112,14 +115,15 @@ class SearchHymnDelegate extends SearchDelegate {
             'No Hymns found',
             style: TextStyle(
               fontSize: 16,
-              //TODO: add an asset depicting nothing
+
+              ///TODO: add an asset depicting nothing
             ),
           ),
         )
         : CustomScrollView(
           slivers: [
             const SliverToBoxAdapter(child: SizedBox(height: 16)),
-            SliverHymnList(hymns: filteredHymns, isBookmarked: false),
+            SliverHymnList(hymns: filteredHymns),
           ],
         );
   }

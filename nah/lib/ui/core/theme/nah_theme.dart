@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
 
 class NahTheme {
-  //Gradient colors for the drawer
-  static final lightDrawerGradientColors = [
-    Colors.grey.shade100,
-    Colors.grey.shade200,
-    Colors.grey.shade400,
-  ];
-  static final darkDrawerGradientColors = [
-    Colors.black87,
-    Colors.grey.shade800,
-    Colors.grey.shade700,
-  ];
-
   static ThemeData light() {
     return ThemeData(
       // Material 3 is enabled project-wide for consistent theming.
@@ -33,9 +21,7 @@ class NahTheme {
 
       // The light theme uses Colors.grey.shade200 for the bottom sheet background
       // to provide a subtle contrast with the light theme's primary colors.
-      bottomSheetTheme: BottomSheetThemeData(
-        modalBackgroundColor: Colors.grey.shade200,
-      ),
+      bottomSheetTheme: _sharedBotSheetTheme(true),
       sliderTheme: _sharedSliderTheme,
       drawerTheme: _sharedDrawerThemeData(true),
       floatingActionButtonTheme: _sharedFabThemeData(),
@@ -51,6 +37,8 @@ class NahTheme {
         onSecondary: Colors.white,
         tertiary: const Color(0xFF0089F1),
         onTertiary: Colors.white,
+        error: const Color(0xFFF44336),
+        onError: const Color(0xFFFFFFFF),
         surface: Colors.black,
         onSurface: Colors.white,
       ),
@@ -58,9 +46,8 @@ class NahTheme {
       dividerTheme: _sharedDividerThemeData(false),
       sliderTheme: _sharedSliderTheme,
       drawerTheme: _sharedDrawerThemeData(false),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.grey.shade800,
-      ),
+      bottomSheetTheme: _sharedBotSheetTheme(false),
+      dialogTheme: DialogThemeData(backgroundColor: Colors.grey.shade900),
     );
   }
 
@@ -99,4 +86,10 @@ class NahTheme {
 
   static FloatingActionButtonThemeData _sharedFabThemeData() =>
       FloatingActionButtonThemeData(foregroundColor: Colors.white);
+
+  static BottomSheetThemeData _sharedBotSheetTheme(bool isLightTheme) =>
+      BottomSheetThemeData(
+        modalBackgroundColor:
+            isLightTheme ? Colors.grey.shade200 : Colors.grey.shade900,
+      );
 }

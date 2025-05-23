@@ -10,7 +10,7 @@ class HymnColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //variable to hold the list of verses
+    ///variable to hold the list of verses
     final verses = getHymnVerses();
 
     return Column(
@@ -30,10 +30,11 @@ class HymnColumn extends StatelessWidget {
         const Divider(),
         const SizedBox(height: 16),
         ...List.generate(verses.length, (int index) {
-          //variable to hold the font size
+          ///variable to hold the font size
           final fontSize = context.watch<ThemeProvider>().fontSize;
-          //if the index of the this list generated is 0 and the hymn has a chorus
-          //then retain a column with the 1st verse & a chorus else retain a column of verses only
+
+          ///if the index of the this list generated is 0 and the hymn has a chorus
+          ///then retain a column with the 1st verse & a chorus else retain a column of verses only
           return index == 0 && getChorus().isNotEmpty
               ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +68,7 @@ class HymnColumn extends StatelessWidget {
     );
   }
 
-  //method to get lyrics from verses and chorus and format them
+  ///method to get lyrics from verses and chorus and format them
   List<String> getHymnVerses() {
     final verses =
         hymn.lyrics['verses'] is List
@@ -79,7 +80,7 @@ class HymnColumn extends StatelessWidget {
     return verses;
   }
 
-  //method to get the chorus from the hymn lyrics
+  ///method to get the chorus from the hymn lyrics
   String getChorus() {
     final chorus = hymn.lyrics['chorus'] as String? ?? '';
     return chorus;

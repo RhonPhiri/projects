@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nah/data/models/bookmark_model.dart';
 import 'package:nah/data/models/hymn_model.dart';
+import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
 import 'package:nah/ui/hymn_collection/widgets/create_hymn_collection_alert_dialog.dart';
 import 'package:nah/ui/core/ui/modal_bot_sheet_container.dart';
 import 'package:nah/ui/hymn_collection/view_model/hymn_collection_provider.dart';
@@ -20,7 +22,9 @@ class HymnColBotSheet extends StatelessWidget {
           _buildColBotSheetTopBar(context, hymnCollectionProvider),
           Expanded(
             child:
-                hymnCollectionProvider.hymnCollections.isEmpty
+                hymnCollectionProvider.isLoading
+                    ? Center(child: CircularProgressIndicator())
+                    : hymnCollectionProvider.hymnCollections.isEmpty
                     ? _buildCollectionsEmpty()
                     : _buildColBotSheetList(hymnCollectionProvider),
           ),
@@ -29,6 +33,7 @@ class HymnColBotSheet extends StatelessWidget {
     );
   }
 
+  ///Method to build the hymn collection bottom sheet top bar
   Widget _buildColBotSheetTopBar(
     BuildContext context,
     HymnCollectionProvider hymnCollectionProvider,
@@ -57,7 +62,9 @@ class HymnColBotSheet extends StatelessWidget {
                   newHymnCollection.title.toLowerCase(),
             );
             if (!isAlreadyCreated) {
-              hymnCollectionProvider.createHymnCollection(newHymnCollection);
+              await hymnCollectionProvider.createHymnCollection(
+                newHymnCollection,
+              );
             }
           }
         },
@@ -98,37 +105,62 @@ class HymnColBotSheet extends StatelessWidget {
     );
   }
 
+  ///Method to build a list of hymn collections
   Widget _buildColBotSheetList(HymnCollectionProvider hymnCollectionProvider) {
     return ListView.builder(
       itemCount: hymnCollectionProvider.hymnCollections.length,
       itemBuilder: (context, index) {
-        final collection = hymnCollectionProvider.hymnCollections[index];
+        ///Variable to store the list of hymn collections
+        final hymnCollections =
+            hymnCollectionProvider.hymnCollections.reversed.toList();
+
+        ///Variable to store a particular hymn collection depending on its index
+        final hymnCollection = hymnCollections[index];
+
+        ///variable to hold the bookmarked hymns
+        final bookmarks = context.watch<BookmarkedHymnsProvider>().bookmarks;
+
+        ///variable below stores the current selected hymnal
+        final selectedHymnal =
+            context.read<HymnalProvider>().getSelectedHymnal();
+
+        ///varibale to hold a bookmarked hymn
+        final bookmarkedHymn = Bookmark(
+          id: hymn.id,
+          title: hymn.title,
+          language: selectedHymnal.language,
+          hymnColTitle: hymnCollection.title,
+        );
+
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: CheckboxListTile(
             tileColor: Theme.of(
               context,
-            ).colorScheme.primary.withValues(alpha: 0.1),
-            title: Text('${index + 1}. ${collection.title}'),
+            ).colorScheme.primary.withValues(alpha: 0.2),
+            title: Text('${index + 1}. ${hymnCollection.title}'),
 
-            //return true if this collection contains this hymn
-            value: collection.hymnList.any(
-              (bookmarkedHymn) => bookmarkedHymn.title == hymn.title,
+            ///return true if a hymn has been bookmarked in a particular collection
+            value: bookmarks.any(
+              (bookmark) =>
+                  bookmark.id == bookmarkedHymn.id &&
+                  bookmark.hymnColTitle == bookmarkedHymn.hymnColTitle,
             ),
-            //method that when a user checks or unchecks the checkbox, the hymn is added/ removed
-            // from the collection
+
+            ///method that when a user checks or unchecks the checkbox, the hymn is added/ removed from the collection
             onChanged: (newValue) {
-              //checking that newValue is not null
+              ///checking that newValue is not null
               if (newValue == null) return;
-              //variable below stores the current selected hymnal
+
+              ///variable below stores the current selected hymnal
               final selectedHymnal =
                   context.read<HymnalProvider>().getSelectedHymnal();
-
-              context.read<HymnCollectionProvider>().toggleCollectionCheckBox(
-                newValue: newValue,
-                collection: collection,
-                newHymn: hymn,
-                hymnal: selectedHymnal,
+              context.read<BookmarkedHymnsProvider>().toggleCollectionCheckBox(
+                hymnId: hymn.id,
+                hymnTitle: hymn.title,
+                hymnalTitle: selectedHymnal.title,
+                hymnalLang: selectedHymnal.language,
+                hymnColTitle: hymnCollection.title,
               );
             },
           ),

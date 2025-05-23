@@ -17,6 +17,7 @@ class DrawerTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 24.0, right: 24, bottom: 24),
       child: Material(
+        color: Theme.of(context).colorScheme.tertiary.withValues(alpha: 0.4),
         borderRadius: BorderRadius.circular(24),
         child: InkWell(
           onTap: onTap,

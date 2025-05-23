@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-//This is a sliver app bar that takes up a title, leading & action buttons respectively.
-//It allows animation of the title from a bottom to the center offset
+///This is a sliver app bar that takes up a title, leading & action buttons respectively.
+///It allows animation of the title from a bottom to the center offset
 class MySliverAppBar extends StatelessWidget {
   const MySliverAppBar({
     super.key,
@@ -21,7 +21,7 @@ class MySliverAppBar extends StatelessWidget {
         background: Align(
           alignment: Alignment.bottomLeft,
           child: Padding(
-            padding: const EdgeInsets.only(left: 16.0, bottom: 8),
+            padding: const EdgeInsets.only(left: 16.0, bottom: 8, top: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class MySliverAppBar extends StatelessWidget {
                 ),
                 // Container(
                 //   height: 4,
-                //   width: (title.length / 1) * 10,
+                //   width: (title.length / 2) * 10,
                 //   decoration: BoxDecoration(
                 //     color: Theme.of(context).colorScheme.primary,
                 //     borderRadius: BorderRadius.circular(8),
@@ -46,7 +46,8 @@ class MySliverAppBar extends StatelessWidget {
           ),
         ),
       ),
-      //if either actions / leading is null, then add a shrinked sized box, or an empty list
+
+      ///if either actions / leading is null, then add a shrinked sized box, or an empty list
       leading:
           leading ??
           IconButton(
