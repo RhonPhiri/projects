@@ -3,7 +3,6 @@ import 'package:nah/data/models/hymn_collection_model.dart';
 import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
 import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
-import 'package:nah/ui/core/ui/sliver_list_empty.dart';
 import 'package:provider/provider.dart';
 
 class BookmarkedHymnScreen extends StatelessWidget {
@@ -12,9 +11,6 @@ class BookmarkedHymnScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hymnList = context.watch<BookmarkedHymnsProvider>().bookmarkedHymns;
-
-    final hymnalTItles = hymnList.map((bh) => bh.hymnalTitle).toList();
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -44,15 +40,19 @@ class BookmarkedHymnScreen extends StatelessWidget {
               ),
             ],
           ),
-          collection.hymnList.isEmpty
-              ? const SliverListEmpty(
-                message: 'No hymns were added into this collection',
-              )
-              : SliverHymnList(
-                hymns: hymnList,
-                isBookmarked: true,
-                hymnalTitles: hymnalTItles,
-              ),
+          Consumer<BookmarkedHymnsProvider>(
+            builder: (context, bookmarkProvider, child) {
+              return bookmarkProvider.isLoading
+                  ? SliverFillRemaining(
+                    child: Center(
+                      child: CircularProgressIndicator.adaptive(
+                        key: ValueKey("bhScreenLoading"),
+                      ),
+                    ),
+                  )
+                  : SliverHymnList(hymns: bookmarkProvider.bookmarkedHymns);
+            },
+          ),
         ],
       ),
     );

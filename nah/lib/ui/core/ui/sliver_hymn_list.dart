@@ -1,22 +1,11 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
+import 'package:nah/ui/core/ui/open_container_transition.dart';
 import 'package:nah/ui/details/widget/details_screen.dart';
 
 class SliverHymnList extends StatelessWidget {
-  const SliverHymnList({
-    super.key,
-    required this.hymns,
-    required this.isBookmarked,
-    this.hymnalTitles,
-  });
+  const SliverHymnList({super.key, required this.hymns});
   final List<Hymn> hymns;
-  //This variable holds the bool to indicate if the hymn list are bookmarks or not
-  final bool isBookmarked;
-  //if isBookmark, the hymnal list below will be provided, otherwise is nullable
-  //this list is receiving hymnals that can be null themselves due to the selectedHymnal
-  //getter in the hymnal collection provider
-  final List<String>? hymnalTitles;
 
   @override
   Widget build(BuildContext context) {
@@ -26,43 +15,15 @@ class SliverHymnList extends StatelessWidget {
         itemCount: hymns.length,
         itemBuilder: (context, index) {
           final hymn = hymns[index];
-          return OpenContainer(
-            closedElevation: 0,
-            closedColor: Theme.of(context).colorScheme.surface,
-            transitionDuration: const Duration(milliseconds: 500),
-            transitionType: ContainerTransitionType.fadeThrough,
-            closedBuilder: (context, action) {
-              return isBookmarked
-                  ? ListTile(
-                    key: ValueKey("hymnTile $index"),
-                    contentPadding: const EdgeInsets.only(left: 16),
-                    title: Text(
-                      '${index + 1}. ${hymn.title}',
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: Text(
-                        '${hymnalTitles?[index] ?? "Unknown"}, No: ${hymn.id}',
-                        style: const TextStyle(fontWeight: FontWeight.w300),
-                      ),
-                    ),
-                  )
-                  : Padding(
-                    padding: const EdgeInsets.only(
-                      left: 16.0,
-                      top: 8,
-                      bottom: 8,
-                    ),
-                    child: Text(
-                      '${hymn.id}. ${hymn.title}',
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                  );
-            },
-            openBuilder: (context, action) {
-              return DetailsScreen(hymn: hymn);
-            },
+          return OpenContainerTransition(
+            closedBuilderWidget: Padding(
+              padding: const EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
+              child: Text(
+                '${hymn.id}. ${hymn.title}',
+                style: const TextStyle(fontSize: 16),
+              ),
+            ),
+            openBuilderWidget: DetailsScreen(hymn: hymn, isBookmarked: false),
           );
         },
         separatorBuilder: (context, index) => const Divider(),

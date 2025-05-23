@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/db/database_helper.dart';
+import 'package:nah/data/repositories/bookmark_repository.dart';
+import 'package:nah/data/repositories/hymn_collection_repo.dart';
 import 'package:nah/data/repositories/hymn_repository.dart';
 import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/nah_services_export.dart';
@@ -13,10 +15,10 @@ import 'package:nah/ui/hymn/widgets/hymn_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-//variable to hold the DatabaseHelper instance
+///variable to hold the DatabaseHelper instance
 final dbHelper = DatabaseHelper();
 Future<void> main() async {
-  //initialize
+  ///initialize
   WidgetsFlutterBinding.ensureInitialized();
   await initializeApp(dbHelper);
 
@@ -38,18 +40,27 @@ Future<void> main() async {
               (context) =>
                   HymnProvider(HymnRepository(HymnService(), dbHelper)),
         ),
-        ChangeNotifierProvider(create: (context) => HymnCollectionProvider()),
-        ChangeNotifierProvider(create: (context) => BookmarkedHymnsProvider()),
+        ChangeNotifierProvider(
+          create:
+              (context) => HymnCollectionProvider(HymnCollectionRepo(dbHelper)),
+        ),
+        ChangeNotifierProvider(
+          create:
+              (context) => BookmarkedHymnsProvider(
+                HymnRepository(HymnService(), dbHelper),
+                BookmarkRepository(dbHelper),
+              ),
+        ),
       ],
       child: const MyApp(),
     ),
   );
 
-  //close database and release resources
+  ///close database and release resources
   // await closeDatabaseOnAppExit(dbHelper);
 }
 
-//method to initalize the app & database
+///method to initalize the app & database
 Future<void> initializeApp(DatabaseHelper dbHelper) async {
   try {
     await dbHelper.database;
@@ -58,11 +69,11 @@ Future<void> initializeApp(DatabaseHelper dbHelper) async {
   }
 }
 
-//method to release database resources upon closing the app
-Future<void> closeDatabaseOnAppExit(DatabaseHelper dbHelper) async {
-  await dbHelper.close();
-  debugPrint('database closed successfully!!!');
-}
+// ///method to release database resources upon closing the app
+// Future<void> closeDatabaseOnAppExit(DatabaseHelper dbHelper) async {
+//   await dbHelper.close();
+//   debugPrint('database closed successfully!!!');
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

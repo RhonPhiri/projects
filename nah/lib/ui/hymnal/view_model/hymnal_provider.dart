@@ -1,5 +1,5 @@
-//this is the hymnal provider class managing the list of hymnals fetched from github
-//The app should load the list of hymnals & display a list of hymns from the first hymnal
+///this is the hymnal provider class managing the list of hymnals fetched from github
+///The app should load the list of hymnals & display a list of hymns from the first hymnal
 
 import 'package:flutter/widgets.dart';
 import 'package:nah/data/db/database_helper.dart';
@@ -10,30 +10,31 @@ import 'package:nah/data/repositories/hymnal_repository.dart';
 import 'package:nah/data/services/result.dart';
 
 class HymnalProvider extends ChangeNotifier {
-  //call, using DI the get hymnals method from the hymnal repo
+  ///call, using DI the get hymnals method from the hymnal repo
   final HymnalRepository _hymnalRepository;
   final HymnRepository _hymnRepository;
 
   HymnalProvider(this._hymnRepository, this._hymnalRepository);
 
-  //variable to hold the error message
+  ///variable to hold the error message
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
-  //variable to check if the hymnal list is being fetched
+
+  ///variable to check if the hymnal list is being fetched
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
-  //Variable to hold the current selected hymnal
+  ///Variable to hold the current selected hymnal
   int _selectedHymnal = 0;
   int get selectedHymnal => _selectedHymnal;
 
-  //variable to hold the list of hymnals
+  ///variable to hold the list of hymnals
   final List<Hymnal> _hymnalList = [];
   List<Hymnal> get hymnals => List.unmodifiable(_hymnalList);
 
-  //method to add hymnals to the hymnal list
+  ///method to add hymnals to the hymnal list
   Future<void> loadHymnals() async {
-    //start loading process
+    ///start loading process
     _isLoading = true;
     _errorMessage = null;
     notifyListeners();
@@ -54,15 +55,15 @@ class HymnalProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  //method to select a different hymnal & get its index
+  ///method to select a different hymnal & get its index
   void selectHymnal(int index) {
     _selectedHymnal = index;
     notifyListeners();
   }
 
-  //method to cache all hymns associated with each hymnal fetched
+  ///method to cache all hymns associated with each hymnal fetched
   Future<void> fetchAndCacheHymnsForAllHymnals(List<Hymnal> hymnalList) async {
-    //iterate through each hymnal & fetch its hymns
+    ///iterate through each hymnal & fetch its hymns
     for (Hymnal hymnal in hymnalList) {
       final hymnFetchResult = await _hymnRepository.getHymns(
         hymnal.language.toLowerCase(),
@@ -77,12 +78,12 @@ class HymnalProvider extends ChangeNotifier {
     }
   }
 
-  //Get hymnal title
+  ///Get hymnal title
   String getHymnTitle() {
     return _hymnalList.isEmpty ? '' : _hymnalList[_selectedHymnal].title;
   }
 
-  //Get the current selected hymnal
+  ///Get the current selected hymnal
   Hymnal getSelectedHymnal() {
     return _hymnalList[selectedHymnal];
   }

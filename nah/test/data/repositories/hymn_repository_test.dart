@@ -50,7 +50,7 @@ void main() {
         when(
           () => mockHymnService.fetchHymns(language),
         ).thenAnswer((_) async => Failure(Exception('Error fetching hymns')));
-        when(() => mockDatabaseHelper.getHymnsByLanguage(language)).thenAnswer(
+        when(() => mockDatabaseHelper.getHymns(language)).thenAnswer(
           (_) async => [
             Hymn(
               id: 1,
@@ -70,7 +70,7 @@ void main() {
         //Assert
         expect(result, isA<Success<List<Hymn>>>());
         verify(() => mockHymnService.fetchHymns(language)).called(1);
-        verify(() => mockDatabaseHelper.getHymnsByLanguage(language)).called(1);
+        verify(() => mockDatabaseHelper.getHymns(language)).called(1);
       },
     );
 
@@ -82,7 +82,7 @@ void main() {
           () => mockHymnService.fetchHymns(language),
         ).thenAnswer((_) async => Failure(Exception('Error fetching hymns')));
         when(
-          () => mockDatabaseHelper.getHymnsByLanguage(language),
+          () => mockDatabaseHelper.getHymns(language),
         ).thenAnswer((_) async => []);
 
         //ACT
@@ -91,7 +91,7 @@ void main() {
         //Assert
         expect(result, isA<Failure>());
         verify(() => mockHymnService.fetchHymns(language)).called(1);
-        verify(() => mockDatabaseHelper.getHymnsByLanguage(language)).called(1);
+        verify(() => mockDatabaseHelper.getHymns(language)).called(1);
       },
     );
   });

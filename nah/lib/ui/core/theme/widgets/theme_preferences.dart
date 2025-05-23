@@ -34,31 +34,33 @@ class ThemePreferences extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           ...List.generate(3, (int index) {
-            return ChoiceChip(
-              label: Text(
-                index == 0
-                    ? 'System'
-                    : index == 1
-                    ? 'Light'
-                    : 'Dark',
-                style: TextStyle(
-                  //if the current thememode is equal to the selected thememode then apply the white color
-                  //else use the on primary
-                  color:
-                      context.read<ThemeProvider>().themeMode ==
-                              ThemeMode.values[index]
-                          ? Colors.white
-                          : Theme.of(context).colorScheme.onPrimary,
-                ),
-              ),
-              side: BorderSide.none,
-              selected:
-                  context.read<ThemeProvider>().themeMode ==
-                  ThemeMode.values[index],
-              onSelected: (value) {
-                context.read<ThemeProvider>().changeAppTheme(index);
-              },
-              checkmarkColor: Colors.white,
+            return Consumer<ThemeProvider>(
+              builder:
+                  (context, themeProvider, child) => ChoiceChip(
+                    backgroundColor: getThemeColor(themeProvider.themeMode),
+                    label: Text(
+                      index == 0
+                          ? 'System'
+                          : index == 1
+                          ? 'Light'
+                          : 'Dark',
+                      style: TextStyle(
+                        //if the current thememode is equal to the selected thememode then apply the white color
+                        //else use the on primary
+                        color:
+                            themeProvider.themeMode == ThemeMode.values[index]
+                                ? Colors.white
+                                : Theme.of(context).colorScheme.onPrimary,
+                      ),
+                    ),
+                    side: BorderSide.none,
+                    selected:
+                        themeProvider.themeMode == ThemeMode.values[index],
+                    onSelected: (value) {
+                      context.read<ThemeProvider>().changeAppTheme(index);
+                    },
+                    checkmarkColor: Colors.white,
+                  ),
             );
           }),
         ],
@@ -75,6 +77,7 @@ class ThemePreferences extends StatelessWidget {
           builder: (context, themeProvider, child) {
             final fontSize = themeProvider.fontSize;
             return Slider(
+              inactiveColor: getThemeColor(themeProvider.themeMode),
               value: fontSize,
               onChanged: (newValue) => themeProvider.changeFontSize(newValue),
               min: 12.0,
@@ -88,4 +91,7 @@ class ThemePreferences extends StatelessWidget {
       ],
     );
   }
+
+  Color getThemeColor(ThemeMode themeMode) =>
+      themeMode == ThemeMode.light ? Colors.white : Colors.grey.shade800;
 }

@@ -10,32 +10,30 @@ class NahDrawer extends StatelessWidget {
     final isBright = Theme.of(context).brightness == Brightness.light;
     return Drawer(
       key: ValueKey("NahDrawer"),
-      child: Container(
-        child: Column(
-          children: [
-            DrawerHeader(
-              margin: EdgeInsets.only(top: 16),
-              child: SizedBox(
-                child: Image.asset(
-                  "assets/images/${isBright ? "nac_logo_light.png" : "nac_logo_blue.png"}",
-                ),
+      child: Column(
+        children: [
+          DrawerHeader(
+            margin: EdgeInsets.only(top: 16),
+            child: SizedBox(
+              child: Image.asset(
+                "assets/images/${isBright ? "nac_logo_light.png" : "nac_logo_blue.png"}",
               ),
             ),
-            Spacer(),
-            DrawerTile(
-              title: "Hymn Collections",
-              icon: Icons.menu_book,
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => HymnColScreen()),
-                );
-                //Close the drawer
-                Scaffold.of(context).closeDrawer();
-              },
-            ),
-            Spacer(flex: 3),
-          ],
-        ),
+          ),
+          Spacer(),
+          DrawerTile(
+            title: "Hymn Collections",
+            icon: Icons.menu_book,
+            onTap: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => HymnColScreen()));
+              //Close the drawer
+              Scaffold.of(context).closeDrawer();
+            },
+          ),
+          Spacer(flex: 3),
+        ],
       ),
     );
   }

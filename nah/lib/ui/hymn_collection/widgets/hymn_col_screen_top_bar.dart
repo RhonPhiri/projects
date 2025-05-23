@@ -25,7 +25,8 @@ class HymnColScreenTopBar extends StatelessWidget {
           Checkbox(
             side: BorderSide(color: color, width: 2),
             semanticLabel: 'Select all',
-            //check if the length of the hymnCollections == hymncollections to be deleted. length
+
+            ///check if the length of the hymnCollections == hymncollections to be deleted. length
             value: hymnCollectionsToDel.length == hymnCollections.length,
 
             onChanged: (newValue) {
@@ -36,7 +37,7 @@ class HymnColScreenTopBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              //Delete all collections in the hymnCollectionsToDel
+              ///Delete all collections in the hymnCollectionsToDel
               _buildSnackBar(context, 2);
               context.read<HymnCollectionProvider>().deleteCollections();
             },
@@ -48,6 +49,7 @@ class HymnColScreenTopBar extends StatelessWidget {
     );
   }
 
+  ///Shows a snackbar when collections are deleted
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _buildSnackBar(
     BuildContext context,
     int numberOfCollections,

@@ -28,15 +28,19 @@ class Hymn {
     );
   }
 
+  ///Converts the Hymn object to a map for storage
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'title': title,
       'otherDetails': otherDetails,
-      'lyrics': json.encode(lyrics), //the map literal will be stored as text
+      'lyrics': json.encode(lyrics),
+
+      ///the map literal will be stored as text
     };
   }
 
+  ///Creates a Hymn object from a map
   factory Hymn.fromMap(Map<String, dynamic> map) {
     return switch (map) {
       {
