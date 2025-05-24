@@ -72,6 +72,7 @@ class _FlowMenuState extends State<FlowMenu>
   Widget createFab(IconData icon) => Padding(
     padding: const EdgeInsets.only(bottom: 8.0, right: 8.0),
     child: FloatingActionButton(
+      key: ValueKey('flowMenuFab_${icon.codePoint}'),
       onPressed: () {
         if (controller.status == AnimationStatus.completed) {
           controller.reverse();

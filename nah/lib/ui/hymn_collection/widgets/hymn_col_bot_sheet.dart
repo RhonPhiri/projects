@@ -135,6 +135,7 @@ class HymnColBotSheet extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: CheckboxListTile(
+            key: ValueKey('hymnColBotSheetCheckbox_$index'),
             tileColor: Theme.of(
               context,
             ).colorScheme.primary.withValues(alpha: 0.2),

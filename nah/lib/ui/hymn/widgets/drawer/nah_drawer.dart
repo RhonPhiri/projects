@@ -13,6 +13,7 @@ class NahDrawer extends StatelessWidget {
       child: Column(
         children: [
           DrawerHeader(
+            key: ValueKey("DrawerHeader"),
             margin: EdgeInsets.only(top: 16),
             child: SizedBox(
               child: Image.asset(
@@ -22,6 +23,7 @@ class NahDrawer extends StatelessWidget {
           ),
           Spacer(),
           DrawerTile(
+            key: ValueKey("DrawerTile_HymnCollections"),
             title: "Hymn Collections",
             icon: Icons.menu_book,
             onTap: () {

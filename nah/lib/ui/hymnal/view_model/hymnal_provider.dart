@@ -1,5 +1,6 @@
 ///this is the hymnal provider class managing the list of hymnals fetched from github
 ///The app should load the list of hymnals & display a list of hymns from the first hymnal
+library;
 
 import 'package:flutter/widgets.dart';
 import 'package:nah/data/db/database_helper.dart';
