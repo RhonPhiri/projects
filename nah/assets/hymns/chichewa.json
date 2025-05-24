@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Dzukani Ana a Mfumu",
-        "otherDetails": "522NEH\nAwake! Sons of the Kingdom",
+        "otherDetails": "522NEH\n01 NAH\nAwake! Sons of the Kingdom",
         "lyrics": {
             "verses": [
                 "1. Dzukani ana ache, Mfumu yayandika\nTamandani mchimwemwe Mfumu yam'mwambayo\nBwerani muone chikhomo tayandika\nTidikiranu Mbuye, mchiyembekezero.",
@@ -42,7 +42,7 @@
     {
         "id": 4,
         "title": "Bvalani za nkhondo zanu",
-        "otherDetails": "410NEH\nGird on your Armour",
+        "otherDetails": "410NEH\n04. NAH\nGird on your Armour",
         "lyrics": {
             "verses": [
                 "1. Bvalani za nkhondo zanu, dzadzani nyalizo\nNdi mafuta a chikondi, mugonje kwa iye\nMkwati adzabwera kudzatenga ache\nKonzekani sadzachedwa, mvani kuitana.",
@@ -56,7 +56,7 @@
     {
         "id": 5,
         "title": "Mkwati adzakumbukirani",
-        "otherDetails": "425NEH\nThe Bridegroom comes! Remember His word!",
+        "otherDetails": "425NEH\n05 NAH\nThe Bridegroom comes! Remember His word!",
         "lyrics": {
             "verses": [
                 "1. Mkwati adzakumbukirani woomboledwa dikirani\nMunthawi zonse monga mwamva Mbuye adzansanga",
@@ -70,7 +70,7 @@
     {
         "id": 6,
         "title": "Mkwatibwi wadikiradi",
-        "otherDetails": "424NEH\nThe bride has waited o so long",
+        "otherDetails": "424NEH\n06 NAH\nThe bride has waited o so long",
         "lyrics": {
             "verses": [
                 "1. Mkwatibwi wadikiradi, Mbuye kudzanso kwanu\nMwana wa Mulungu inu, kodi mubwera liti?\nMubweretsa madalitso, ndi chani china choposa.",
@@ -84,7 +84,7 @@
     {
         "id": 7,
         "title": "Tukulani mitu yanu",
-        "otherDetails": "527NEH\nLift up your Heads, Ye Mighty Gates",
+        "otherDetails": "527NEH\n07 NAH\nLift up your Heads, Ye Mighty Gates",
         "lyrics": {
             "verses": [
                 "1. Tukulani mitu yanu, Mfumu ili kudikira\nMfumu yayandikiradi, Mpulumutsi wa dzikoli\nWatenga chipulumutso, motero sangalalani\nTiyamike inu, Mlengi, Mbuye wathu.",
@@ -104,7 +104,7 @@
                 "1. Inu ana a anthu konzani mitima\nM'gonjetsi wafikadi, amachotsa tchimo\nNdi yemwe Mulungu analonjeza ife\nMthandizi ndi bwenzilo\nTidziwa chifundo.",
                 "2. Konzatu nyumba yako pofika mlendoyu\nLambula njira yache yomwe yawilira\nTayani machimo, chotsani kudzikonda\nMuyang'ane m'mwamba.",
                 "3. Mtima wa chikondiwo ulandira mphoto\nMtima wodzikuzawo umagwa ndi mantha\nMtima oyetsetsa kuyenda ndi Yesu\nUdzala ndi ubwino",
-                "4.\nWochimwa'ne m'ndikonze kamba ka nthawiyo\nMu chifuniro chanu Mbuye, m'ndiyeretse\nMupenya mu mtima mchimwemwe ndidzanena\n'Mbuye ali ndine.'"
+                "4. Wochimwa'ne m'ndikonze kamba ka nthawiyo\nMu chifuniro chanu Mbuye, m'ndiyeretse\nMupenya mu mtima mchimwemwe ndidzanena\n'Mbuye ali ndine.'"
             ],
             "chorus": ""
         }
@@ -112,7 +112,7 @@
     {
         "id": 9,
         "title": "Ndani ali pakhomo?",
-        "otherDetails": "301NEH\nSee, who's standing at your Door?",
+        "otherDetails": "301NEH\n10 NAH\nSee, who's standing at your Door?",
         "lyrics": {
             "verses": [
                 "1. Ndani ali pakhomo?\nAlowe, (mpulumutsiyo) Bass/Tenor/Alto\nAgogoda pakhomo\nAlowe, (mpulumutsiyo) Bass/Tenor/Alto\nUsachedwe apita, alowe woyerayo,\nAli mfumu yakodi\nAlowe, (mpulumutsiyo) Bass/Tenor/Alto",
@@ -126,7 +126,7 @@
     {
         "id": 10,
         "title": "Mwana wa zioni kondwera",
-        "otherDetails": "529NEH\nZion's daughter, O be glad",
+        "otherDetails": "529NEH\n11 NAH\nZion's daughter, O be glad",
         "lyrics": {
             "verses": [
                 "1. Mwana wa zion kondwera, ukondwe yerusalem\nWa mfumu ikudza, ona mfumu ya ntendere,",
@@ -152,7 +152,7 @@
     {
         "id": 12,
         "title": "Podzabwera kudzatenga",
-        "otherDetails": "434NEH\nWhen He Cometh",
+        "otherDetails": "434NEH\n14 NAH\nWhen He Cometh",
         "lyrics": {
             "verses": [
                 "1. Podzabwera kudzatenga osankhidwa ache\nOsankhidwa, osankhidwa, okondedwawo.",
@@ -194,7 +194,7 @@
     {
         "id": 15,
         "title": "Dzani okhulupilira",
-        "otherDetails": "550NEH\nCome Hither Ye Faithful",
+        "otherDetails": "550NEH\n27 NAH\nCome Hither Ye Faithful",
         "lyrics": {
             "verses": [
                 "1. Dzani okhulupirika, imbani!\nOnani M'pulumutsi modyeramo\nThamangilani ku Betelehemu!",
@@ -208,7 +208,7 @@
     {
         "id": 16,
         "title": "Bwerani nonse tiyimbe",
-        "otherDetails": "365NEH\nCome everyone and Join our song",
+        "otherDetails": "365NEH\n35 NAH\nCome everyone and Join our song",
         "lyrics": {
             "verses": [
                 "1. Bwerani nonse tiyimbe, akondadi\nTiimbe chisomo chache, akondadi\nDzukani inu ochimwa, funani za madalitso\nUmawa wayandikira, akondadi.",
@@ -221,7 +221,7 @@
     {
         "id": 17,
         "title": "Tsiku lokondwa",
-        "otherDetails": "555NEH\nO Thou Joyful Christmas Tide",
+        "otherDetails": "555NEH\n39NAH\nO Thou Joyful Christmas Tide",
         "lyrics": {
             "verses": [
                 "1. Tsiku lokondwa la madalitso\nNthawiyo yosangala upandu watha\nKhristu wabadwa dzani tikondwere oyeranu",
@@ -234,7 +234,7 @@
     {
         "id": 18,
         "title": "Mtendere chikondwelero",
-        "otherDetails": "556NEH\nO What Peace and what Rejoicing",
+        "otherDetails": "556NEH\n4ONAH\nO What Peace and what Rejoicing",
         "lyrics": {
             "verses": [
                 "1. Mtendere chikondwerero mukubadwa kwa Yesu\nMu umodzi ndi mchikondi tonsefe tikondwera\nTimtamande timyimbire ndi mtenderewo kwa anthu padziko.\nMpulumitsi watibadwira mmawawu wa kh'rismisi",
@@ -247,7 +247,7 @@
     {
         "id": 19,
         "title": "Usiku Woyera",
-        "otherDetails": "560NEH\nSilent night, Holy Night",
+        "otherDetails": "560NEH\n42NAH\nSilent night, Holy Night",
         "lyrics": {
             "verses": [
                 "1. Usiku Woyera Wachete wowala\nPozungulira mwana Woyerayo ndiwofatsayo\nAgona mtendere Agona mtendere",
@@ -260,7 +260,7 @@
     {
         "id": 20,
         "title": "Mwana watibadwira",
-        "otherDetails": "545NEH\nIn Bethlehem the Lowly",
+        "otherDetails": "545NEH\n45NAH\nIn Bethlehem the Lowly",
         "lyrics": {
             "verses": [
                 "1. Mwana watibadwira mu Betelehemu\nNdichifuniro changa kukhale wanudi\nNdithu ndithu ndikhale wanudi",
@@ -438,7 +438,7 @@
     {
         "id": 33,
         "title": "Ndidzaimba za Momboli",
-        "otherDetails": "91NEH\n41 OLD HYMNAL FRONT\nnI will sing of My Redeemer",
+        "otherDetails": "91NEH\n41 OLD HYMNAL FRONT\n91 NEH\nI will sing of My Redeemer",
         "lyrics": {
             "verses": [
                 "1. Ndidzaimba za momboli, ndidzachikondi chache\nPa mtanda anandifera, kundiombola Ine",
@@ -680,6 +680,884 @@
                 "4. Tigwadira dzina lache, pa mapazi achewo\nMfumu yamafumu onse, tidzabvala korona."
             ],
             "chorus": "Chorus: Dzinalo, labwino, chiyembezo chathu\nDzinalo labwino, chiyembezo chathu."
+        }
+    },
+    {
+        "id": 51,
+        "title": "Lizani mabelu a kumwambako",
+        "otherDetails": "230 OLD HYMNAL FRONT\nRing the Bells of Heaven",
+        "lyrics": {
+            "verses": [
+                "1. Lizani mabelu a kumwambako\nWosocherayo wabweratu\nOna Atate akumana naye\nMwana wache wosochera.",
+                "2. Lizani mabelu a kumwambako\nWosochera wamasulidwa\nInde waomboledwa ku machimo\nWabadwa monga watsopano.",
+                "3. Lizani mabelu a kumwambako\nPhwando lache lakonzekadi\nTumizani uthenga kutaliko\nMoyo wabadwa kachiwiri."
+            ],
+            "chorus": "Chorus: Angelowo aimbitsadi\nUlemelero kwa Mulungu\nOwomboledwawo monga ankhondo\nAimba nyimbo ya ufulu."
+        }
+    },
+    {
+        "id": 52,
+        "title": "Mukhale ndine",
+        "otherDetails": "232NEH\n235 OLD HYMNAL FRONT\nAbide with Me",
+        "lyrics": {
+            "verses": [
+                "1. Mukhale ndine dzuwa lalowa\nWagwa usiku bwenzi lisowa\nNdilibe wina wondithandiza\nWa mphamvu ndinu mukhale ndinetu.",
+                "2. Ka moyo kanga katha leroli\nZidzachokanso zinthu za dziko\nZimasinthika zo-onekazo\nSimusinthika m'khale ndinetu.",
+                "3. Nthawitu ya kupemphera\nNdikhale mchifundo chanu\nMukatsogola sindiopai\nMsana usiku mkhale ndinetu.",
+                "4. Ndionetseni mtanda wanuwo\nMuunikire ine kumwamba\nMdima uthawa m'mawa wafika\nM'moyo mu imfa m'khale ndinetu."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 53,
+        "title": "Kugonjetsa adzagonjetsa",
+        "otherDetails": "222NEH\n262 OLD HYMNAL FRONT\nVictory through Grace.",
+        "lyrics": {
+            "verses": [
+                "1. Kugonjetsa adzagonjetsa, Mfumu ili mu mphamvu\nAtsogoza okhulupirira, pakati pa nkhondoyo\nAkupita patsogolo, Oobvala zoyera mbeen\nMvani kuitana dzina, la mtsogoleri wao.",
+                "2. Kugonjetsa adzagonjetsa, kodi ndani Mfumuyo\nAtsogolera a nkhondowo, mu ulemelerowo\nAli Ambuye momboli, mpulumutsi ndi Mfumu\nNyenyezi zache zowala, mu Ufumu wachewo.",
+                "3. Kugonjetsa adzagonjetsa, Yesu Mfumu ya tonse\nMipando-ndodo, a korona, zaziko zonse zitha\nAnkhondo muwatsogoza, akhala owonadi\nMuwapeza mnyumba zanu, apuma ku nkhondo"
+            ],
+            "chorus": "Chorus: Sikwa a mphamvu munkhondo, Sikwa othamanga\nKoma okhulupirika, 'dzapambana mchisomo."
+        }
+    },
+    {
+        "id": 54,
+        "title": "Haya ! anzanga taonani",
+        "otherDetails": "184NEH\n265 OLD HYMNAL FRONT\nHold the Fort",
+        "lyrics": {
+            "verses": [
+                "1. Haya ! anzanga taonani, chenjezo\nMagulu ayandikira, kudzapambana.",
+                "2. Ankhondowo asatana, akupitabe\nAmphamvuwo ali kugwa, ali ndi mantha.",
+                "3. Mvani lipenga, mbendera.yakwezekatu\nMwa mtsogoleri wathuyo, tidzagonjetsa.",
+                "4. Nkhondo yalimba, thandizo liri pafupi\nWolamulira wafika, kondweranitu."
+            ],
+            "chorus": "Chorus: Yesu atichenjezatu, limbikanibe\nMwa chisomo tidzachita,\n.Yankhani m'mwamba."
+        }
+    },
+    {
+        "id": 55,
+        "title": "Molimbika mtima tidzayendabe",
+        "otherDetails": "219NEH\n274 OLD HYMNAL FRONT\nTolling Bravely onward",
+        "lyrics": {
+            "verses": [
+                "1. Molimbika mtima tidzayendabe\nM'chikondi cha Yesu, tsiku ndi tsiku\nSitiponya nkhondo kukondweretsa\nZofuna za anthu, koma za Khristu.",
+                "2. Molimbika mtima tidzayendabe\nAnthuwo aseke monga kwa Nowa\nMdani akalipe mantha palibe\nKhristu watichotsa uchimo wathu.",
+                "3. Molimbika mtima tidzayendabe\nAneneri ache anabvutika\nMu ntchito za Yesu monga Ambuye\nAtsogoleradi, ana achewo."
+            ],
+            "chorus": "Chorus: Ngakhale mdaniyo, pena namondwe\nMwa Atumwi ache, tidzayendabe."
+        }
+    },
+    {
+        "id": 56,
+        "title": "Mtima wanga",
+        "otherDetails": "244NEH\n276 OLD HYMNAL FRONT\nHere is My Heart.",
+        "lyrics": {
+            "verses": [
+                "1. Mtima wanga, Mlungu ndipereka, Inu woupanga\nMwana wanga ukane za dziko, imva mau ache\nMchisomo mphatso yapatsidwa, tengani Mlungu mudalitse\nNdipereka mtima wanga.",
+                "2. Mtima wangau, walandiratu uli wofokatu\nNdipereka mokhulupirika, mosanyozeratu\nNdizoipa waonetsedwa, wodzazidwa ndiuchimo\nMtima wanga woipatu.",
+                "3. Mtima wanga ukhale wamphamvu, udza ku mtandako\nNdanitu chuma chamoyo mu imfa yanuyo\nMumabala a Khristu Mbuye, ndipeza madalitso\nMtima wokhulupirika."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 57,
+        "title": "Mzimu ndi mtsogoleri",
+        "otherDetails": "468NEH\n288 OLD HYMNAL FRONT\nHoly Spirit Faithful Guide",
+        "lyrics": {
+            "verses": [
+                "1. Mzimu ndi m'tsogoleri, m'njira ya chi-Khristuyo\nM'titsogoze ifetu, pa-ulendo wathuwo\nWotopa akondwere, pomva mau achewo\nPakunena Mzimuyo, wosochera bweratu.",
+                "2. Pafupi ndi bwezilo, m'chithandizo chanucho\nSi-tidera nkhawazo, poyenda mu m'dimawo\nPakuomba mphepozo, pakufoka mtimatu\nPakunena Mzimuyo, wosochera bweratu.",
+                "3. M'mene bvuto lidzatu, poyembekezeratu,\nM'mapemphero athuwo, ngati talembedwamo\nMumadzi osefukawo, mu mwazi wa Yesuyo\nPakunena Mzimuyo, wosochera bweratu."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 58,
+        "title": "Yesu mundiyendetse",
+        "otherDetails": "196NEH\n292 OLD HYMNAL FRONT\nJesus Saviour Pilot Me",
+        "lyrics": {
+            "verses": [
+                "1. Yesu mundiyendetse, pa nyanja ya namondwe\nMafunde akauka, mu mathanthwe anyanja\nKhalani maso anga, Yesu mundiyendetse.",
+                "2. Monga mwana kwa mache, tonthozani nyanjayo\nNyanja zikumverani, m'mene munena chete\nWoweruza wa nyanja, Yesu mundiyendetse.",
+                "3. Pofika kutsidyalo, ndimkokomo wa nyanja\nPafupi ndi mtendere, pa chifukwa chanucho\nNdimva kundi-itana, 'ndidzakuyendetsani'."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 59,
+        "title": "Mulungu anditsogoza",
+        "otherDetails": "247NEH\n296 OLD HYMNAL FRONT\nJust as God leads Me",
+        "lyrics": {
+            "verses": [
+                "1. Mulungu anditsogoza, sindisankha njira yanga\nNdikhutira zopatsidwa, sandisocheretsa ine\nNdiyenda mokondweradi, mmene atsogoza mnjira\nMongatu mwana wache.",
+                "2. Mulungu anditsogoza, ndipumula mdzanja lache\nMuchimene anatuma, mwa kulamulira kwache\nNdifuna kukwaniritsa, mukumalizitsa kwache\nMu moyo pena imfa.",
+                "3. Mulungu anditsogoza, ndikhulupira iye\nMkuunika kwa chinyengocho, ndiyenda mu uphungu wache\nChikondi cha chilungamo, pondi-ika m'ku-unika\nNdigonjera kwa iye.",
+                "4. Mulungu anditsogoza, mu chiyembekezerocho\nNdipatsidwa mphamvu zache, sindisintha chiri chonse\nTero ndakhazikikadi, ndi ika moyo mwa iye\nWondipatsa chifundo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 60,
+        "title": "M'nditsogoze m'ku-unika",
+        "otherDetails": "297 OLD HYMNAL FRONT\nLead Kindly Light",
+        "lyrics": {
+            "verses": [
+                "1. M'nditsogoze m'ku-unika kwanu\nM'dimawo wafika, ndiri kutari ndi kwathu\nMunditsogolere, sungani mapazi anga\nPa ulendo wanga wa ku-mudzi.",
+                "2. Sindinakupemphani nthawi zonse\nKunditsogolera, ndinakonda njira zanga\nNdinakonda tsiku labwino, m'nthawi ya nthawi\nMusakumbuke zanga zakale.",
+                "3. Mphamvu yanu yadalitsa ine,\nNdidzatsogoleredwa m' madambo ndi m'mapiri\nUsikuwo wafika ndi m'mawa wafikadi\nUmene ndinafuna kuona."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 61,
+        "title": "Yesu bwenzi langadi",
+        "otherDetails": "195NEH\n304 OLD HYMNAL FRONT\nJesus Lover of My Soul",
+        "lyrics": {
+            "verses": [
+                "1. Yesu bwenzi langadi, ndithawira kwathu,\nPokwera madzi anyanja, pouka chimphepocho.",
+                "2. Kothawira ndiribe, chithandizo changanu\nMusandisiye ndekha, munditonthoze ine.",
+                "3. Chikhulupiliro changa, chithandizo ndinu\nMuphimbe mutu wanga, ndi mapiko anuwo.",
+                "4. Chisomocho chambiri, chiphimba tchimo\nMumtsinje wochiritsa, ndiyeretseni ine",
+                "5. Ndinu mtsinje wa moyo, ndimwe mu kasupe\nDzutsani moyo wanga, ukwere ku muyaya.",
+                "6. Ndibisale mwa inu, namondweyo apita\nMnditsogoze kumwamba, mndilandire kwanu."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 62,
+        "title": "Dzuwa langa",
+        "otherDetails": "304 OLD HYMNAL FRONT\nSun of My Soul",
+        "lyrics": {
+            "verses": [
+                "1. Dzuwa langa M'pulumutsi, sikungade, mfupi ndi Inu\nMitamboyo singadzetu, kubisa nkhope yanuyo.",
+                "2. M'mene madontho amame, agwetsa zikope zanga\nGanizo la kupumula, pa chifuwa cha Mbuye.",
+                "3. Mkhale nane dzuwa lonse, popanda Inu ndidzafa\nMukhale nane usiku, kuti ndikhale ndi moyo.",
+                "4. Mundidalitse pouka, kuti ndiyende m'dzikomo\nNdikhale m'chikondi chanu, ndipenye za kumwambako."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 63,
+        "title": "Chikhulupiriro chathu",
+        "otherDetails": "207NEH\n267 OLD HYMNAL FRONT\nSafely faith through life",
+        "lyrics": {
+            "verses": [
+                "1. Chikhulupiriro chathu, chili mudzanja lache\nChithandiza, chilimbitsa, mumphamvu ya chikondi\nChithandiza, chilimbitsa, mumphamvu ya chikondi.",
+                "2. Chikondi sichifoketsa, zo-oneka mwa ena\nChifundo cha Mpulumutsi, chiphimbadi zolakwa\nChifundo cha Mpulumutsi, chiphimbadi zolakwa.",
+                "3. Chiyembekezero chathu, popenya za mtsogolo\nChitonthoza mu zowawa, kufikira zidzatha\nChitonthoza mu zowawa, kufikira zidzatha.",
+                "4. Mwa chiphunzitso cha Yesu, momwemonso tikhale\nMu ntchito ndi chikhalidwe, ulemu kwa Mulungu\nMu ntchito ndi makhalidwe, ulemu kwa Mulungu."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 64,
+        "title": "Muzisoni ndapeza chikondwerero",
+        "otherDetails": "192NEH\n58 OLD HYMNAL FRONT\nI've Found a Joy in Sorrow",
+        "lyrics": {
+            "verses": [
+                "1. Muzisoni ndapeza chikondwerero\nTsiku lina labwino ndi dzuwa lawala\nMalo ochiritsawo, Mfumu ndi kasupe\nMbuye atonthozadi, moyo woswekawo\nMbuye atonthozadi, moyo woswekawo.",
+                "2. Mumatsoka ndapeza chisangalalocho\nNdapeza manna, koma mphesa sizibala\nNdapeza thanthwe, kasupe mchipululu\nNdapeza m'pumulowo, nditabvutikadi\nNdapeza m'pumulowo, nditabvutikadi.",
+                "3. Malo otsitsimutsa, ndi akasupewo\nM'dalitso okwanira, mulonjezanolo\nPambuyo pa misozi, ndaona dzuwalo\nLindikwaniritsadi, lichotsa zowawa\nLindikwaniritsadi, lichotsa zowawa.",
+                "4. Mwampulumutsi wanga, ndisangalaladi,\nNdipeza machiritso ndi madalitsowo,\nLonjezano la iwo, woopa Mulungu\nNdiwo ulemerero, wompatsa M'tima\nNdi ulemerero wompatsa M'tima."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 65,
+        "title": "Ndipenya kwa inu",
+        "otherDetails": "495NEH\n49 OLD HYMNAL FRONT\nMy Faith looks up to Thee",
+        "lyrics": {
+            "verses": [
+                "1. Ndipenya kwa inu mwana wa nkhosanu\nM'pulumutsi, ndimvereni ine\nMundichotseretu, machimo angawo, ndiyere mbee.",
+                "2. Mundipatsa mphamvu, ku m'tima wofoka\nNdilimbetu, munandiferatu\nChikondi chanucho, chisasinthe konse, monga moto,",
+                "3. Poyenda mum'dima, ndi zisoni zanga\nM'nditsogoze, chotsani m'dimawo\nBvuto ndi misozi, ndisasocheretu, kusiya'nu.",
+                "4. Pakutha kwa moyo, pakudza imfayo\nKundizinga M'pulumutsi wanga\nChotsani manthawo, nditengeni ine, kumwambako."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 66,
+        "title": "Usikuwo pa phirilo",
+        "otherDetails": "54 OLD HYMNAL BACK/ADDENDA\n'Tis midnight",
+        "lyrics": {
+            "verses": [
+                "1. Usikuwo paphirilo, nyenyezi zasiyatu\nUli usiku m'mundamo, Mbuye apemphera yekha.",
+                "2. Usikuwo, zonse zatha, Mbuye avutika yekha\nIye anamkondayo, sasamala mabvutowo.",
+                "3. Usikuwo, m'chimo lathu, Mbuye alira m'mwaziwo\nAmene abvutikadi, sadzachotsedwa kwa iye.",
+                "4. Usikuwo bvuto latha, liumbika ndi Angelo\nYosadziwika ndi anthu, nyimboyo yotonthoza Mbuyeyo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 67,
+        "title": "Kutali ndi mizinda ya Anthu",
+        "otherDetails": "58 OLD HYMNAL BACK/ADDENDA\nWandering a far",
+        "lyrics": {
+            "verses": [
+                "1. Kutali ndi mizinda ya anthu, mvani kufu-ula kwa a khate\nYesu mutichitire chifundo, mutichiritse matenda athu.",
+                "2. M'modziyo atayamika Mbuye, anachiritsidwa mumauwo\nKutama m'chiritsi wamkuluyo, komabe enawo ali kuti?",
+                "3. Afarisi afunsa za Yesu, ndiwe Khristu kodi? Utiuze\nUnyinjiwo wotsatira iye, komatu enanso, ali kuti?"
+            ],
+            "chorus": "Chorus: Anthu khumi anachira\nNanga enawo, ali kuti?"
+        }
+    },
+    {
+        "id": 68,
+        "title": "Yamikani inu Ambuye",
+        "otherDetails": "62NEH\nThank Ye the Lord",
+        "lyrics": {
+            "verses": [
+                "1. Yamikani inu Ambuye\nPakuti inu muli ndi chikondi chosatha\nChiri cha muyaya, chiri cha muyaya.",
+                "2. Tamandani inu Ambuye\nMoyo wanga kumbuka zimene wakuchitira\nWakuchitiradi, wakuchitiradi.",
+                "3. Wamphamvuyo, Mulungu wathu\nNtchito zache za nzeru, Apatsa chisomo chache\nChiri cha tsopano, chiri cha tsopano.",
+                "4. Wamkuluyo, Mulungu wathu\nDziko lonse lidzakhala ndi ulemelero wache\nUlemelerowo, ulemelerowo.",
+                "5. Imbiradi ! Ambuye wathu\nIye akumva nyimbo zathu, za chisangalalo\nAmvera nyimbozo, amvera nyimbozo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 69,
+        "title": "Chaka ichi chikutha",
+        "otherDetails": "483NEH\nThe year so still is Ending",
+        "lyrics": {
+            "verses": [
+                "1. Chaka ichi chikutha Mtima wanga fatsa\nKwa Mlungu Tate wathu tipereke zonse\nZamchaka ichi zonse Mlungu akudziwa\nMabala athu onse ndi misonzi yathu.",
+                "2. Chisoni nchachikulu chimwemwe nchochepa\nMsanga tinalekana ndi okondedwawo\nMaso milomo yawo, imfa inatseka, sangalaladi\nLakhulanso zowawazi mchotse",
+                "3. Kuti tisayiwale timayiwalazo\nKuti dziko lapansi simudziwa wathuwu,\nMbuye ali ndi ache omwe abadwanso anagulira iwo\nMzinda wazioni.",
+                "4. Mdzikoli tilekana m'misonzi mzowawa\nKutsidya tidzakondwa kwa nthawi zosatha\nTipatseni mtendere tithe kuonanso\nYendani nafe Mbuye kunka kumwambako."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 70,
+        "title": "Mu Chisokonezo Cha Anthu Onse",
+        "otherDetails": "53 NAH\nMid Scenes of Confusion",
+        "lyrics": {
+            "verses": [
+                "1. Mu chisokonezo cha anthu onse,\nMoyo wanga ukondwera ndi oyera\nPa phwandolo pali malo angadi\nNdikhazikika mwa Yesu Mbuyeyo",
+                "2. Umodzi wa anawo a mtendere\nMchikondi chache chosalekadi\nNgakhale ndiyenda muzisonizo\nNdifunitsa kupenya nkhope yanu",
+                "3. Ndifuna kumasuka mu uchimo\nUndiletsa chikondwelero changa\nMayeso anga ndiukiradi\nNdidzakhala mtendere ndi Inu",
+                "4. Ndikhala muchigwa cha mabvuto\nNdipatseni mphamvuzo nthawi zonse\nNdibwera kwa Inu m'mabvuto anga\nKuyembekezera mudzi wanga",
+                "5. Ndipatseni ine chisomo chanu\nMzimu undisangalalitse\nNdipatseni chifaso kudikira\nKuyembekezera mudzi wangawo",
+                "6. Ndifunitsitsa nkhope yanuyo\nMonga ndiri mu dziko la zisoni\nMu chifanizo chanu ndiukedi\nNdi zikwizo kunka kumudzi kwathu"
+            ],
+            "chorus": "Chorus; Kwathu, kwathu, mudzi wanga\nNdikonzeni ndikafike kumudzi"
+        }
+    },
+    {
+        "id": 71,
+        "title": "Yamikani Ambuye wathu",
+        "otherDetails": "58NEH\nPraise Thou the Lord",
+        "lyrics": {
+            "verses": [
+                "1. Yamikani Ambuye wathu, Mfumu yathudi\nImba nyimbo moyo wanga. ndi akumwambako\nIdzanitu, ndi zilimba ndi zeze, muimbireni Mulengi wathu.",
+                "2. Yamikani muweruzi ndi mtsogoleri\nAkuyendetsa m'zinjira, atumiza, zifundo, madalitso\nMtima wako uyamike.",
+                "3. Yamikani wachisomoyo, wodabwitsayo\nAkunyamula, ukagwa akudzutsa iwe\nWofokatu, osatha kulankhula, udzaphimbika mwa iye.",
+                "4. Yamikani Mbuye mtsogoleri wa moyo wako\nMwa mwana wache wakupatsa iwe chisomo\nGanizatu, Mulungu wamphamvu, sachoka kwa mwana wache.",
+                "5. Yamikani Ambuye wa chifundo chosatha\nOsankhidwanu, imbani nyimbo mukondwere\nImbanitu, moyo wanga yamika, m'yamikeni nthawi zonse."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 72,
+        "title": "Kuli kasupe",
+        "otherDetails": "336NEH\nThere is a fountain",
+        "lyrics": {
+            "verses": [
+                "1. Kuli kasupe wa mwazi kwa onse ochimwa\nKasupe wodabwitsa wochotsa zisoni",
+                "2. Mwazi wa mwana wa nkhosa undiyembekeza\nTsanulani mzimu wanu mlenge zatsopano.",
+                "3. Pamene ndiri m'machimo ndifuna mwaziwo\nNdidzaimba ndi chimwemwe za chisomo chake.",
+                "4. Mwazi ukhale kasupe wotha ludzu langa\nUdzakhala nyimbo yanga pachifuwa chake."
+            ],
+            "chorus": "Chorus: Ndipenya mwazi wangwiro\nM'chikhulupiriro machimo atha\nMdziweli ndi imfa ya Yesu."
+        }
+    },
+    {
+        "id": 73,
+        "title": "Thanthwe long'ambikatu",
+        "otherDetails": "498NEH\nRock of Ages Cleft for Me",
+        "lyrics": {
+            "verses": [
+                "1. Thanthwe long'ambikatu, ndibisale momwemo.\nMadzi ndipo Mwaziwo, zoturuka m'nthitimo\nZinditsuke mtima mbu, zindilimbikitsetu.",
+                "2. Ntchito zanga zonsezo, sizikondweretsanu\nNdikazigwiritsadi, ndikalira nsonizi\nZonse sizikwanai, koma Yesu yekhayo",
+                "3. M'manja mwanga chabebi, mtanda ndingogwiradi\nNdiyang'ana kwa inu, ku chisomo chanucho\nNdithawire mtsinjewo, munditsuke m'mtimamo.",
+                "4, Moyo wanga kunsiku, pena ndimwaliratu\nM'mene ndidzaukanso, tionane masowo\nThanthwe long ambikatu, ndibisale momwemo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 74,
+        "title": "Haleluya kwaya zonse ziimba",
+        "otherDetails": "97 NAH\nHallelujah! Choirs are singing",
+        "lyrics": {
+            "verses": [
+                "1. Haleluya kwaya zonse ziimba kuyamika Yesu\nKhristu, tsikuli nlalikuludi, Mbuye waturuka m'ndende\nKuimfa ndi manda wauka , anadza kutiwombola\nMphamvu zonse nzake wagonjetsa zonse haleluya\nWatsiriza ntchito yake pogonjetsa imfa ndithu.",
+                "2. Tinatengedwa ku fumbi ndipo tidzaukitsidwadi\nM'nalenga fumbi ndi moyo, Iye wapereka mphamvu\nNdi ulemelero kwa onse, ofuna moyo wosatha\nMbuye tili anu wodala kwa myaya haleluya\nSitiopa mfupi ndinu Yesu Khristu waukadi",
+                "3. Tsiku lotamanda Mbuye akwaniritsa pempho lathu\nNdikuunikira manda. Ife ndife okondwera\nKuti mdima tsono uchoka, tidzavala zoyera mbee\nMbuye m'titsogoze tilambira inu ana anu\nMunadutsa imfa zedi kutipezetsa mpumulo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 75,
+        "title": "Kodi mumwazika bwanji?",
+        "otherDetails": "101 NAH\nSouls of Man, Why will Ye Scatter?",
+        "lyrics": {
+            "verses": [
+                "1. Kodi mu mwazika bwanji, monga nkhosa\nBwanji mungoyenda yenda, kuchoka\nKodi kuli Mbusa wina, wofatsa wa chikondi\nNdani kwa Mpulumutsiyo, pamapazi achewo,",
+                "2. Mulungu wa chikondiyo, wa chikondi koposa\nNdiye Atate, chikondi chache chopitilira\nChifundo chache chakula monga kukula kwache\nMuli chifundo chache, chopambana ufumu.",
+                "3. Kumwamba mabvuto athu adzadziwika koposa\nKumwamba kulakwa kwathu, kulandira chifundo\nOchimwa alandilidwa, alandira chisomo\nMpulumutsi wa chifundo, atichilitsa ife.",
+                "4. Tisachepetse chikondi chopatsidwa ndi Mbuye\nTikulitsadi ulemu, wopatsidwa kwa iye\nMuli chiombolo chache, pomwaza mwazi wache\nMuli chisangalaro chathu muzowawa za Mbuye.",
+                "5. Ngatitu tikonda lye, tisunge mau ache\nMoyo wathu udzawala, mu-ubwino wa Mbuye\nChikondi cha Mulunguyo, chili chotambalala\nNdipo mtima wa Mulungu uli wodabwitsadi."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 76,
+        "title": "Ntchito ndi yanu Mulungu",
+        "otherDetails": "159NEH\nThe work is Thine My Lord and God",
+        "lyrics": {
+            "verses": [
+                "1. Ntchito ndi yanu Mulungu, momwe tikondwera\nPopeza ntchito ndi yanu, siidzaonongeka\nIsanamere mbeuyo, munthaka imayambatu\nYabwelera mchikhalidwe, chake chapoyambacho\nImayamba yadutsa mu imfa.",
+                "2. Mbuye mnasautsidwadi, mnayang'ana mmwamba\nMtenge ali mu umodzi, kunka mparadiso\nMbuye dzani mdzatitenge, matsautso tigonjetsa\nKudzera mu imfa yanu, pogwiranso ntchito yanu\nIfe tipata moyo osatha",
+                "3. Mbuye Yesu mnatifera, mnagonjetsa imfa\nMdzadyetsa mizimu yonse, ya otumikira\nTumizani amithenga, alalike dzina lanu\nMatamando kwa Mbuyenu, tidzagwira ntchito yanu\nTidzadikira kudzanso kwanu"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 77,
+        "title": "N'nali pachipata",
+        "otherDetails": "321NEH\nI stood at mercy's gate",
+        "lyrics": {
+            "verses": [
+                "1. N'nali pachipata monga wosochera\nNdinagwida mantha kupempha chifundo\nNdi moyo wa mantha kunali kuchedwa\nKuthera panjira (ndinapempheratu *2).",
+                "2. Mbuye ndinam'pempha mundipulumutse\nKudikira kwanga kunali kwa phindu\nYesu wanditola anandikokera\nPachifuwa chake (nandipatsa mtendere *2).",
+                "3. Ndidziwa Ambuye yemwe andikonda\nWandifunafuna nandifera ine.\nKwa iye ndipuma kumachimo anga\nMwayi ndaupeza (Yesu wanditola *2)."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 78,
+        "title": "Atate wanga ndakulakwirani",
+        "otherDetails": "137 NAH\nDear father, I have sorely sinned",
+        "lyrics": {
+            "verses": [
+                "1. Atate wanga ndakulakwirani ndachimwa pamaso panu\nTchimo langa landimanga m'ndende (ndikumvatu, kupweteka *2).",
+                "2. Mukudziwa mavuto anga onse ndi nsozi ndidza kwa\nInu Mbuye wanga ndipilire chotani (kusaona nkhope yanu *2).",
+                "3. Mbuye musalipire tchimo langa musaweruze mulandu\nTsiku ntsiku ndifunafuna inu (chifukwa ndinu chikondi *2).",
+                "4. Ambuye ndidzatsatira mokondwa kutitu ndikapumule\nTsiku ntsiku kukukondani inu (ndikutsamira kwa inu *2)."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 79,
+        "title": "Pansi pa mtima ndilira",
+        "otherDetails": "138 NAH\nOut of the depths I cry to Thee",
+        "lyrics": {
+            "verses": [
+                "1. Pansi pa mtima ndilira Ambuye ndimvereni tcherani makutu ₺\nMumve kupemphera kwanga mukakumbuka machimo\nMukabwezera chilango. Ndaniyo angaime,",
+                "2. Tipempha chikondi chanu mutiveke chisomo ntchito\nSizichotsa tchimo. Moyo watikanika wina atamanda ntchito\nAna atama chisomo chomwe ndi chilungamo.",
+                "3. Ndiyembekeza Ambuye n'chifuniro changa\nNdidalira mau ake ndi mzimu wolapadi iyeyo\nNdiwachifundo. Ali chitonthozo changa ndidikira thandizo.",
+                "4. Ndidikiratu usiku ndidikira m'mamawa ndidalira\nMphamvu zanu. Sindidzakunyozani, inu ayisalayeli inu obadv\nMwa mzimu dikirani Mulungu.",
+                "5. Kuchuruka kwa machimo chisomo nchochuruka\nChikondi sichilephera tikapepha moona\nIye ndu mbusa wabwino adzawombola isi-ra-eli\nMachimo ndi m'zisoni."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 80,
+        "title": "Nyenyezi ili pakati kutiunikira",
+        "otherDetails": "139 NAH.\nThere dawns a star, so clear and bright.",
+        "lyrics": {
+            "verses": [
+                "1. Nyenyezi ili pakati kutiunikira ife\nUlemelero wanu\nNdinu nyali ya chifundo mundilimbitse\nN'sajiwe ndi mano asatana.\nMunditenge ndifuna kudza kwa inu\nNdikupempha chikhululukiro chanu.",
+                "2. Mtima wonyada chotsani mundimasule\nAmbuye ku machimo adziko.\nNdikhale odzichepetsa ndikhale muchoonadi\nKugwira ntchito yanu.\nNdipatseni chikhulupiriro chanu ndi khalidwe\nLokondweretsa Mulungu.",
+                "3. Mvekeni moyo wanga zobvala zanu zoyera\nKunka moyo wosatha\nMphamvu yopezeka mwazi yotsuka ndikudalitsa\nItsogoza kumudzi.\nThandizeni Yesu mwini chikondi kuti ndisagwe\nKopanda'nu ndi mwalira.",
+                "4. Mbuye muwale mwa ine ndilalikire za inu\nNdi chikhulupiriro\nNdidzatsata njira yanu chisomo ndi ndodo yanga\nInu simulephera\nMpulumutsi ndilonjeze kukhala nanu kwa m'yaya\nKuyamikira kwa m'yaya."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 81,
+        "title": "Ndimachimo",
+        "otherDetails": "140 NAH.\nWith the same transgressions",
+        "lyrics": {
+            "verses": [
+                "1. Ndi machimo anga ndibwere kodi?\nKupilirira nane simunatope?\nKodi chifundocho ndi chatsopano\nmudzandikhululukira machimo?",
+                "2. Ndikapempha inu ndipenya nkhope\nNdipenya chifundo ndinso chisomo\nNdi chikondi chanu Mbuye ndadala.\nKonse konse kulibe chikondichi.",
+                "3. Chikhululukiro ndi mau anu\nNdizo moyo wanga zachotsa tsoka\nMtendere upatsa chipulumutso\nPokhala mdziko mundidalitse."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 82,
+        "title": "Ndi mtima wolapa ndidza kwa inu",
+        "otherDetails": "340NEH\nWith contrite heart I come to Thee.",
+        "lyrics": {
+            "verses": [
+                "1. Ndi mtima wolapa ndidza kwa inu Mbuye\nKomwe Yesu anafera kuchotsa machimo\nMithenga ya anthu ndiyi : chisomo chilipo\nAtsegula Mparadiso kudzakuwombola.",
+                "2. Mongatu wopemphapempha ndadza ndi machimo\nKoma pamene ndalapa mundikhululukire\nNdadza ndizosayenera ndine wovutika Mbuye\nmundipulumutse mundigwire dzanja.",
+                "3. Iye wakudza kwa inu sabwezedwa konse\nInenso ndikupemphani Mbuye mundimvere\nYesu Khristu mwazi wanu wandipulumutsa\nUnditsuka mkatikati ndapeza mtendere."
+            ],
+            "chorus": "Chorus: Musandibisire nkhope yanu Mbuye\nM'churutse chisomo kuti ndiyanjane nanu."
+        }
+    },
+    {
+        "id": 83,
+        "title": "M'sandipitilire Yesu",
+        "otherDetails": "333NEH\nPass Me not, O Gentle Saviour",
+        "lyrics": {
+            "verses": [
+                "1. M'sandipitilire Yesu, mundimveretu\nM'mene muitana ena, m'sandipitilire.",
+                "2. Ku m'pando wa chisomowo, ndi tonthozedwe\nNdi gwadira inu Mbuye, mundithandize.",
+                "3. Ndi khulupilira inu, nkhope yanuyo\nMu chiritsa Mzimu wanga, m'ndipulumutse.",
+                "4. Inu ndinutu kasupe, wa chitonthozo\nSindifuna wina konse, koma inutu."
+            ],
+            "chorus": "Chorus: M'pulumutsi, mundimveretu\nM'mene muitana ena\nM'sandipitilire."
+        }
+    },
+    {
+        "id": 84,
+        "title": "Mbuye wanga tengani mtimawu",
+        "otherDetails": "244NEH\nHere is my heart",
+        "lyrics": {
+            "verses": [
+                "1. Mbuye wanga tengani mtimawu mwapanga nchisomo\nMwana wanga ukane dzikoli ndimva mau ako\nTengani mphatso ya chikondi Mulungu wanga mudalitse\nMtima wanga mtima wanga.",
+                "2. Mtima wanga m'landire n'chifundo ngakhale ngoipa\nNdipereka n'chikondi choona mwa chisomo chanu\nNdiwodetsedwa ndi zoipa ndiwodzazidwa ndi machimo\nMtima wanga mtima wanga.",
+                "3. Mtima wanga ngokwana mwa Khristu ntanda uli m'fupi\nMbuye wanga inu chuma changa ndinu moyo wanga\nUli ndi mabala amkati madalitso ndi chitonthozo\nMtima wanga mtima wanga."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 85,
+        "title": "Tidza kwanu Mfumu yathu",
+        "otherDetails": "144 NAH\nWe come before Thy majesty",
+        "lyrics": {
+            "verses": [
+                "1. Tidza kwanu Mfumu yathu tikugwadirani\nKokani Mitima yathu kufika paguwa\nMtipatse Chisomo chanu mchotse tchimo lathu lonse\nMsabisetu nkhope yanu muombole ochimwayo\nMsatisale ifetu ochimwa.",
+                "2. Monga mwana osochera nafe tachimwadi\nTachoka mchikondi chanu mtikhululukire\nMtipatse chikondi chanu musunge,Mtima ochimwa\nMsabisetu nkhope yanu tikondwera mchisomocho\nMkuwalako kwa inu Ambuye.",
+                "3. Munalenga zinthu zonse kukhala thandizo\nMumaperekanso mphamvu kwa anu ofoka\nTipereka chiyamiko tisambitsidwe mumwazi\nKudzera mwamwana wanu taomboledwa mumwazi\nMuchikondi mudzi wakonzedwa."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 86,
+        "title": "Kasupe oyera wachisomo",
+        "otherDetails": "315NEH\nFountain of purity",
+        "lyrics": {
+            "verses": [
+                "1. Kasupe oyera wachisomo, owombola onse ochimwawo\nYesu Mpulumutsi wa ochimwa, ndisambitseni ndiyeretu mbee",
+                "2. Ngakhale ndiri kugwira ntchito, sindingathe kudziyeretsatu\nYesu Mpulumutsi wa ochimwa, ndisambitseni ndiyeretu mbee",
+                "3. Kasupe wanu Mbuye ngoyera, atsuke ayereste mtimanga\nZonse ndipempha Mbuye ndizanu, mndisambitse ndikhale oye:"
+            ],
+            "chorus": "Chorus: (Ndiyere mbee *2), Ndikhale oyeratu mbee."
+        }
+    },
+    {
+        "id": 87,
+        "title": "Muli malo mchisomo cha Mlungu",
+        "otherDetails": "304NEH\n158NAH\nThere is still room in God's great mercy",
+        "lyrics": {
+            "verses": [
+                "1. Muli malo mchisomo cha Mlungu a mtima wanga osweka\nMtima wangau wamasuka kuti ndilowe kumwamba\nMpulumutsi mnditengere (kumalo a mtenderewo *2).",
+                "2. Muli malo mchikondi chanu ndalandiradi kwa inu\nMchipiliro ndilungamitsidwa nyumba ya tate ndifuna\nNdidzagwira dzanja lache (kunditengera kumwamba *2).",
+                "3. Muli malo mkhola lankhosa a mizimu yosochera\nKukhalilira kugwiritsa ndicho chifuniro chanu\nMpulumutsi bwenzi langa (ndiye ndikhulupilira *2).",
+                "4. Muli malo a banja langa phwando landikonzedwera\nWochimwayo wamasulidwa kutitu asatayike,\nNdimva kuitana kwanu ( choncho ndidzatu kwa inu *2)."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 88,
+        "title": "Muli malo mnyumba ya Mulungu!",
+        "otherDetails": "160 NAH\nThere still is room! God's house is not yet filled",
+        "lyrics": {
+            "verses": [
+                "1. Muli malo mnyumba ya Mulungu chakudya nchambiri\nChakonzedwa anjala akhute zonse nzanu Mbuye\nPitanitu mukawatenge alowe munyumba ya Mbuye\nMuli malo muli malo.",
+                "2. Nthawi iripo lalikirani Chikondi cha Mbuye\nMuitane alendo mnyumbayi mutamande iye\nKhomo lachisomo liripo pomwe Mlungu atidalitsa\nMuli malo muli malo.",
+                "3. Konzekani ola layandika lofikira Mkwati\nNdipo nthawi yachisomo *dzatha Mkwati adzafika\nIwe Mkwatibwi konzekera ulandire Mbuye wakoyo\nNthawi yache yafikadi."
+            ]
+        }
+    },
+    {
+        "id": 89,
+        "title": "Ku chokera ku m'pando",
+        "otherDetails": "279NEH\nFresh from the Throne of Glory",
+        "lyrics": {
+            "verses": [
+                "1. Kuchokera ku m'pando, wache wachifumu\nKuchokera ku kasupe, wa madzi a moyo\nM'tsinje wodalatu, ndidyetse maso anga\nM'tsinje wodalatu, ndidyetse maso anga.",
+                "2. Kasupe wa umoyo, wa chisangalalo\nAzeze aimbako, nyimbo zimvekadi\nNdikhaletu ndiimbe, pafupi ndi iwe\nNdikhaletu ndiimbe, pafupi ndi iwe",
+                "3. M'tsinje wa Mulungu wanga ndikulonjerani\nMoyo wanga m'madziwo atha ludzu langa\nM'tsinje woyera ndimwe, madzi amoyowo,\nM'tsinje woyera ndimwe, madzi amoyowo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 90,
+        "title": "Mabelu aulaliki aimba dziko lonse",
+        "otherDetails": "283NEH\nHark! the Gospel bells are ringing",
+        "lyrics": {
+            "verses": [
+                "1. Mabelu aulaliki aimba dziko lonse\nAnena zachipulumutso cha iwe ndi cha ine\nTitame chikondi chache potitumira mwana\nYense omkhulupilira sadzafa mpaka myaya.",
+                "2. Mabeluwa aitana tikalowe kuphwando\nTikalandire thandizo latonsefe ochimwa\nYesu ndiyetu chakudya cha mizimu yanjala\nKubweretsa chilimbitso kumitima yofooka.",
+                "3. Lolani mtima wangau udzale ndi choona\nKuti ndithe kugonjetsa mphamvu ya satanayo\nKuti achoke mwaine chifukwa cha ungwiro\nKudzera m'mphamvu za Yesu zopatsidwa kwa ine.",
+                "4. Mabelu atilozera kunyimbo yatsopano\nAna a Mlungu bwerani tikondwe ndioyera\nPosachedwa Mfumu idza tikhale okonzeka\nMkhale okhulupilika mudzavala korona."
+            ],
+            "chorus": "Chorus: Mabelu aimba dziko lonse amveka\nAdza ndi uthenga wabwino kwa tonsefe."
+        }
+    },
+    {
+        "id": 91,
+        "title": "Yesu ali kuitana iwe",
+        "otherDetails": "290NEH\nJesus is calling the lost ones",
+        "lyrics": {
+            "verses": [
+                "1. Yesu ali kuitana iwe, ''osochera, osochera''\nTuluka mumdima wa uchimo\nAkupatsa chifundo.",
+                "2. Yesu apulumutsa otopa, ''apumule, apumule,''\nBwera nawo akatundu ako, Akupatsa chisomo.",
+                "3. Yesu ali kudikira iwe, ''ochimwa'we, ochimwe'we''\nWatembenuka usachedwetu, bweratu ochimwa'we.",
+                "4. Yesu akuyembekezera leroli. ''mvera iye, mvera iye''\nUkakhulupiliratu iye, adzakhala okondwa."
+            ],
+            "chorus": "Chorus: Aitana, aitana, Yesu\nAli kuitana iwe tsopano."
+        }
+    },
+    {
+        "id": 92,
+        "title": "Ndidziwa zamtsinje onyezimira",
+        "otherDetails": "288NEH\nI know of a fountain so sparkling",
+        "lyrics": {
+            "verses": [
+                "1. Ndidziwa zamtsinje onyezimira omwe umathetsa ludzu\nMwa Atumwi ache a Yesu Khristu mudzapeza kasupeyu.",
+                "2. Imwa Mzimu odzazidwa ndi ludzu akuitana mchikondi\nOmwe ayeretsedwa mkasupeyu apata moyo osatha.",
+                "3. Idzanitu nonse anthu ochimwa Yesu akulilirani\nMuomboli akukondani nonsenu koditu simudzasitha."
+            ],
+            "chorus": "Ten & Alt : Kukasupe wache odzalatu ndichisomo.\nSap: Dzani\nBass: Dzani dzani kukasupe"
+        }
+    },
+    {
+        "id": 93,
+        "title": "Ndidziwa mtsinje wa ulemelero",
+        "otherDetails": "289NEH\nI know of a river whose glorious stream",
+        "lyrics": {
+            "verses": [
+                "1. Ndidziwa m'tsinje wa ulemelero\nMadzi ache a m'tendere\nMtsinje wa pamwamba onyezimira\nNdani awudziwa lero?",
+                "2. Monse madzi amoyowo adutsa\nMukhala chisangalalo\nYense wakumwa madziwa apeza\nMtendere mumtima wache.",
+                "3. M'tsinje ngwakuya madzi ngoyera\nUpeputsa mtima wako\nUchiritsa odwala ndi amantha\nNgakhale anthu ankhanza.",
+                "4. Yesu ndiyetu Madzi amoyowa\nIye samasintha konse\nMwazi wache oyeretsedwawo\nUnathikira ochimwa.",
+                "5. Yense waludzu adze ndikumwako\nMzimu wache uitana\nOsamba ndi kumwa madziwa\nAdzakhala mwa Mlungu kwamyaya."
+            ],
+            "chorus": "Chorus: Dzani kum'tsinjewu lero\nKuti muwomboledwetu\nNdinso mazi ache ngauleledi\nAtsitsimutsa mitima."
+        }
+    },
+    {
+        "id": 94,
+        "title": "Zinthu zonse ndiri nazo",
+        "otherDetails": "177 NAH\nAll I have is Thine, Lord Jesus",
+        "lyrics": {
+            "verses": [
+                "1. Zinthu zonse ndiri nazo ndizanu Mbuye wanga\nNdigwada pamaso panu ndigonjera kwa inu\nNdiyang'anire kwa inu. Inu nokha mtsogoze\n(Ndimau anga Ambuye ndidzakukwezanitu*2).",
+                "2. Zokoma zamdziko lino ziribe phindu konse\nNgakhale moyo ukome ndimangidwe mchisomo\nPamtanda ndiona Khristu akhetsa mwazi wache\n(Ndigwadira Mlungu wanga pondiombola ine *2).",
+                "3. Ndifuna inutu Mbuye ndipembedza inutu\nMndikhumbatire mchifundo ndimve chisomo chanu\nNchodabwitsa kwaochimwa kupuma mwa Yesuyo\n(Ndidzaima monga iye ogonjetsa dzikoli *2)"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 95,
+        "title": "Bwera kwa Atate wako",
+        "otherDetails": "184 NAH\nCome to the Father's Dwelling",
+        "lyrics": {
+            "verses": [
+                "1. Bwera kwa Atate wako, iwe wosochera\nMpulumutsi wako, akuitana iwe.",
+                "2. Dziko la uchimo, lilibe mtendere\nBweratu mwanawe, kwa Yesu udzapume.",
+                "3. Ngakhale walephera, mumachimo ako\nBwera ndi akatundu, ako adzatula.",
+                "4. Bwera kwa wolema, iwe\nBwera kwa Atate wako, mabvuto adzatha."
+            ],
+            "chorus": "Chorus: Bwera ! bwera ! siya zochimwazo\nBwera ! bwera ! imva kuitana."
+        }
+    },
+    {
+        "id": 96,
+        "title": "Bwera kwa Mpulumutsiyo",
+        "otherDetails": "276NEH\nCome to the Saviour",
+        "lyrics": {
+            "verses": [
+                "1. Bwera kwa Mpulumutsiyo\nImvani mau ache lero\nAli pafupi kudalitsa, bwera aitana.",
+                "2. Mvani mau ache ananu\nM'patseni mtima wanu lero\nAli wosankhidwa m'mwambamo, dzikonzekereni.",
+                "3. Amvere mapemphero anu\nAli ndi inu pafupitu\nAdzakupatsani chisomo, wochimwa bweratu."
+            ],
+            "chorus": "Chorus: Kukumana mokondweradi\nKu uchimo tamasulidwa\nTidzalowatu mu kenani\nWosankhidwa bwera"
+        }
+    },
+    {
+        "id": 97,
+        "title": "Chikondi ndichotu",
+        "otherDetails": "585NEH\n193 OLD HYMNAL FRONT\nBlest be the Tie that Binds",
+        "lyrics": {
+            "verses": [
+                "1. Chikondi ndichotu, chiyanjanitsa'fe\nMwa Khristu tidza-imbabe, kufika m'mwambamo.",
+                "2. Tipempha kwa Atate, wosunga tonsefe\nChikhulupiliro chathu, nchimodzi mwa Atumwi.",
+                "3. Tithandizanadi, m'zovuta, m'zolema\nMisozi yathu ikugwa, mukuthandizana.",
+                "4. M'mene tilekana, chisomokwa ife\nMu mzimu tiri pamodzi, tidzaonananso."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 98,
+        "title": "Imba kawiri kwa ine",
+        "otherDetails": "310NEH\nWonderful words of Life",
+        "lyrics": {
+            "verses": [
+                "1. Imba kawiri kwa ine, mau amoyowo\nNdione ubwino wache, mau a moyowo\nMau a umoyo andiphunzitsadi\nAbwinowo, odabwitsa, mau amoyowo\nAbwinowo, odabwitsa, mau amoyowo.",
+                "2. Khristu apatsa kwa onse, mau amoyowo\nMvera mau a chikondi, mau amoyowo\nAtipatsa ife cha ulere chache\nAbwinowo, odabwitsa, mau amoyowo\nAbwinowo, odabwitsa, mau amoyowo.",
+                "3. Mu uthenga aitana, mau amoyowo\nAkhululukira onse, mau amoyowo\nYesu Mpulumutsi, mtiyeretse ife\nAbwinowo, odabwitsa, mau amoyowo\nAbwinowo, odabwitsa, mau amoyowo."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 99,
+        "title": "Yemwe akumva afuuletu",
+        "otherDetails": "308NEH\nWhosoever Will",
+        "lyrics": {
+            "verses": [
+                "1. Yemwe akumva afuuletu, kumadzi a moyo 'dzani nonsenu\nMwa Khristu ludzu lidzatha phe, yemwe afuna, adze.",
+                "2. Yemwe akumva amve mauwo, wodala yemwe asunga mauwo\nChipulumutso ndi chisomo chache, yemwe afuna, adze.",
+                "3. Yemwe akumva asachedwetu, tembenukani mtima nthawi ino\nMau a Yesu alitu ndi moyo, yemwe afuna, adze."
+            ],
+            "chorus": "Chorus: Akumva ludzu, akumva njala\nYesu mwa Atumwi ati idzani\nKhomo lachisomo latsegukadi\nYemwe afuna adze."
+        }
+    },
+    {
+        "id": 100,
+        "title": "Pa mapazi ache a Yesu",
+        "otherDetails": "74NEH\nAt the Feet of Jesus",
+        "lyrics": {
+            "verses": [
+                "1. Pa mapazi ache a Yesu Mbuye\nTimva mau ache tilimbitsidwa\nAtipatsa mphamvuzo ndi maraya oyera.",
+                "2. Mu mau a Yesu ndiyeretsedwa\nNsinga za satana zimasulidwa\nNdipatsidwa chisomo mtima wanga ukondwa.",
+                "3. Nthawizo zabwino zikhala ndine\nPamene Mulungu andidalitsa\nAndichiritsa ine ndikhala woyera mbee!!."
+            ],
+            "chorus": "Chorus: Pa mapazi ache a Yesu Mbuye\nPali malo anga ndi mau ache."
+        }
+    },
+    {
+        "id": 101,
+        "title": "Ndiyamika chikondi chache",
+        "otherDetails": "376NEH\nI Praise God's Love",
+        "lyrics": {
+            "verses": [
+                "1. Ndiyamika chikondi chache\nChoonetesedwa ndi Khristu\nNdigonjera ku mau ache\nNdinakhululukidwatu\nNdichotsa maganizo anga\nMwachikondi chache chosatha",
+                "2. Muli wachifundo kwa ine\nChikondi ndi mtima wanga\nNdiwerama pamaso panu\nNdi zonsenzo ndiri nazo\nChikondi cha Mulungu wanga\nNdasankhidwa kukhala wache",
+                "3. Mtima wanga ndikupatsani\nMomboli wanga wabwino\nMuli wachifundo cha moyo\nMwa chipulumutso changa\nMwa ndiombola ku uchimo\nNdikupatsani mtima wanga",
+                "4. Dzina lache la Yesu Mbuye\nLilembedwe mu mtimamu\nM'chikondicho cha Yesu Mbuye\nAtate awonekera\nMuchikhalidwe changa chonse\nYesu Mbuye awonekera",
+                "5. M'dzina lache la Yesu Mbuye\nAtate awonekera\nKasupe wa mu mtenderewo\nAyendabe lero lino\nOchimwawo akanadziwa\nAkanafuna Kasupeyu"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 102,
+        "title": "Ndidze pafupipa",
+        "otherDetails": "234NAH\nNearer, my God, to Thee",
+        "lyrics": {
+            "verses": [
+                "1. Ndidze pafupi, Mlungu wanga !\nNgakhale pa mtanda, mundikweza\nKoma ndi-imbabe, Mbuye m'ndikhalitse\nMbuye m'ndikhalitse, m'fupi ndi inu.",
+                "2. Ngakhale ku thengo, ndasochera\nMu mdima ndigona e-pa mwala\nKoma m'kulotako, ndiyandikizanso\nNdiyandikizanso, m'fupi ndinu.",
+                "3. Pajapo ndipenya, pokwerapo\nAngelo atsika, kumwambako\nNdiwo akodola, kuti ndikabwere\nKuti ndi kabwere, m'fupi ndinu.",
+                "4. Tsono poukanso, wokondwatu\nNdipeza pomwepo, pali Mulungu\nNdipo masautso, andisendezanso\nAndisendezanso, m'fupi ndinu.",
+                "5. Pena pakufadi, mkwera m'mwamba\nDzuwa ndi nyenyezi, zitsatira\nPomwe ndiimbanso, ndidza pafupipa\nNdidza pafupipa, Mulungu wanga."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 103,
+        "title": "Onani ndikweza Manja",
+        "otherDetails": "260NEH\nSee, I spread my arms in yearning",
+        "lyrics": {
+            "verses": [
+                "1. Onani ndikweza manja, maso anga kwa inu\nModzichepetsa ndipempha dzani mkhale mwa ine.",
+                "2. Mundipatsetu chakudya kwezani chuma changa\nUlendowu ngolemetsa ndipatseni mpumulo.",
+                "3. Ndiribe chokupatsani mu umphawi, m'matenda\nNdidza kuphwando lanulo, mmphamvu yanu ndikhuta.",
+                "4. Ndidziwadi muli nane, ndiri wanu kwatunthu\nMau anu saadzasintha ndiri wanu kwamyaya.",
+                "5. Mndipatse chisomo chanu ndimachiritso anu\nMndidzadze ndi chuma chanu m'walitse mtima wanga."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 104,
+        "title": "Ndiweramitsa nkhope",
+        "otherDetails": "236NEH\nBefore My Hearts King Bowing",
+        "lyrics": {
+            "verses": [
+                "1. Ndiweramitsa nkhope, ndipereka mphatso,\nNgakhale ndi zochepa, Mfumu ikondwera\nChifuniro changacho, m'njira ya imfayi\nKwaniritsani Mbuye, chifuniro chanu.",
+                "2. Sindidzatopa konse, ndinso kukhumudwa\nNdi mtima okondwa, n'dzadalira Iye\nAnataya moyowo, anakhetsa mwazi\nAdzandipatsa ine, zabwino zache",
+                "3. Ngodzala n'chifundo, ndinso ndi chisomo\nUngachimwe motani, adzakulandira\nMchikondi cha muyaya, adzandikonza'ne\nNdidzamtsata mmapazi, kufika kumudzi",
+                "4. M'ndiyang'anire'ne mwana olefuka\nNdiyang'ana kwanu, kufunatu mphavu\nNdiika manja anga mdzanja lanu Mbuye\nNdidziwa mnditengera kudziko la tate"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 105,
+        "title": "Nthawitu ya kupemphera",
+        "otherDetails": "261NEH\nSweet hour of prayer",
+        "lyrics": {
+            "verses": [
+                "1. Nthawitu ya kupemphera, indichotsa ku dzikoli\nNdidza ku mpando wa 'tate, ndiulula zanga zonse\nMunthawi za mabvutowo, moyo wanga upumula\nNdichotsedwa ku misampha, panthawi ya kupemphera.",
+                "2. Nthawitu ya kupemphera, ndiika pemphero langa\nIye wokhulupirika, adalitsa moyo wanga\nNdionetu nkhope yache, khulupira mau ache\nNditula zonse kwa iye, panthawi ya kupemphera.",
+                "3. Nthawitu ya kupemphera, ndikhale mchifundo chanu\nPaphiri lalitalilo, ndione nyumba yangayo\nNdidzasiya thupi ili, kuthamangira korona\nNdidzatsazika nthawiyi, nthawitu ya kupemphera."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 106,
+        "title": "Tengani moyo wanga",
+        "otherDetails": "106NEH\nTake my life",
+        "lyrics": {
+            "verses": [
+                "1. Tengani moyo wanga ukhale wanu Mbuye\nNthawi masiku anga zitamanda kwa myaya\nMaso anga awone ubwino wanu Mbuye\nKhutu langa limveka mau anu okoma",
+                "2. Tengani manja anga ayende monga mfuna\nPhazi langa liyende, mwachangu mokongola\nMau anga aimbe kwa mfumu yanga myaya\nN'tsira chikondi changa pamapazi anuwo",
+                "3. Tengani chuma changa, sin'dzabisako kanthu\nNzeru zanga zigwire ntchito monganu mfuna\nMtenge zokhumba zanga, zikhale zanu Mbuye\nTengani mtima wanga ukhale mpando wanu"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 107,
+        "title": "Kwa m'yaya ndi Mbuye",
+        "otherDetails": "178NEH\nFor ever with the Lord",
+        "lyrics": {
+            "verses": [
+                "1. Kwa myaya ndi Mbuye, chifuniro changa\nMau ache ndi nyenyezi, anditsogolera\nM'dziko ndabvutika, ndikhalatu mlendo\nNdiyendetsa hema wanga Mbuye ali mfupi\nMfupinu mfupi 'nu, Mbuye ali mfupi.",
+                "2. Ndiyang'ana m'mwamba, mudzi ukodola\nPotsatira 'tsogoleri, ndiona mudziwo\nNdifuna kupuma, mumudzi wa mmwamba\nKugawana chikondicho, mdziko lodalalo\nChikondi chikondi, mdziko lodalo,",
+                "3. Ngakhaletu maso anga saonatu\nMonga nkhunda m'chombo chija, ndithawira kwache\nMitambo ichoka, namondwe apita\nKubweretsa mtenderewo, ndi chitonthozocho,\nMtendere, mtendere, unditonthozadi.",
+                "4. Pochoka m'sautso, moyo umasuka\nNdichokeratu ku imfa, ndikhala okondwa\nIne ndidzaona, kukongola kwanu\nNdidzakhalatu ndi Iye, kwa myaya ndi Mbuye\nMokondwa, mokondwa, kwa m'yaya ndi Mbuye."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 108,
+        "title": "Kwa Yesu kuli Kasupe",
+        "otherDetails": "348NEH\nFrom Jesus' Love the Fountain Pure",
+        "lyrics": {
+            "verses": [
+                "1. Kwa Yesu kuli Kasupe, kuchoka madzi abwino\nAmoyo ndi wochiritsa, athetsa ludzu langa.",
+                "2. Pomva kuyenda kwa madzi, mitima isenderatu\nKuti imveretu mau, ochotsa zowawa zonse",
+                "3. Kasupeyo wa chisomo, anditonthoza mu mtima\nNdatsukidwa ku zoipa, kukhala wa kumwambako."
+            ],
+            "chorus": "Chorus: Mtsinje wache wa chisomo, tipulumukemo\nMtsinje wache wa chisomo, ndaomboledwatu."
+        }
+    },
+    {
+        "id": 109,
+        "title": "Mtima wanga yang'ana",
+        "otherDetails": "408NEH\nForth, Forth my Heart to Heaven",
+        "lyrics": {
+            "verses": [
+                "1. Mtima wanga yang'ana, yang'ana kumwamba\nMulibe kupumula, mu dziko linotu\nKomwe mwana wa nkhosa wakonza malo athu\nUliko m'pumulo, yang'ana kumwamba.",
+                "2. Ngati ndiwe kapolo, dzimasule wekha\nKhristu anagonjetsa zopweteka zako\nPenya mbendera yache, apulumutsa onse\nUko udzapuma, yang'ana kumwamba.",
+                "3. Ndinutu odabwitsa, Mwana wa nkhosa'nu\nNdasowadi mapiko, ndikana-uluka\nKukakondwera naye, ndi osankhidwa ache\nNdi chikondi chache, yang'ana kumwamba.",
+                "4. Chifuniro chanucho, chikhale cha ine\nNdichite chifuniro chimene mufuna\nNdizayembekezadi, kundi-itana kwanu\nDza-pumula kuno, yang'ana kumwamba."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 110,
+        "title": "Ndilimbikira chifukwa chachiombolo",
+        "otherDetails": "153NEH\nStriving Onwards",
+        "lyrics": {
+            "verses": [
+                "1. Ndilimbikira chifukwa chachiombolo\nNdidzayesetsa kufikira ndi tapeza,\nNdidzataya zopinga chifukwa chalonjezo\nWokhalira mphotoyo adzalandira.",
+                "2. Kumpandowo wa Atate ndifulumira\nKuzengereza kumvera kumaononga\nWotopa mkulimbika atayanso korona\nZamudziko ndizachabe sindizifuna.",
+                "3. Yesu anditsogolera, kunka kumudzi\nNdikafoka Mzimu wanga mu'limbikitse\nMunthawi ya mayeso ndipewa mabvutowo\nMundilimbikitse kuti ndi dzapambane.",
+                "4. Mumabvuto mundichotse ndiribe mphamvu\nMkufoka, kwa inu m'mwamba ndipeza mphamvu.\nMau anu ndi moyo andimasula ine\nMndilowetse mu'lemelero wosalema."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 111,
+        "title": "Mulungu ali ndi Ine",
+        "otherDetails": "188NEH\nIf God Himself is for Me",
+        "lyrics": {
+            "verses": [
+                "1. Mulungu ali ndi ine, sindiopa kathu\nNdikapemphatu iye, adani athawa\nKhristu bwenzi langalo, chithandizo changa \nOnsewo andibvuta, sadzaonekanso.",
+                "2. Ndamanga pa maziko, mwazi wa Yesuyo\nChipulumutso changa, ndiye wo-onadi\nKopanda Mbuye wathu, zonse ziri chabe\nMphatso zonse za Yesu, wondikonda ine",
+                "3. Mzimu wache ukhala, mu mtima wo-ona\nPosochera mtimawo, utonthozedwadi\nAdalitsa ntchitozo, ine ndi-itana\n'Atate' Osalema, woweruza m'mwamba",
+                "4. Mzimu wache unena, mau a mphamvudi\nWofunitsa m'mpumu;o, mwa Mlungu apeza\nMbuye wathu akonza, gawo langa-langa\nPofoka moyo wanga, m'mwamba muli mwanga"
+            ]
+        }
+    },
+    {
+        "id": 112,
+        "title": "Ndi ndodo ya golide",
+        "otherDetails": "229NEH\nWith a golden staff in hand",
+        "lyrics": {
+            "verses": [
+                "1. Ndi ndodo ya golide, ndiyenda mu dzikoli\nYochokera kumwamba, kunditengera konko\nNdodo mchikhulupiriro, indisunge m'chipiliro\nNgakhale imfa idze, ndikhala ndi ndodoyi",
+                "2. Mungelo wa kumwamba, monga mwana wa M'lungu\nM'chimwemwe aphunzitsa, chifuniro cha Mbuye\nUsachoke ku chikondi, chochokeratu kumwamba\nAbale, tidzakhala, ndi M'lungu kwa muyaya",
+                "3. Nyenyezi kumwambako, iwala modabwitsa\nKuwala kokodola, mtima wanga ukondwa.\nIndiyembekezeretsa, kumwambako kutseguka\nItengereko onse, odalira mbuyeyo"
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 113,
+        "title": "Ndifuna Yesuyo Ambuyeyo",
+        "otherDetails": "245NEH\nI need the every hour",
+        "lyrics": {
+            "verses": [
+                "1. Ndifunanu yesu, Ambuyeyo,\nMuli mtenderewo, m'mawu anu.",
+                "2. Ndifunanu Yesu, m'mabvutomo\nMayesi achoka mfupi ndinu.",
+                "3. Ndifunanu Yesu, mokondwadi\nMukhale ndi ine, mu moyowu.",
+                "4. Ndifunanu Yesu, ndiphunzire\nKukwaniritsadi lonjezano.",
+                "5. Ndifunanu Yesu, woyeratu\nNdikhale tu wanu odalanu."
+            ],
+            "chorus": "Chorus: Ndifuna inu Yesu, kunthawi zosatha \nNdidalitseni ine, ndidza kwanu"
+        }
+    },
+    {
+        "id": 114,
+        "title": "Moyo wanga khala mwa Mulungu",
+        "otherDetails": "223NEH\nWait my soul and tarry",
+        "lyrics": {
+            "verses": [
+                "1. Moyo wanga khala mwa Mulungu\nAdzakuthandiza zolema zako\nUopa, u-bvutika bwanji\nM'mawa wayandika, nthawi zisintha\nMuchimphepocho mu kudwala\nMbuye adalitsa moyo wanga",
+                "2. Moyo wanga khala mwa Mulungu\nAdzakuthandiza zolema zako\nPolephera zinthu zonsezo\nAdzakuyendetsa mchigwa cha mdima\nMbuye wanyaya mndiyendetse\nKhristu mundipulumutse ine",
+                "3. Moyo wanga khala mwa Mulungu\nAdzakuthandiza zochimwa zako\nAdzakumasula iwetu\nPotha kwa moyowu\nMukupumula mu mabvuto mu njirayo\nTsata mokondwa Mlungu wako"
+            ],
+            "chorus": ""
         }
     }
 ]

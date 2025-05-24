@@ -28,6 +28,7 @@ class HymnColInkwellButton extends StatelessWidget {
       context,
     ).colorScheme.onPrimary.withValues(alpha: 0.6);
     return InkWell(
+      key: ValueKey('hymnColInkwell_$index'),
       onTap: () async {
         ///assing the collection to the provider
         ///load the bookmarked hymns into the bookmarkedHymns list
@@ -93,6 +94,7 @@ class HymnColInkwellButton extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Checkbox(
+                  key: ValueKey('collectionCheckbox_$index'),
                   semanticLabel: 'Select collection',
                   visualDensity: VisualDensity.compact,
                   side: BorderSide(color: color, width: 2),
@@ -107,6 +109,7 @@ class HymnColInkwellButton extends StatelessWidget {
                   },
                 ),
                 IconButton(
+                  key: ValueKey('collectionDeleteButton_$index'),
                   visualDensity: VisualDensity.compact,
                   padding: const EdgeInsets.all(0),
                   tooltip: 'Delete Collection',

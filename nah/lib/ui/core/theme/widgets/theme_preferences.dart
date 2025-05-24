@@ -37,6 +37,7 @@ class ThemePreferences extends StatelessWidget {
             return Consumer<ThemeProvider>(
               builder:
                   (context, themeProvider, child) => ChoiceChip(
+                    key: ValueKey('themeChoiceChip_$index'),
                     backgroundColor: getThemeColor(themeProvider.themeMode),
                     label: Text(
                       index == 0
@@ -77,6 +78,7 @@ class ThemePreferences extends StatelessWidget {
           builder: (context, themeProvider, child) {
             final fontSize = themeProvider.fontSize;
             return Slider(
+              key: ValueKey('fontSizeSlider'),
               inactiveColor: getThemeColor(themeProvider.themeMode),
               value: fontSize,
               onChanged: (newValue) => themeProvider.changeFontSize(newValue),

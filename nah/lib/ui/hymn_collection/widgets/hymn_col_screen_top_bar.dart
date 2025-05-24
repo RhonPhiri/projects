@@ -24,6 +24,7 @@ class HymnColScreenTopBar extends StatelessWidget {
       child: Row(
         children: [
           Checkbox(
+            key: ValueKey('selectAllCollectionsCheckbox'),
             side: BorderSide(color: color, width: 2),
             semanticLabel: 'Select all',
 
@@ -37,6 +38,7 @@ class HymnColScreenTopBar extends StatelessWidget {
             },
           ),
           IconButton(
+            key: ValueKey('deleteSelectedCollectionsButton'),
             onPressed: () {
               //Delete the bookamrks first before deleting the collections
               context.read<BookmarkedHymnsProvider>().deleteBookmarks(

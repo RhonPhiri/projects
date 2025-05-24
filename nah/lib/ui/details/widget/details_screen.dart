@@ -24,7 +24,7 @@ class DetailsScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             /// App bar for the details screen.
-            SliverAppBar(),
+            SliverAppBar(key: ValueKey("DetailsScreenSliverAppBar")),
 
             /// Main content: hymn details.
             (isBookmarked && bookamrkProvider.isLoading)

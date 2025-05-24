@@ -41,6 +41,7 @@ class HymnalScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final hymnal = hymnalProvider.hymnals[index];
                   return ListTile(
+                    key: ValueKey('hymnalListTile_$index'),
                     leading: Icon(
                       hymnalProvider.selectedHymnal == index
                           ? Icons.book_rounded

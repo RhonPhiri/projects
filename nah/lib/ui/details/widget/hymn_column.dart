@@ -13,8 +13,8 @@ class HymnColumn extends StatelessWidget {
     String chorus,
     double fontSize,
   ) {
-    if (chorus.isNotEmpty) {
-      return [
+    return [
+      if (chorus.isNotEmpty) ...[
         for (var i = 0; i < verses.length; i++) ...[
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
@@ -39,9 +39,7 @@ class HymnColumn extends StatelessWidget {
               ),
             ),
         ],
-      ];
-    } else {
-      return [
+      ] else
         for (String verse in verses)
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
@@ -54,8 +52,7 @@ class HymnColumn extends StatelessWidget {
               ),
             ),
           ),
-      ];
-    }
+    ];
   }
 
   @override
@@ -70,17 +67,25 @@ class HymnColumn extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ...List.generate(2, (int index) {
-          return Text(
-            index == 0 ? "${hymn.id}. ${hymn.title}" : hymn.otherDetails,
+        Text(
+          "${hymn.id}. ${hymn.title}",
+          style: TextStyle(
+            height: 1.5,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
 
-            style: TextStyle(
-              height: 1.5,
-              fontSize: index == 0 ? 24 : 16,
-              fontWeight: index == 0 ? FontWeight.bold : FontWeight.w300,
-            ),
-          );
-        }),
+        Text(
+          hymn.otherDetails,
+
+          style: TextStyle(
+            height: 1.5,
+            fontSize: 18,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+
         const Divider(),
         const SizedBox(height: 16),
         ..._buildLyrics(verses, chorus, fontSize),

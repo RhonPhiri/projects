@@ -33,7 +33,7 @@ class BookmarkedHymnsProvider with ChangeNotifier {
   List<Hymn> get bookmarkedHymns => List.unmodifiable(_bookmarkedHymns);
 
   ///field to store the list of bookmarkes
-  List<Bookmark> _bookmarks = [];
+  final List<Bookmark> _bookmarks = [];
   List<Bookmark> get bookmarks => List.unmodifiable(_bookmarks);
 
   ///field to store the current selected collection

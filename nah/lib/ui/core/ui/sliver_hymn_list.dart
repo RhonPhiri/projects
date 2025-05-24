@@ -16,6 +16,7 @@ class SliverHymnList extends StatelessWidget {
         itemBuilder: (context, index) {
           final hymn = hymns[index];
           return OpenContainerTransition(
+            key: ValueKey('hymnOpenContainer_${hymn.id}'),
             closedBuilderWidget: Padding(
               padding: const EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
               child: Text(
