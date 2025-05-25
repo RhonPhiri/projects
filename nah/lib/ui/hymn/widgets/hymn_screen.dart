@@ -44,75 +44,71 @@ class _HymnScreenState extends State<HymnScreen> {
 
     /// Get the hymn provider.
     final hymnProvider = context.watch<HymnProvider>();
-    return SafeArea(
-      child: Scaffold(
-        drawer: NahDrawer(),
-        body: CustomScrollView(
-          slivers: [
-            MySliverAppBar(
-              // Get the title from the provider.
-              title: hymnalProvider.getHymnTitle(),
-              leading: Builder(
-                builder: (context) {
-                  // Menu icon button.
-                  return IconButton(
-                    onPressed: () => handleDrawerButton(context),
-                    icon: Icon(Icons.menu),
-                  );
-                },
-              ),
-              actions: List.generate(2, (int index) {
-                // Search icon as the first button in the actions list.
-                final searchIconPressed = index == 0;
+    return Scaffold(
+      drawer: NahDrawer(),
+      body: CustomScrollView(
+        slivers: [
+          MySliverAppBar(
+            // Get the title from the provider.
+            title: hymnalProvider.getHymnTitle(),
+            leading: Builder(
+              builder: (context) {
+                // Menu icon button.
                 return IconButton(
-                  onPressed: () async {
-                    // If it's the searchicon pressed, then show the search, else, navigate to hymnal screen.
-                    searchIconPressed
-                        ? showSearch(
-                          context: context,
-                          delegate: SearchHymnDelegate(searchHymnId: false),
-                        )
-                        : Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => HymnalScreen(),
-                          ),
-                        );
-                  },
-                  icon: Icon(searchIconPressed ? Icons.search : Icons.book),
+                  onPressed: () => handleDrawerButton(context),
+                  icon: Icon(Icons.menu),
                 );
-              }),
+              },
             ),
-            // Since all is dependent on the hymnal provider, show the progress indicator if hymnals or hymns are loading.
-            hymnalProvider.isLoading || hymnProvider.isLoading
-                ? SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: Center(
-                    key: ValueKey('hymnScreenProgressIndicator'),
-                    child: CircularProgressIndicator(),
-                  ),
-                )
-                : hymnalProvider.errorMessage != null &&
-                    hymnalProvider.errorMessage!.isNotEmpty
-                ? SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: ErroMessageWithRetry(key: ValueKey('hymnError')),
-                )
-                : SliverHymnList(
-                  key: ValueKey("sliverHymnList"),
-                  hymns: hymnProvider.hymnList,
+            actions: List.generate(2, (int index) {
+              // Search icon as the first button in the actions list.
+              final searchIconPressed = index == 0;
+              return IconButton(
+                onPressed: () async {
+                  // If it's the searchicon pressed, then show the search, else, navigate to hymnal screen.
+                  searchIconPressed
+                      ? showSearch(
+                        context: context,
+                        delegate: SearchHymnDelegate(searchHymnId: false),
+                      )
+                      : Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => HymnalScreen()),
+                      );
+                },
+                icon: Icon(searchIconPressed ? Icons.search : Icons.book),
+              );
+            }),
+          ),
+          // Since all is dependent on the hymnal provider, show the progress indicator if hymnals or hymns are loading.
+          hymnalProvider.isLoading || hymnProvider.isLoading
+              ? SliverFillRemaining(
+                hasScrollBody: false,
+                child: Center(
+                  key: ValueKey('hymnScreenProgressIndicator'),
+                  child: CircularProgressIndicator(),
                 ),
-          ],
-        ),
-        // Search hymn number through the FAB.
-        floatingActionButton: FloatingActionButton(
-          key: ValueKey("searchHymnId"),
-          onPressed:
-              () => showSearch(
-                context: context,
-                delegate: SearchHymnDelegate(searchHymnId: true),
+              )
+              : hymnalProvider.errorMessage != null &&
+                  hymnalProvider.errorMessage!.isNotEmpty
+              ? SliverFillRemaining(
+                hasScrollBody: false,
+                child: ErroMessageWithRetry(key: ValueKey('hymnError')),
+              )
+              : SliverHymnList(
+                key: ValueKey("sliverHymnList"),
+                hymns: hymnProvider.hymnList,
               ),
-          child: Icon(Icons.dialpad),
-        ),
+        ],
+      ),
+      // Search hymn number through the FAB.
+      floatingActionButton: FloatingActionButton(
+        key: ValueKey("searchHymnId"),
+        onPressed:
+            () => showSearch(
+              context: context,
+              delegate: SearchHymnDelegate(searchHymnId: true),
+            ),
+        child: Icon(Icons.dialpad),
       ),
     );
   }

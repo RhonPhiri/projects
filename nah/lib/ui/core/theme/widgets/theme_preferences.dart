@@ -83,8 +83,8 @@ class ThemePreferences extends StatelessWidget {
               value: fontSize,
               onChanged: (newValue) => themeProvider.changeFontSize(newValue),
               min: 12.0,
-              max: 36.0,
-              divisions: 6,
+              max: 32.0,
+              divisions: 5,
               label: '$fontSize',
               padding: const EdgeInsets.only(top: 16, bottom: 16, right: 24),
             );

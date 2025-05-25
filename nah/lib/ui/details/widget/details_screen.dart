@@ -20,25 +20,23 @@ class DetailsScreen extends StatelessWidget {
     ///Variable to access the bookmarked hymn provider
     final bookamrkProvider = context.watch<BookmarkedHymnsProvider>();
     return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            /// App bar for the details screen.
-            SliverAppBar(key: ValueKey("DetailsScreenSliverAppBar")),
+      body: CustomScrollView(
+        slivers: [
+          /// App bar for the details screen.
+          SliverAppBar(key: ValueKey("DetailsScreenSliverAppBar")),
 
-            /// Main content: hymn details.
-            (isBookmarked && bookamrkProvider.isLoading)
-                ? SliverFillRemaining(
-                  child: Center(child: CircularProgressIndicator()),
-                )
-                : SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: HymnColumn(hymn: hymn),
-                  ),
+          /// Main content: hymn details.
+          (isBookmarked && bookamrkProvider.isLoading)
+              ? SliverFillRemaining(
+                child: Center(child: CircularProgressIndicator()),
+              )
+              : SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: HymnColumn(hymn: hymn),
                 ),
-          ],
-        ),
+              ),
+        ],
       ),
 
       /// Floating action button menu for actions related to the hymn.

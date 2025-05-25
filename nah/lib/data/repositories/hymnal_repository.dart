@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:nah/data/db/database_helper.dart';
 import 'package:nah/data/models/hymnal_model.dart';
 import 'package:nah/data/services/hymnal_service.dart';
@@ -28,8 +29,17 @@ class HymnalRepository {
   /// - `Failure<String>` if there is an error during the operation.
   Future<Result<List<Hymnal>>> getHymnals() async {
     try {
+      //load cached hymnals from database
+      final cachedHymnals = await databaseHelper.getHymnals();
+
+      if (cachedHymnals.isNotEmpty) {
+        return Success(cachedHymnals);
+      }
+      //if result is a failure, fall back on cached data
+      throw Exception((cachedHymnals as Failure).error);
+    } catch (e) {
       //fetch hymnals from the hymnal service
-      final result = await _hymnalService.fetchHymnalsWithRetry();
+      final result = await _hymnalService.fetchHymnals();
 
       if (result is StringSuccess) {
         //parse the jsonString & return a list of hymnals
@@ -43,17 +53,8 @@ class HymnalRepository {
 
         return Success(hymnals);
       }
-
-      //if result is a failure, fall back on cached data
-      throw Exception((result as Failure).error);
-    } catch (e) {
-      //load cached hymnals from database
-      final cachedHymnals = await databaseHelper.getHymnals();
-
-      if (cachedHymnals.isNotEmpty) {
-        return Success(cachedHymnals);
-      }
     }
+    debugPrint('Failed to fetch & load cached hymns');
     return Failure(Exception('Error fetching hymnals from the hymnal service'));
   }
 }

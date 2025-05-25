@@ -8,7 +8,7 @@ class ThemeProvider with ChangeNotifier {
     loadAppTheme();
   }
   //variable holding the font size
-  static const double _defaultFontSize = 16.0;
+  static const double _defaultFontSize = 20.0;
   double _fontsize = _defaultFontSize;
   double get fontSize => _fontsize;
 
