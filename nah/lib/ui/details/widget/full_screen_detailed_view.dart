@@ -20,6 +20,7 @@ class _FullScreenDetailedViewState extends State<FullScreenDetailedView> {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   }
 
   @override
@@ -29,6 +30,7 @@ class _FullScreenDetailedViewState extends State<FullScreenDetailedView> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     super.dispose();
   }
 
@@ -59,7 +61,9 @@ class _FullScreenDetailedViewState extends State<FullScreenDetailedView> {
     //variable to hold the chorus
     final chorus = widget.hymn.chorus;
     //Variable to hold the textTheme
-    final textStyle = Theme.of(context).textTheme.headlineMedium;
+    final textStyle = Theme.of(
+      context,
+    ).textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.bold);
     final centerText = TextAlign.center;
 
     //Building list of pages
@@ -75,16 +79,20 @@ class _FullScreenDetailedViewState extends State<FullScreenDetailedView> {
           Text(verse, style: textStyle, textAlign: centerText),
     ];
 
-    return SafeArea(
-      child: Scaffold(
-        body: PageView.builder(
-          itemCount: pages.length,
-          itemBuilder:
-              (context, index) => Container(
-                color: Theme.of(context).colorScheme.surface,
-                child: Center(child: pages[index]),
-              ),
-        ),
+    return Scaffold(
+      body: PageView.builder(
+        itemCount: pages.length,
+        itemBuilder:
+            (context, index) => Container(
+              color: Theme.of(context).colorScheme.surface,
+              child: Center(child: pages[index]),
+            ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: Icon(Icons.fullscreen_exit_rounded),
       ),
     );
   }

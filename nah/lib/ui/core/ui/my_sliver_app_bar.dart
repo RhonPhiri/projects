@@ -33,14 +33,6 @@ class MySliverAppBar extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                // Container(
-                //   height: 4,
-                //   width: (title.length / 2) * 10,
-                //   decoration: BoxDecoration(
-                //     color: Theme.of(context).colorScheme.primary,
-                //     borderRadius: BorderRadius.circular(8),
-                //   ),
-                // ),
               ],
             ),
           ),
