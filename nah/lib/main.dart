@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nah/data/db/database_helper.dart';
 import 'package:nah/data/repositories/bookmark_repository.dart';
 import 'package:nah/data/repositories/hymn_collection_repo.dart';
@@ -24,6 +25,10 @@ Future<void> main() async {
 
   final prefs = await SharedPreferences.getInstance();
 
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(
     MultiProvider(
       providers: [

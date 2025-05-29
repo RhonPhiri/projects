@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
+import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/details/widget/flow_menu/flow_menu.dart';
 import 'package:nah/ui/details/widget/hymn_column.dart';
 import 'package:provider/provider.dart';
@@ -19,14 +20,19 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ///Variable to access the bookmarked hymn provider
     final bookamrkProvider = context.watch<BookmarkedHymnsProvider>();
+    final bookmarkCondition = (isBookmarked && bookamrkProvider.isLoading);
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           /// App bar for the details screen.
-          SliverAppBar(key: ValueKey("DetailsScreenSliverAppBar")),
+          // SliverAppBar(key: ValueKey("DetailsScreenSliverAppBar")),
+          MySliverAppBar(
+            title: bookmarkCondition ? "" : "${hymn.id}. ${hymn.title}",
+          ),
 
           /// Main content: hymn details.
-          (isBookmarked && bookamrkProvider.isLoading)
+          bookmarkCondition
               ? SliverFillRemaining(
                 child: Center(child: CircularProgressIndicator()),
               )

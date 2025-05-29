@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nah/ui/core/ui/no_data.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
 import 'package:nah/ui/hymn/view_model/hymn_provider.dart';
 import 'package:provider/provider.dart';
@@ -110,15 +111,15 @@ class SearchHymnDelegate extends SearchDelegate {
         }).toList();
 
     return filteredHymns.isEmpty
-        ? const Center(
-          child: Text(
-            'No Hymns found',
-            style: TextStyle(
-              fontSize: 16,
-
-              ///TODO: add an asset depicting nothing
+        ? Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Text('No Hymns found', style: TextStyle(fontSize: 16)),
             ),
-          ),
+            SizedBox(height: 8),
+            NoData(gender: "female"),
+          ],
         )
         : CustomScrollView(
           slivers: [

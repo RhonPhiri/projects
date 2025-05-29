@@ -29,12 +29,13 @@ class HymnColumn extends StatelessWidget {
           ),
           if (i == 0)
             Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Text(
                 chorus,
                 style: TextStyle(
                   fontSize: fontSize + 1,
                   fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic,
                 ),
               ),
             ),
@@ -68,17 +69,7 @@ class HymnColumn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "${hymn.id}. ${hymn.title}",
-          style: TextStyle(
-            height: 1.5,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-
-        Text(
           hymn.otherDetails,
-
           style: TextStyle(
             height: 1.5,
             fontSize: 18,

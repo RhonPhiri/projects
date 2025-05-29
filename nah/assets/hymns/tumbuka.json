@@ -1,0 +1,88 @@
+[
+    {
+        "id": 1,
+        "title": "Wanthengwa wakulindizga",
+        "otherDetails": "424NEH\n6NAH\nThe Bride has Waited",
+        "lyrics": {
+            "verses": [
+                "1. Wanthengwa wakulindizga Fumu mukwiza kwinu \nMwana wachiuta zani mufiske khumbo linu \nKwiza kwinu ntchitumbiko palije kuluska ichi \nZani lubiro Fumu fiskani nyengo yinu.",
+                "2. Muli nase nyengo yose tikumuchindikani \nM'mazgu ghinu Fumu mtipe chivwano na nkhongono \nKuti timlindizganinge nakuwona chisko chinu \nZanu lubiro Fumu fiskani nyengo yinu,",
+                "3. Tibe maso nyengo yose nyali zithu zibale \nMutipeso na mafuta tiyime kulindizga \nTinozgekerenge ntchemo wanthengwa sono wafika \nZani lubiro Fumu fiskani nyengo yinu.",
+                "4. Manwekero ghithu ghose tikabepo pa nthengwa \nFumu Yesu labiskani tikumulindizgani \nM'chimwemwe tikulabiska kwa imwe na ku m'chemani \nZani lubiro Fumu fiskani nyengo yinu."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 2,
+        "title": "Mitima yithu",
+        "otherDetails": "33HC\nOur hearts sing with joy",
+        "lyrics": {
+            "verses": [
+                "1. Mitima yithu yiwonge Fumu yatitumbika tiyiwonge \nYiri na ise pavinthu vyose lusungu Iwake mwelulipo.",
+                "2. Muchindikike Chiuta withu tikuwonga uwemi winu \nMuthaski mtuba nkhongono zinu zikubusa kwa myira-yira."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 3,
+        "title": "M'nditore Fumu ndibe winu",
+        "otherDetails": "37HC\nTake my heart Lord",
+        "lyrics": {
+            "verses": [
+                "1. M'nditore Fumu ndibe winu, nkhumulombani, \nMundisuke Ku uheni nkhum'gomezgani. \nNdimwe Chiuta wane na Mphanji. \nKhumbo linu libusenge. \nKhumbo linu libusenge."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 4,
+        "title": "Tikwimba nachimwemwe",
+        "otherDetails": "47HC\nWe raise a joyful chorus",
+        "lyrics": {
+            "verses": [
+                "1. Tikwimba nachimwemwe sumu yakubonga \nTikwimba na kuonga vitumbiko vyake.",
+                "2. Mwimbire Khristu mthaski m'ndopa watithaska \nMwimbire Khristu Mthaski kwamuyirayira."
+            ],
+            "chorus": "Chorus: Marumbo kwa muthaski watipa kutemwa \nKuti m'nkhongono zake tikwere kuchanya \nKuti m'nkhongono zake tikwere Kuchanya"
+        }
+    },
+    {
+        "id": 5,
+        "title": "Dada mukandisola",
+        "otherDetails": "73HC\nTis Thee who chose me Father",
+        "lyrics": {
+            "verses": [
+                "1. Dada mukandisola ndibe mwana winu \nKuti nditebetenge apo kuli nyengo \nMu'chizi mwandisora kuti ndibe winu \nM'nkhongono ya mzimu ndimanyenge khumbo linu.",
+                "2. Nanga ndibe muheni mu'chizi nkhutowa \nMukutemwa kutuba mukundilongozga \nPakurwa na uheni imwe muli nane m'chivwano \nNdilondezge nkhafike kuchanya."
+            ],
+            "chorus": ""
+        }
+    },
+    {
+        "id": 6,
+        "title": "Zuba likwiza ilo ndachimwemwe",
+        "otherDetails": "208HC\nSoon comes the day",
+        "lyrics": {
+            "verses": [
+                "1. Zuba likwiza ilo ndachimwemwe \nPala tamkuwonana na wanthengwa",
+                "2. Chinthu chimoza icho nkhuchikhumba \nMundovwire kufika kuchikhomo."
+            ],
+            "chorus": "Chorus: Mwe zani Yesu mtitole, tikabe namwe kumuzi."
+        }
+    },
+    {
+        "id": 7,
+        "title": "Uko makuni ghaumoyo",
+        "otherDetails": "291HC\nWhere the trees of Life e'er blossom",
+        "lyrics": {
+            "verses": [
+                "1. Uko makuni ghaumoyo ghakupambika swii \nKuchanya, nkhumuzi wane ku gomi la Chiuta \nUko batuba bakwimba kwa Mwana wamberere.\nAlto: Mukukondwa ndamukhala mu chikaya chandanda. \nSop/Ten/Bass: Muchikaya chandanda.\nAll: Mukukondwa ndamukhala muchikaya chandanda.",
+                "2. Pano ndichali mulendo, m'malaya gha ulendo \nKula kumuzi kuchanya usokwano wam'mala \nKwamkuwa kunozga uli kukhala mwe na Fumu.\nAlto: M'chikaya cha uchindami, ndamsutuka mkwananga. \nSop/Ten/Bass: Muchikaya chandanda. \nAll: M'chikaya cha uchindami, ndamsutuka mkwananga.",
+                "3. Fumu Yesu mubomboli m'ndilongozge kumuzi \nNdibe chatonda nga ndimwe, m'ndipe uchizi winu! \nNkhunweka kumthubuskani Mwe pa chizumbi chinu.\nAlto: Namabumba ghakuchanya ndim'chindikani imwe.\nSop/Ten/Bass: Muchikaya chandanda. \nAll. Namabumba ghakuchanya ndim'chindikani imwe."
+            ],
+            "chorus": ""
+        }
+    }
+]

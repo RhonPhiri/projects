@@ -3,6 +3,7 @@ import 'package:nah/data/models/hymn_collection_model.dart';
 import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
 import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
+import 'package:nah/ui/core/ui/sliver_list_empty.dart';
 import 'package:provider/provider.dart';
 
 class BookmarkedHymnScreen extends StatelessWidget {
@@ -29,7 +30,9 @@ class BookmarkedHymnScreen extends StatelessWidget {
                                   ? null
                                   : const Text('Description'),
                           content: Text(collection.description),
-                          contentTextStyle: TextStyle(
+                          contentTextStyle: Theme.of(
+                            context,
+                          ).textTheme.bodyLarge?.copyWith(
                             color: Theme.of(context).colorScheme.onPrimary,
                           ),
                         ),
@@ -49,6 +52,11 @@ class BookmarkedHymnScreen extends StatelessWidget {
                         key: ValueKey("bhScreenLoading"),
                       ),
                     ),
+                  )
+                  : bookmarkProvider.bookmarkedHymns.isEmpty
+                  ? SliverListEmpty(
+                    message: "${collection.title} is empty",
+                    emptyGender: "male",
                   )
                   : SliverHymnList(hymns: bookmarkProvider.bookmarkedHymns);
             },

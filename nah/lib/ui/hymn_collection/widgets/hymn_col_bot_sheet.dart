@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nah/data/models/bookmark_model.dart';
 import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/ui/bookmarked_hymn/view_model/bookmarked_hymns_provider.dart';
+import 'package:nah/ui/core/ui/no_data.dart';
 import 'package:nah/ui/hymn_collection/widgets/create_hymn_collection_alert_dialog.dart';
 import 'package:nah/ui/core/ui/modal_bot_sheet_container.dart';
 import 'package:nah/ui/hymn_collection/view_model/hymn_collection_provider.dart';
@@ -25,7 +26,7 @@ class HymnColBotSheet extends StatelessWidget {
                 hymnCollectionProvider.isLoading
                     ? Center(child: CircularProgressIndicator())
                     : hymnCollectionProvider.hymnCollections.isEmpty
-                    ? _buildCollectionsEmpty()
+                    ? _buildCollectionsEmpty(context)
                     : _buildColBotSheetList(hymnCollectionProvider),
           ),
         ],
@@ -40,7 +41,7 @@ class HymnColBotSheet extends StatelessWidget {
   ) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: 12),
       decoration: BoxDecoration(
         color: Theme.of(context).bottomSheetTheme.modalBackgroundColor,
         borderRadius: const BorderRadius.only(
@@ -49,7 +50,11 @@ class HymnColBotSheet extends StatelessWidget {
         ),
       ),
       alignment: Alignment.topRight,
-      child: TextButton(
+      child: MaterialButton(
+        color: Theme.of(context).colorScheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.circular(12),
+        ),
         onPressed: () async {
           final newHymnCollection = await showDialog(
             context: context,
@@ -72,7 +77,11 @@ class HymnColBotSheet extends StatelessWidget {
         child: const Text.rich(
           TextSpan(
             text: '+ ',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              color: Colors.white,
+            ),
             children: [
               TextSpan(
                 text: 'Create New Collection',
@@ -85,23 +94,20 @@ class HymnColBotSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildCollectionsEmpty() {
-    return const Center(
-      child: Text.rich(
-        style: TextStyle(fontSize: 16),
-
-        TextSpan(
-          text: 'You currently don\'t have any collections\nClick ',
-          children: [
-            TextSpan(
-              text: '+ create new collection',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            TextSpan(text: ' to create a new one'),
-          ],
+  Widget _buildCollectionsEmpty(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "You currently don't have any \nhymn collections.",
+          textAlign: TextAlign.center,
+          style: Theme.of(
+            context,
+          ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
         ),
-        textAlign: TextAlign.center,
-      ),
+        SizedBox(height: 8),
+        NoData(gender: "female"),
+      ],
     );
   }
 

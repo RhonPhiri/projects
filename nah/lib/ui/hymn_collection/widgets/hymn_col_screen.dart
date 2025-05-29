@@ -42,8 +42,12 @@ class HymnColScreen extends StatelessWidget {
                 child: Center(child: CircularProgressIndicator()),
               )
               : hymnCollections.isEmpty
+              // ? SliverListEmpty(
+              //   message: 'You currently don\'t have any hymn collections',
+              // )
               ? SliverListEmpty(
-                message: 'You currently don\'t have any hymn collections',
+                message: "You currently don't have any \nHymn collections",
+                emptyGender: "male",
               )
               : SliverList.separated(
                 itemCount: hymnCollections.length,
