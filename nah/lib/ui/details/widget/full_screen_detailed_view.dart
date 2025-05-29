@@ -72,7 +72,11 @@ class _FullScreenDetailedViewState extends State<FullScreenDetailedView> {
       if (chorus.isNotEmpty)
         for (String verse in verses) ...[
           Text(verse, style: textStyle, textAlign: centerText),
-          Text(chorus, style: textStyle, textAlign: centerText),
+          Text(
+            chorus,
+            style: textStyle?.copyWith(fontStyle: FontStyle.italic),
+            textAlign: centerText,
+          ),
         ]
       else
         for (String verse in verses)

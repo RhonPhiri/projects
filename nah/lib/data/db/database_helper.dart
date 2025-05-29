@@ -10,7 +10,6 @@ import 'package:nah/data/models/hymn_model.dart';
 import 'package:nah/data/models/hymnal_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-
 import '../models/hymn_collection_model.dart';
 
 class DatabaseHelper {
