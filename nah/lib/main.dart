@@ -21,14 +21,16 @@ final dbHelper = DatabaseHelper();
 Future<void> main() async {
   ///initialize
   WidgetsFlutterBinding.ensureInitialized();
-  await initializeApp(dbHelper);
-
-  final prefs = await SharedPreferences.getInstance();
 
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  await initializeApp(dbHelper);
+
+  final prefs = await SharedPreferences.getInstance();
+
   runApp(
     MultiProvider(
       providers: [

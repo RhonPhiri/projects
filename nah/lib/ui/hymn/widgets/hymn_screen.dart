@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:nah/ui/core/ui/erro_message_with_retry.dart';
 import 'package:nah/ui/core/ui/my_sliver_app_bar.dart';
 import 'package:nah/ui/core/ui/sliver_hymn_list.dart';
@@ -18,10 +19,15 @@ class HymnScreen extends StatefulWidget {
 }
 
 class _HymnScreenState extends State<HymnScreen> {
+  //Variable to hold the current scrolling status
+  bool _isScrollingDown = false;
+
+  late ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
-    // Defer the call to loadHymnals() until after the widget tree is built.
+    //Delay the call to loadHymnals() until after the widget tree is built.
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await context.read<HymnalProvider>().loadHymnals();
 
@@ -35,6 +41,25 @@ class _HymnScreenState extends State<HymnScreen> {
         await context.read<HymnProvider>().loadHymns(selectedHymnal.language);
       }
     });
+
+    _scrollController = ScrollController()..addListener(scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void scrollListener() {
+    if (_scrollController.position.pixels >= 120 &&
+        _scrollController.position.userScrollDirection ==
+            ScrollDirection.reverse) {
+      if (!_isScrollingDown) setState(() => _isScrollingDown = true);
+    } else if (_scrollController.position.userScrollDirection ==
+        ScrollDirection.forward) {
+      if (_isScrollingDown) setState(() => _isScrollingDown = false);
+    }
   }
 
   @override
@@ -44,9 +69,11 @@ class _HymnScreenState extends State<HymnScreen> {
 
     /// Get the hymn provider.
     final hymnProvider = context.watch<HymnProvider>();
+
     return Scaffold(
       drawer: NahDrawer(),
       body: CustomScrollView(
+        controller: _scrollController,
         slivers: [
           MySliverAppBar(
             // Get the title from the provider.
@@ -100,16 +127,19 @@ class _HymnScreenState extends State<HymnScreen> {
               ),
         ],
       ),
-      // Search hymn number through the FAB.
-      floatingActionButton: FloatingActionButton(
-        key: ValueKey("searchHymnId"),
-        onPressed:
-            () => showSearch(
-              context: context,
-              delegate: SearchHymnDelegate(searchHymnId: true),
-            ),
-        child: Icon(Icons.dialpad),
-      ),
+      // Search hymn number using the FAB.
+      floatingActionButton:
+          _isScrollingDown
+              ? SizedBox.shrink()
+              : FloatingActionButton(
+                key: ValueKey("searchHymnId"),
+                onPressed:
+                    () => showSearch(
+                      context: context,
+                      delegate: SearchHymnDelegate(searchHymnId: true),
+                    ),
+                child: Icon(Icons.dialpad),
+              ),
     );
   }
 
