@@ -7,7 +7,11 @@ class NoData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset("assets/images/empty/no_data_$gender.png"),
+      child: Image.asset(
+        "assets/images/empty/no_data_$gender.png",
+        width: 320,
+        height: 320,
+      ),
     );
   }
 }
