@@ -1,6 +1,4 @@
 # nah
---
-
 ## Description
 New Apostolic Church Hymnal is a lightweight, offline hymnal app created with flutter (Beginner level). It includes hymns in various languages including English, with a focus on simplicity, accessibility, and ease of use.
 
