@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:nah/data/models/hymn_model.dart';
@@ -22,6 +23,8 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  bool isPlaying = false;
+
   //Variable to hold the current scrolling status
   bool _isScrollingDown = false;
 
@@ -67,6 +70,22 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 bookmarkCondition
                     ? ""
                     : "${widget.hymn.id}. ${widget.hymn.title}",
+            actions: [
+              IconButton(
+                onPressed: () {
+                  final player = AudioPlayer(playerId: "${widget.hymn.id}");
+                  isPlaying
+                      ? player.play(AssetSource("audios/hymn522.mp3"))
+                      : player.release();
+                  setState(() {
+                    isPlaying = !isPlaying;
+                  });
+                },
+                icon: Icon(
+                  isPlaying ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                ),
+              ),
+            ],
           ),
 
           /// Main content: hymn details.
