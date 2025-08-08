@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
             children: [
               Spacer(flex: 2),
               SvgPicture.asset(
-                "images/pencil.svg",
+                "assets/images/pencil.svg",
                 width: size.width * 0.2,
                 height: size.height * 0.2,
               ),
